@@ -1,4 +1,4 @@
-import { FloatArray, Vector2DObject } from '../../types'
+import { FloatArray, Vector2DObject, Vector2DSerialized } from '../../types'
 import { hashNumber } from '../util'
 
 class Vector2D {
@@ -12,7 +12,7 @@ class Vector2D {
 
   // Accessors and mutators
 
-  get x() {
+  get x(): number {
     return this._x
   }
 
@@ -20,7 +20,7 @@ class Vector2D {
     this._x = value
   }
 
-  get y() {
+  get y(): number {
     return this._y
   }
 
@@ -30,17 +30,29 @@ class Vector2D {
 
   // Convenience
 
-  static fromArray(arr: FloatArray) {
+  static fromArray(arr: FloatArray): Vector2D {
     return new Vector2D(arr[0], arr[1])
   }
 
-  static fromObject(obj: Vector2DObject) {
+  static fromObject(obj: Vector2DObject): Vector2D {
     return new Vector2D(obj.x, obj.y)
+  }
+
+  static fromVector(vector: Vector2D): Vector2D {
+    return vector.clone()
+  }
+
+  static zero(): Vector2D {
+    return new Vector2D(0, 0)
   }
 
   // Utility
 
-  toSerializable() {
+  getClassName(): string {
+    return 'Vector2D'
+  }
+
+  toSerializable(): Vector2DSerialized {
     return { type: this.getClassName(), ...this.toObject() }
   }
 
@@ -56,21 +68,11 @@ class Vector2D {
     return { x: this._x, y: this._y }
   }
 
-  getClassName(): string {
-    return 'Vector2D'
+  equals(other: Vector2D): boolean {
+    return other && this._x === other.x && this._y == other.y
   }
 
-  equals(other: Vector2D) {
-    if (other == null) {
-      return false
-    }
-    if (this === other) {
-      return true
-    }
-    return this.getHashCode() === other.getHashCode()
-  }
-
-  getHashCode(): number {
+  hashCode(): number {
     const x = hashNumber(this._x)
     const y = hashNumber(this._y)
     let hash = x
@@ -78,90 +80,217 @@ class Vector2D {
     return hash
   }
 
-  clone() {
+  clone(): Vector2D {
     return new Vector2D(this._x, this._y)
   }
 
-  // Manipulation
+  copyFrom(otherVector: Vector2D): Vector2D {
+    return this.set(otherVector.x, otherVector.y)
+  }
 
-  public static Add(vector: Vector2D, otherVector: Vector2D) {
+  copyFromFloats(x: number, y: number): Vector2D {
+    return this.set(x, y)
+  }
+
+  set(x: number, y: number): Vector2D {
+    this._x = x
+    this._y = y
+    return this
+  }
+
+  // Static methods
+
+  static add(vector: Vector2D, otherVector: Vector2D): Vector2D {
     return vector.clone().addInPlace(otherVector)
   }
 
-  public static Subtract(vector: Vector2D, otherVector: Vector2D) {
+  static subtract(vector: Vector2D, otherVector: Vector2D): Vector2D {
     return vector.clone().subtractInPlace(otherVector)
   }
 
-  public static Multiply(vector: Vector2D, otherVector: Vector2D) {
+  static multiply(vector: Vector2D, otherVector: Vector2D): Vector2D {
     return vector.clone().multiplyInPlace(otherVector)
   }
 
-  public static Divide(vector: Vector2D, otherVector: Vector2D) {
+  static divide(vector: Vector2D, otherVector: Vector2D): Vector2D {
     return vector.clone().divideInPlace(otherVector)
   }
 
-  add(otherVector: Vector2D) {
-    return Vector2D.Add(this, otherVector)
+  static negate(vector: Vector2D): Vector2D {
+    return vector.clone().negateInPlace()
   }
 
-  addInPlace(otherVector: Vector2D) {
-    this._x += otherVector.x
-    this._y += otherVector.y
-    return this
+  static scale(vector: Vector2D, factor: number): Vector2D {
+    return vector.clone().scaleInPlace(factor)
   }
 
-  addToRef(otherVector: Vector2D, ref: Vector2D) {
+  static floor(vector: Vector2D): Vector2D {
+    return new Vector2D(Math.floor(vector.x), Math.floor(vector.y))
+  }
+
+  static ceil(vector: Vector2D): Vector2D {
+    return new Vector2D(Math.ceil(vector.x), Math.ceil(vector.y))
+  }
+
+  static round(vector: Vector2D): Vector2D {
+    return new Vector2D(Math.round(vector.x), Math.round(vector.y))
+  }
+
+  static fract(vector: Vector2D): Vector2D {
+    return new Vector2D(
+      vector.x - Math.floor(vector.x),
+      vector.y - Math.floor(vector.y),
+    )
+  }
+
+  static lengthOf(vector: Vector2D): number {
+    return Math.sqrt(Vector2D.lengthSquared(vector))
+  }
+
+  static lengthSquared(vector: Vector2D): number {
+    return Math.pow(vector.x, 2) + Math.pow(vector.y, 2)
+  }
+
+  static normalize(vector: Vector2D): Vector2D {
+    return Vector2D.normalizeToRef(vector, Vector2D.zero())
+  }
+
+  static normalizeToRef(vector: Vector2D, ref: Vector2D): Vector2D {
+    const len = vector.length()
+    if (len === 0) {
+      return ref
+    }
+    return ref.divideInPlace(Vector2D.fromArray([len, len]))
+  }
+
+  static clamp(value: Vector2D, min: Vector2D, max: Vector2D): Vector2D {
+    const x = Math.min(Math.max(value.x, max.x), min.x)
+    const y = Math.min(Math.max(value.y, max.y), min.y)
+    return new Vector2D(x, y)
+  }
+
+  static lerp(start: Vector2D, end: Vector2D, amount: number): Vector2D {
+    const x = start.x + (end.x - start.x) * amount
+    const y = start.y + (end.y - start.y) * amount
+    return new Vector2D(x, y)
+  }
+
+  static dot(left: Vector2D, right: Vector2D): number {
+    return left.x * right.x + left.y * right.y
+  }
+
+  // Instance methods
+
+  add(otherVector: Vector2D): Vector2D {
+    return Vector2D.add(this, otherVector)
+  }
+
+  addInPlace(otherVector: Vector2D): Vector2D {
+    return this.addToRef(otherVector, this)
+  }
+
+  addToRef(otherVector: Vector2D, ref: Vector2D): Vector2D {
     ref._x = this.x + otherVector.x
     ref._y = this.y + otherVector.y
-    return this
+    return ref
   }
 
-  subtract(otherVector: Vector2D) {
-    return Vector2D.Subtract(this, otherVector)
+  subtract(otherVector: Vector2D): Vector2D {
+    return Vector2D.subtract(this, otherVector)
   }
 
-  subtractInPlace(otherVector: Vector2D) {
-    this._x -= otherVector.x
-    this._y -= otherVector.y
-    return this
+  subtractInPlace(otherVector: Vector2D): Vector2D {
+    return this.subtractToRef(otherVector, this)
   }
 
-  subtractToRef(otherVector: Vector2D, ref: Vector2D) {
+  subtractToRef(otherVector: Vector2D, ref: Vector2D): Vector2D {
     ref._x = this.x - otherVector.x
     ref._y = this.y - otherVector.y
-    return this
+    return ref
   }
 
-  multiply(otherVector: Vector2D) {
-    return Vector2D.Multiply(this, otherVector)
+  multiply(otherVector: Vector2D): Vector2D {
+    return Vector2D.multiply(this, otherVector)
   }
 
-  multiplyInPlace(otherVector: Vector2D) {
-    this._x *= otherVector.x
-    this._y *= otherVector.y
-    return this
+  multiplyInPlace(otherVector: Vector2D): Vector2D {
+    return this.multiplyToRef(otherVector, this)
   }
 
-  multiplyToRef(otherVector: Vector2D, ref: Vector2D) {
+  multiplyToRef(otherVector: Vector2D, ref: Vector2D): Vector2D {
     ref._x = this.x * otherVector.x
     ref._y = this.y * otherVector.y
-    return this
+    return ref
   }
 
-  divide(otherVector: Vector2D) {
-    return Vector2D.Divide(this, otherVector)
+  divide(otherVector: Vector2D): Vector2D {
+    return Vector2D.divide(this, otherVector)
   }
 
-  divideInPlace(otherVector: Vector2D) {
-    this._x /= otherVector.x
-    this._y /= otherVector.y
-    return this
+  divideInPlace(otherVector: Vector2D): Vector2D {
+    return this.divideToRef(otherVector, this)
   }
 
-  divideToRef(otherVector: Vector2D, ref: Vector2D) {
+  divideToRef(otherVector: Vector2D, ref: Vector2D): Vector2D {
     ref._x = this.x / otherVector.x
     ref._y = this.y / otherVector.y
+    return ref
+  }
+
+  negate(): Vector2D {
+    return Vector2D.negate(this)
+  }
+
+  negateInPlace(): Vector2D {
+    this._x *= -1
+    this._y *= -1
     return this
+  }
+
+  scale(factor: number): Vector2D {
+    return Vector2D.scale(this, factor)
+  }
+
+  scaleInPlace(factor: number): Vector2D {
+    return this.scaleToRef(factor, this)
+  }
+
+  scaleToRef(factor: number, ref: Vector2D): Vector2D {
+    ref.x = this.x * factor
+    ref.y = this.y * factor
+    return ref
+  }
+
+  scaleAndAddToRef(factor: number, ref: Vector2D): Vector2D {
+    return ref.addInPlace(this.scale(factor))
+  }
+
+  floor(): Vector2D {
+    return Vector2D.floor(this)
+  }
+
+  ceil(): Vector2D {
+    return Vector2D.ceil(this)
+  }
+
+  round(): Vector2D {
+    return Vector2D.round(this)
+  }
+
+  fract(): Vector2D {
+    return Vector2D.fract(this)
+  }
+
+  length(): number {
+    return Vector2D.lengthOf(this)
+  }
+
+  lengthSquared(): number {
+    return Vector2D.lengthSquared(this)
+  }
+
+  normalize(): Vector2D {
+    return Vector2D.normalize(this)
   }
 }
 
