@@ -1,109 +1,97 @@
-import { Vector2DObject } from '../../../types'
+import { Object2D } from '../../../types'
 import { zeroObject } from '../../util/object'
 
 /**
  * Computes a new vector, result of the addition of vector and the otherVector.
  *
- * @param {Vector2DObject} vector - first operand
- * @param {Vector2DObject} otherVector - second operand
- * @returns {Vector2DObject} the resulting vector
+ * @param {Object2D} vector - first operand
+ * @param {Object2D} otherVector - second operand
+ * @returns {Object2D} the resulting vector
  */
-export function addObjects(
-  vector: Vector2DObject,
-  otherVector: Vector2DObject
-): Vector2DObject {
+export function addObjects(vector: Object2D, otherVector: Object2D): Object2D {
   return addObjectsTo(vector, otherVector, zeroObject())
 }
 
 /**
  * Adds the result of the addition of vector and the otherVector to the reference.
  *
- * @param {Vector2DObject} vector - first operand
- * @param {Vector2DObject} otherVector - second operand
- * @param {Vector2DObject} ref - the reference
- * @returns {Vector2DObject} the modified reference
+ * @param {Object2D} vector - first operand
+ * @param {Object2D} otherVector - second operand
+ * @param {Object2D} ref - the reference
+ * @returns {Object2D} the modified reference
  */
 export function addObjectsTo(
-  vector: Vector2DObject,
-  otherVector: Vector2DObject,
-  ref: Vector2DObject
-): Vector2DObject {
+  vector: Object2D,
+  otherVector: Object2D,
+  ref: Object2D
+): Object2D {
   ref.x = vector.x + otherVector.x
   ref.y = vector.y + otherVector.y
   return ref
 }
 
-export function addObjectsX(
-  vector: Vector2DObject,
-  otherVector: Vector2DObject
-): Vector2DObject {
+export function addObjectsX(vector: Object2D, otherVector: Object2D): Object2D {
   return addObjectsToX(vector, otherVector, zeroObject())
 }
 
 export function addObjectsToX(
-  vector: Vector2DObject,
-  otherVector: Vector2DObject,
-  ref: Vector2DObject
-): Vector2DObject {
+  vector: Object2D,
+  otherVector: Object2D,
+  ref: Object2D
+): Object2D {
   ref.x = vector.x + otherVector.x
   return ref
 }
 
-export function addObjectsY(
-  vector: Vector2DObject,
-  otherVector: Vector2DObject
-): Vector2DObject {
+export function addObjectsY(vector: Object2D, otherVector: Object2D): Object2D {
   return addObjectsToY(vector, otherVector, zeroObject())
 }
 
 export function addObjectsToY(
-  vector: Vector2DObject,
-  otherVector: Vector2DObject,
-  ref: Vector2DObject
-): Vector2DObject {
+  vector: Object2D,
+  otherVector: Object2D,
+  ref: Object2D
+): Object2D {
   ref.y = vector.y + otherVector.y
   return ref
 }
 
-export function addObject(
-  vector: Vector2DObject,
-  value: number
-): Vector2DObject {
+export function addObject(vector: Object2D, value: number): Object2D {
   return addObjectTo(vector, value, zeroObject())
 }
 
 export function addObjectTo(
-  vector: Vector2DObject,
+  vector: Object2D,
   value: number,
-  ref: Vector2DObject
-): Vector2DObject {
+  ref: Object2D
+): Object2D {
   ref.x = vector.x + value
   ref.y = vector.y + value
   return ref
 }
 
-export function addObjectX(vector: Vector2DObject, x: number): Vector2DObject {
+export function addObjectX(vector: Object2D, x: number): Object2D {
   return addObjectToX(vector, x, zeroObject())
 }
 
 export function addObjectToX(
-  vector: Vector2DObject,
+  vector: Object2D,
   x: number,
-  ref: Vector2DObject
-): Vector2DObject {
+  ref: Object2D
+): Object2D {
   ref.x = vector.x + x
   return ref
 }
 
-export function addObjectY(vector: Vector2DObject, y: number): Vector2DObject {
+export function addObjectY(vector: Object2D, y: number): Object2D {
   return addObjectToY(vector, y, zeroObject())
 }
 
 export function addObjectToY(
-  vector: Vector2DObject,
+  vector: Object2D,
   y: number,
-  ref: Vector2DObject
-): Vector2DObject {
+  ref: Object2D
+): Object2D {
   ref.y = vector.y + y
   return ref
 }

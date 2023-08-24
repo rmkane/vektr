@@ -1,4 +1,4 @@
-import { FloatArray, Vector2DObject } from '../../types'
+import { Array2D, Object2D } from '../../types'
 import {
   addObjects,
   ceilObject,
@@ -19,18 +19,18 @@ import {
 } from '../math/object'
 import Point2D from './Point2D'
 
-class Vector2D extends Point2D {
-  constructor(x: number, y: number) {
+class Vector2D extends Point2D<Vector2D> {
+  constructor(x: number = 0, y: number = 0) {
     super(x, y)
   }
 
   // Convenience
 
-  static fromArray(arr: FloatArray): Vector2D {
+  static fromArray(arr: Array2D): Vector2D {
     return new Vector2D(arr[0], arr[1])
   }
 
-  static fromObject(obj: Vector2DObject): Vector2D {
+  static fromObject(obj: Object2D): Vector2D {
     return new Vector2D(obj.x, obj.y)
   }
 
@@ -44,74 +44,88 @@ class Vector2D extends Point2D {
 
   // Static methods
 
-  static add(vector: Vector2D, otherVector: Vector2D): Vector2D {
+  static add(vector: Object2D, otherVector: Object2D): Vector2D {
     return Vector2D.fromObject(addObjects(vector, otherVector))
   }
 
-  static subtract(vector: Vector2D, otherVector: Vector2D): Vector2D {
+  static subtract(vector: Object2D, otherVector: Object2D): Vector2D {
     return Vector2D.fromObject(subtractObjects(vector, otherVector))
   }
 
-  static multiply(vector: Vector2D, otherVector: Vector2D): Vector2D {
+  static multiply(vector: Object2D, otherVector: Object2D): Vector2D {
     return Vector2D.fromObject(multiplyObjects(vector, otherVector))
   }
 
-  static divide(vector: Vector2D, otherVector: Vector2D): Vector2D {
+  static divide(vector: Object2D, otherVector: Object2D): Vector2D {
     return Vector2D.fromObject(divideObjects(vector, otherVector))
   }
 
-  static negate(vector: Vector2D): Vector2D {
+  static negate(vector: Object2D): Vector2D {
     return Vector2D.fromObject(negateObject(vector))
   }
 
-  static scale(vector: Vector2D, factor: number): Vector2D {
+  static scale(vector: Object2D, factor: number): Vector2D {
     return Vector2D.fromObject(multiplyObject(vector, factor))
   }
 
-  static floor(vector: Vector2D): Vector2D {
+  static floor(vector: Object2D): Vector2D {
     return Vector2D.fromObject(floorObject(vector))
   }
 
-  static ceil(vector: Vector2D): Vector2D {
+  static ceil(vector: Object2D): Vector2D {
     return Vector2D.fromObject(ceilObject(vector))
   }
 
-  static round(vector: Vector2D): Vector2D {
+  static round(vector: Object2D): Vector2D {
     return Vector2D.fromObject(roundObject(vector))
   }
 
-  static fract(vector: Vector2D): Vector2D {
+  static fract(vector: Object2D): Vector2D {
     return Vector2D.fromObject(fractObject(vector))
   }
 
-  static magnitude(vector: Vector2D): number {
+  static magnitude(vector: Object2D): number {
     return magnitudeObject(vector)
   }
 
-  static direction(vector: Vector2D): number {
+  static direction(vector: Object2D): number {
     return directionObject(vector)
   }
 
-  static normalize(vector: Vector2D): Vector2D {
+  static normalize(vector: Object2D): Vector2D {
     return Vector2D.fromObject(normalizeObject(vector))
   }
 
-  static clamp(value: Vector2D, min: Vector2D, max: Vector2D): Vector2D {
+  static clamp(value: Object2D, min: Object2D, max: Object2D): Vector2D {
     return Vector2D.fromObject(clampObject(value, min, max))
   }
 
-  static lerp(start: Vector2D, end: Vector2D, amount: number): Vector2D {
+  static lerp(start: Object2D, end: Object2D, amount: number): Vector2D {
     return Vector2D.fromObject(lerpObject(start, end, amount))
   }
 
-  static dot(left: Vector2D, right: Vector2D): number {
+  static dot(left: Object2D, right: Object2D): number {
     return dotObject(left, right)
   }
 
-  // Instance methods
-
+  /**
+   * Gets the class name.
+   *
+   * @returns {string} the name of the class
+   * @override
+   */
   getClassName(): string {
     return 'Vector2D'
+  }
+
+  /**
+   * Clones a vector.
+   *
+   * @returns {Vector2D} a coloned vector
+   * @override
+   */
+  clone(): Vector2D {
+    return new Vector2D(this._x, this._y)
   }
 
   add(otherVector: Vector2D): Vector2D {
@@ -226,5 +240,7 @@ class Vector2D extends Point2D {
     return Vector2D.normalize(this)
   }
 }
+
+new Vector2D().clone()
 
 export default Vector2D

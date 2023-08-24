@@ -1,10 +1,10 @@
 import { hashNumber } from '..'
-import { FloatArray, Point2DObject, Point2DSerialized } from '../../types'
+import { Array2D, Object2D, Point2DSerialized } from '../../types'
 
 /**
  * A class representing a point in 2D.
  */
-class Point2D {
+class Point2D<T extends Point2D<T>> {
   protected _x: number
   protected _y: number
 
@@ -61,7 +61,7 @@ class Point2D {
    * @returns {string} the name of the class
    */
   getClassName(): string {
-    return 'Vector2D'
+    return 'Point2D'
   }
 
   toSerializable(): Point2DSerialized {
@@ -72,15 +72,15 @@ class Point2D {
     return JSON.stringify(this.toSerializable())
   }
 
-  toArray(): FloatArray {
+  toArray(): Array2D {
     return [this._x, this._y]
   }
 
-  toObject(): Point2DObject {
+  toObject(): Object2D {
     return { x: this._x, y: this._y }
   }
 
-  equals(other: Point2D): boolean {
+  equals(other: Object2D): boolean {
     return other && this._x === other.x && this._y == other.y
   }
 
@@ -92,22 +92,27 @@ class Point2D {
     return hash
   }
 
-  clone(): Point2D {
-    return new Point2D(this._x, this._y)
+  /**
+   * Clones a point.
+   *
+   * @returns {Point2D} a coloned point
+   */
+  clone(): T {
+    return new Point2D(this._x, this._y) as T
   }
 
-  copyFrom(otherVector: Point2D): Point2D {
+  copyFrom(otherVector: T): T {
     return this.set(otherVector.x, otherVector.y)
   }
 
-  copyFromFloats(x: number, y: number): Point2D {
+  copyFromFloats(x: number, y: number): T {
     return this.set(x, y)
   }
 
-  set(x: number, y: number): Point2D {
+  set(x: number, y: number): T {
     this._x = x
     this._y = y
-    return this
+    return this as unknown as T
   }
 }
 

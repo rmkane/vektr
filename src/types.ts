@@ -1,10 +1,8 @@
-export type FloatArray = number[] | Float32Array
-
 export type Serialized = {
   type: string
 }
 
-export type Array2D = [number, number]
+export type NumberPair = [number, number]
 
 export type Point2DObject = {
   x: number
@@ -21,7 +19,7 @@ export type Vector2DObject = Point2DObject
 
 export type Vector3DObject = Point3DObject
 
-export type Vector2DArray = Array2D
+export type Vector2DArray = NumberPair
 
 export type Vector2DSerialized = Serialized & Vector2DObject
 
@@ -31,3 +29,6 @@ export type Polar2DObject = {
 }
 
 export type Polar2DArray = Array2D
+
+export type Object2D = Vector2DObject | Point2DObject
+export type Array2D = Vector2DArray | NumberPair
