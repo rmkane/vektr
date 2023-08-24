@@ -9,6 +9,8 @@ export type Vector2DObject = {
   y: number
 }
 
+export type Vector2DArray = [number, number]
+
 export type Vector2DSerialized = Serialized & Vector2DObject
 
 export type Vector3DObject = Vector2DObject & {
