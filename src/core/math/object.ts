@@ -1,21 +1,36 @@
 import { Polar2DObject, Vector2DObject } from '../../types'
+import { zeroObject } from '../util/object'
 import { clamp, fraction, lerp, polarX, polarY } from './functions'
 
 export function addObjects(
   a: Vector2DObject,
   b: Vector2DObject
 ): Vector2DObject {
-  return {
-    x: a.x + b.x,
-    y: a.y + b.y,
-  }
+  return addObjectsTo(a, b, zeroObject())
+}
+
+export function addObjectsTo(
+  a: Vector2DObject,
+  b: Vector2DObject,
+  ref: Vector2DObject
+): Vector2DObject {
+  ref.x = a.x + b.x
+  ref.y = a.y + b.y
+  return ref
 }
 
 export function addObject(a: Vector2DObject, value: number): Vector2DObject {
-  return {
-    x: a.x + value,
-    y: a.y + value,
-  }
+  return addObjectTo(a, value, zeroObject())
+}
+
+export function addObjectTo(
+  a: Vector2DObject,
+  value: number,
+  ref: Vector2DObject
+): Vector2DObject {
+  ref.x = a.x + value
+  ref.y = a.y + value
+  return ref
 }
 
 export function subtractObjects(
