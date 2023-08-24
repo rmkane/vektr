@@ -1,4 +1,22 @@
 import { FloatArray, Vector2DObject, Vector2DSerialized } from '../../types'
+import {
+  addObjects,
+  ceilObject,
+  clampObject,
+  directionObject,
+  divideObjects,
+  dotObject,
+  floorObject,
+  fractObject,
+  lerpObject,
+  magnitudeObject,
+  multiplyObject,
+  multiplyObjects,
+  negateObject,
+  normalizeObject,
+  roundObject,
+  subtractObjects,
+} from '../math/object'
 import { hashNumber } from '../util'
 
 class Vector2D {
@@ -101,82 +119,67 @@ class Vector2D {
   // Static methods
 
   static add(vector: Vector2D, otherVector: Vector2D): Vector2D {
-    return vector.clone().addInPlace(otherVector)
+    return Vector2D.fromObject(addObjects(vector, otherVector))
   }
 
   static subtract(vector: Vector2D, otherVector: Vector2D): Vector2D {
-    return vector.clone().subtractInPlace(otherVector)
+    return Vector2D.fromObject(subtractObjects(vector, otherVector))
   }
 
   static multiply(vector: Vector2D, otherVector: Vector2D): Vector2D {
-    return vector.clone().multiplyInPlace(otherVector)
+    return Vector2D.fromObject(multiplyObjects(vector, otherVector))
   }
 
   static divide(vector: Vector2D, otherVector: Vector2D): Vector2D {
-    return vector.clone().divideInPlace(otherVector)
+    return Vector2D.fromObject(divideObjects(vector, otherVector))
   }
 
   static negate(vector: Vector2D): Vector2D {
-    return vector.clone().negateInPlace()
+    return Vector2D.fromObject(negateObject(vector))
   }
 
   static scale(vector: Vector2D, factor: number): Vector2D {
-    return vector.clone().scaleInPlace(factor)
+    return Vector2D.fromObject(multiplyObject(vector, factor))
   }
 
   static floor(vector: Vector2D): Vector2D {
-    return new Vector2D(Math.floor(vector.x), Math.floor(vector.y))
+    return Vector2D.fromObject(floorObject(vector))
   }
 
   static ceil(vector: Vector2D): Vector2D {
-    return new Vector2D(Math.ceil(vector.x), Math.ceil(vector.y))
+    return Vector2D.fromObject(ceilObject(vector))
   }
 
   static round(vector: Vector2D): Vector2D {
-    return new Vector2D(Math.round(vector.x), Math.round(vector.y))
+    return Vector2D.fromObject(roundObject(vector))
   }
 
   static fract(vector: Vector2D): Vector2D {
-    return new Vector2D(
-      vector.x - Math.floor(vector.x),
-      vector.y - Math.floor(vector.y),
-    )
+    return Vector2D.fromObject(fractObject(vector))
   }
 
-  static lengthOf(vector: Vector2D): number {
-    return Math.sqrt(Vector2D.lengthSquared(vector))
+  static magnitude(vector: Vector2D): number {
+    return magnitudeObject(vector)
   }
 
-  static lengthSquared(vector: Vector2D): number {
-    return Math.pow(vector.x, 2) + Math.pow(vector.y, 2)
+  static direction(vector: Vector2D): number {
+    return directionObject(vector)
   }
 
   static normalize(vector: Vector2D): Vector2D {
-    return Vector2D.normalizeToRef(vector, Vector2D.zero())
-  }
-
-  static normalizeToRef(vector: Vector2D, ref: Vector2D): Vector2D {
-    const len = vector.length()
-    if (len === 0) {
-      return ref
-    }
-    return ref.divideInPlace(Vector2D.fromArray([len, len]))
+    return Vector2D.fromObject(normalizeObject(vector))
   }
 
   static clamp(value: Vector2D, min: Vector2D, max: Vector2D): Vector2D {
-    const x = Math.min(Math.max(value.x, max.x), min.x)
-    const y = Math.min(Math.max(value.y, max.y), min.y)
-    return new Vector2D(x, y)
+    return Vector2D.fromObject(clampObject(value, min, max))
   }
 
   static lerp(start: Vector2D, end: Vector2D, amount: number): Vector2D {
-    const x = start.x + (end.x - start.x) * amount
-    const y = start.y + (end.y - start.y) * amount
-    return new Vector2D(x, y)
+    return Vector2D.fromObject(lerpObject(start, end, amount))
   }
 
   static dot(left: Vector2D, right: Vector2D): number {
-    return left.x * right.x + left.y * right.y
+    return dotObject(left, right)
   }
 
   // Instance methods
@@ -281,12 +284,12 @@ class Vector2D {
     return Vector2D.fract(this)
   }
 
-  length(): number {
-    return Vector2D.lengthOf(this)
+  magnitude(): number {
+    return Vector2D.magnitude(this)
   }
 
-  lengthSquared(): number {
-    return Vector2D.lengthSquared(this)
+  direction(): number {
+    return Vector2D.direction(this)
   }
 
   normalize(): Vector2D {
