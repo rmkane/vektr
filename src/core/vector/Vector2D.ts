@@ -16,7 +16,7 @@ import {
   normalizeObject,
   roundObject,
   subtractObjects,
-} from '../math/object'
+} from '../math/legacy/object'
 import Point2D from './Point2D'
 
 class Vector2D extends Point2D<Vector2D> {

@@ -1,1 +1,2 @@
-export { clamp, fraction, lerp, polarX, polarY } from './functions'
+export * from './functions'
+export * from './object'

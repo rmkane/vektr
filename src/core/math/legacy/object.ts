@@ -1,6 +1,6 @@
-import { Polar2DObject, Vector2DObject } from '../../types'
-import { zeroObject } from '../util/object'
-import { clamp, fraction, lerp, polarX, polarY } from './functions'
+import { Polar2DObject, Vector2DObject } from '../../../types'
+import { zeroObject } from '../../util/object'
+import { clamp, fraction, lerp, fromPolarX, fromPolarY } from '../functions'
 
 export function addObjects(a: Vector2DObject, b: Vector2DObject): Vector2DObject {
   return addObjectsTo(a, b, zeroObject())
@@ -138,7 +138,7 @@ export function toPolar(vector: Vector2DObject): Polar2DObject {
 
 export function fromPolar(polar: Polar2DObject): Vector2DObject {
   return {
-    x: polarX(polar.magnitude, polar.direction),
-    y: polarY(polar.magnitude, polar.direction),
+    x: fromPolarX(polar.magnitude, polar.direction),
+    y: fromPolarY(polar.magnitude, polar.direction),
   }
 }
