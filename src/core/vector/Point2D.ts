@@ -1,9 +1,7 @@
 import { hashNumber } from '..'
 import { Array2D, Object2D, Point2DSerialized } from '../../types'
 
-/**
- * A class representing a point in 2D.
- */
+/** A class representing a point in 2D. */
 class Point2D<T extends Point2D<T>> {
   protected _x: number
   protected _y: number
@@ -11,8 +9,8 @@ class Point2D<T extends Point2D<T>> {
   /**
    * Create a point.
    *
-   * @param {number} x - the x value
-   * @param {number} y - the y value
+   * @param {number} x - The x value
+   * @param {number} y - The y value
    */
   constructor(x: number, y: number) {
     this._x = x
@@ -22,7 +20,7 @@ class Point2D<T extends Point2D<T>> {
   /**
    * Get the x value.
    *
-   * @returns {number} the x value
+   * @returns {number} The x value
    */
   get x(): number {
     return this._x
@@ -31,7 +29,7 @@ class Point2D<T extends Point2D<T>> {
   /**
    * Set the x value.
    *
-   * @param {number} value - new value for x
+   * @param {number} value - New value for x
    */
   set x(value: number) {
     this._x = value
@@ -40,7 +38,7 @@ class Point2D<T extends Point2D<T>> {
   /**
    * Get the y value.
    *
-   * @returns {number} the y value
+   * @returns {number} The y value
    */
   get y(): number {
     return this._y
@@ -49,7 +47,7 @@ class Point2D<T extends Point2D<T>> {
   /**
    * Set the y value.
    *
-   * @param {number} value - new value for y
+   * @param {number} value - New value for y
    */
   set y(value: number) {
     this._y = value
@@ -58,7 +56,7 @@ class Point2D<T extends Point2D<T>> {
   /**
    * Gets the class name.
    *
-   * @returns {string} the name of the class
+   * @returns {string} The name of the class
    */
   getClassName(): string {
     return 'Point2D'
@@ -95,7 +93,7 @@ class Point2D<T extends Point2D<T>> {
   /**
    * Clones a point.
    *
-   * @returns {Point2D} a coloned point
+   * @returns {Point2D} A coloned point
    */
   clone(): T {
     return new Point2D(this._x, this._y) as T

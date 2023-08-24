@@ -111,7 +111,7 @@ class Vector2D extends Point2D<Vector2D> {
   /**
    * Gets the class name.
    *
-   * @returns {string} the name of the class
+   * @returns {string} The name of the class
    * @override
    */
   getClassName(): string {
@@ -121,7 +121,7 @@ class Vector2D extends Point2D<Vector2D> {
   /**
    * Clones a vector.
    *
-   * @returns {Vector2D} a coloned vector
+   * @returns {Vector2D} A coloned vector
    * @override
    */
   clone(): Vector2D {

@@ -4,77 +4,158 @@ import { zeroObject } from '../../util/object'
 /**
  * Computes a new vector, result of the addition of {@link vector} and the {@link otherVector}.
  *
- * @param {Object2D} vector - first operand
- * @param {Object2D} otherVector - second operand
- * @returns {Object2D} the resulting vector
+ * @param {Object2D} vector - First vector operand
+ * @param {Object2D} otherVector - Second vector operand
+ * @returns {Object2D} The resulting vector
  */
-export function addObjects(vector: Object2D, otherVector: Object2D): Object2D {
-  return addObjectsTo(vector, otherVector, zeroObject())
+function add(vector: Object2D, otherVector: Object2D): Object2D {
+  return addRef(vector, otherVector, zeroObject())
 }
 
 /**
- * Adds the result of the addition of {@link vector} and the {@link otherVector} to {@link ref}.
+ * Adds the result of the addition of {@link vector} and the {@link otherVector} to {@link referenceVector}.
  *
- * @param {Object2D} vector - first operand
- * @param {Object2D} otherVector - second operand
- * @param {Object2D} ref - the reference
- * @returns {Object2D} the modified reference
+ * @param {Object2D} vector - First vector operand
+ * @param {Object2D} otherVector - Second vector operand
+ * @param {Object2D} referenceVector - The reference vector
+ * @returns {Object2D} The modified reference vector
  */
-export function addObjectsTo(vector: Object2D, otherVector: Object2D, ref: Object2D): Object2D {
-  ref.x = vector.x + otherVector.x
-  ref.y = vector.y + otherVector.y
-  return ref
+function addRef(vector: Object2D, otherVector: Object2D, referenceVector: Object2D): Object2D {
+  referenceVector.x = vector.x + otherVector.x
+  referenceVector.y = vector.y + otherVector.y
+  return referenceVector
 }
 
 /**
- * Computes a new vector, result of the addition of {@link otherVector.x} and {@link vector.x}.
+ * Computes a new vector, sum of {@link otherVector.x} and {@link vector.x}.
  *
- * @param {Object2D} vector - first operand
- * @param {Object2D} otherVector - second operand
- * @returns {Object2D} the resulting vector
+ * @param {Object2D} vector - First vector operand
+ * @param {Object2D} otherVector - Second vector operand
+ * @returns {Object2D} The resulting vector
  */
-export function addObjectsX(vector: Object2D, otherVector: Object2D): Object2D {
-  return addObjectsToX(vector, otherVector, zeroObject())
+function addX(vector: Object2D, otherVector: Object2D): Object2D {
+  return addRef(vector, otherVector, zeroObject())
 }
 
-export function addObjectsToX(vector: Object2D, otherVector: Object2D, ref: Object2D): Object2D {
-  ref.x = vector.x + otherVector.x
-  return ref
+/**
+ * Sums {@link vector.x} and {@link otherVector.x} to {@link referenceVector} and returns it.
+ *
+ * @param {Object2D} vector - First vector operand
+ * @param {Object2D} otherVector - Second vector operand
+ * @param {Object2D} referenceVector - The reference
+ * @returns {Object2D} The modified reference vector
+ */
+function addRefX(vector: Object2D, otherVector: Object2D, referenceVector: Object2D): Object2D {
+  referenceVector.x = vector.x + otherVector.x
+  return referenceVector
 }
 
-export function addObjectsY(vector: Object2D, otherVector: Object2D): Object2D {
-  return addObjectsToY(vector, otherVector, zeroObject())
+/**
+ * Computes a new vector, sum of {@link otherVector.y} and {@link vector.y}.
+ *
+ * @param {Object2D} vector - First vector operand
+ * @param {Object2D} otherVector - Second vector operand
+ * @returns {Object2D} The resulting vector
+ */
+function addY(vector: Object2D, otherVector: Object2D): Object2D {
+  return addRefY(vector, otherVector, zeroObject())
 }
 
-export function addObjectsToY(vector: Object2D, otherVector: Object2D, ref: Object2D): Object2D {
-  ref.y = vector.y + otherVector.y
-  return ref
+/**
+ * Sums {@link vector.y} and {@link otherVector.y} to {@link referenceVector} and returns it.
+ *
+ * @param {Object2D} vector - First vector operand
+ * @param {Object2D} otherVector - Second vector operand
+ * @param {Object2D} referenceVector - The reference vector
+ * @returns {Object2D} The modified reference vector
+ */
+function addRefY(vector: Object2D, otherVector: Object2D, referenceVector: Object2D): Object2D {
+  referenceVector.y = vector.y + otherVector.y
+  return referenceVector
 }
 
-export function addObject(vector: Object2D, value: number): Object2D {
-  return addObjectTo(vector, value, zeroObject())
+/**
+ * Computes a new vector, sum of {@link vector} and {@link value}.
+ *
+ * @param {Object2D} vector - First vector operand
+ * @param {Object2D} value - Value to add
+ * @returns {Object2D} The resulting vector
+ */
+function addScalar(vector: Object2D, value: number): Object2D {
+  return addScalarRef(vector, value, zeroObject())
 }
 
-export function addObjectTo(vector: Object2D, value: number, ref: Object2D): Object2D {
-  ref.x = vector.x + value
-  ref.y = vector.y + value
-  return ref
+/**
+ * Sums {@link vector} and {@link value} to {@link referenceVector} and returns it.
+ *
+ * @param {Object2D} vector - First vector operand
+ * @param {Object2D} value - Value to add
+ * @param {Object2D} referenceVector - The reference vector
+ * @returns {Object2D} The modified reference vector
+ */
+function addScalarRef(vector: Object2D, value: number, referenceVector: Object2D): Object2D {
+  referenceVector.x = vector.x + value
+  referenceVector.y = vector.y + value
+  return referenceVector
 }
 
-export function addObjectX(vector: Object2D, x: number): Object2D {
-  return addObjectToX(vector, x, zeroObject())
+/**
+ * Computes a new vector, sum of {@link vector.x} and {@link x}.
+ *
+ * @param {Object2D} vector - First vector operand
+ * @param {Object2D} x - Value to add to x
+ * @returns {Object2D} The resulting vector
+ */
+function addScalarX(vector: Object2D, x: number): Object2D {
+  return addScalarRefX(vector, x, zeroObject())
 }
 
-export function addObjectToX(vector: Object2D, x: number, ref: Object2D): Object2D {
-  ref.x = vector.x + x
-  return ref
+/**
+ * Sums {@link vector.x} and {@link x} to {@link referenceVector} and returns it.
+ *
+ * @param {Object2D} vector - First vector operand
+ * @param {Object2D} x - Value to add to x
+ * @param {Object2D} referenceVector - The reference vector
+ * @returns {Object2D} The resulting vector
+ */
+function addScalarRefX(vector: Object2D, x: number, referenceVector: Object2D): Object2D {
+  referenceVector.x = vector.x + x
+  return referenceVector
 }
 
-export function addObjectY(vector: Object2D, y: number): Object2D {
-  return addObjectToY(vector, y, zeroObject())
+/**
+ * Computes a new vector, sum of {@link vector.t} and {@link y}.
+ *
+ * @param {Object2D} vector - First vector operand
+ * @param {Object2D} y - Value to add to y
+ * @returns {Object2D} The resulting vector
+ */
+function addScalarY(vector: Object2D, y: number): Object2D {
+  return addScalarRefY(vector, y, zeroObject())
 }
 
-export function addObjectToY(vector: Object2D, y: number, ref: Object2D): Object2D {
-  ref.y = vector.y + y
-  return ref
+/**
+ * Sums {@link vector.y} and {@link y} to {@link referenceVector} and returns it.
+ *
+ * @param {Object2D} vector - First vector operand
+ * @param {Object2D} y - Value to add to y
+ * @param {Object2D} referenceVector - The reference vector
+ * @returns {Object2D} The resulting vector
+ */
+function addScalarRefY(vector: Object2D, y: number, referenceVector: Object2D): Object2D {
+  referenceVector.y = vector.y + y
+  return referenceVector
 }
+
+export { add as addObjects }
+export { addRef as addObjectsTo }
+export { addX as addObjectsX }
+export { addRefX as addObjectsToX }
+export { addY as addObjectsY }
+export { addRefY as addObjectsToY }
+export { addScalar as addObject }
+export { addScalarRef as addObjectTo }
+export { addScalarX as addObjectX }
+export { addScalarRefX as addObjectToX }
+export { addScalarY as addObjectY }
+export { addScalarRefY as addObjectToY }
