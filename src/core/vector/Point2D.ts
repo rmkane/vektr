@@ -81,7 +81,7 @@ class Point2D<T extends Point2D<T>> {
   }
 
   equals(other: Object2D): boolean {
-    return other && this._x === other.x && this._y == other.y
+    return other && this._x === other.x && this._y === other.y
   }
 
   hashCode(): number {
