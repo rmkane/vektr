@@ -29,3 +29,11 @@ See: <https://rohit.page/blog/posts/how-to-get-prettier-eslint-play-nicely-with-
   "editor.codeActionsOnSave": ["source.formatDocument", "source.fixAll.eslint"]
 }
 ```
+
+## Husky setup
+
+In order to execute husky shell scripts, set the permissions:
+
+```shell
+chmod ug+x .husky/*
+```

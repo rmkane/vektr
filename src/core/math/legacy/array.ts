@@ -2,7 +2,7 @@ import { Array2D, Polar2DArray } from '../../../types'
 import { clamp, fraction, fromPolarX, fromPolarY, lerp } from '../functions'
 
 export function addArrays(a: Array2D, b: Array2D): Array2D {
-          return [a[0] + b[0], a[1] + b[1]]
+  return [a[0] + b[0], a[1] + b[1]]
 }
 
 export function addArray(a: Array2D, value: number): Array2D {
