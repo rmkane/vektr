@@ -22,6 +22,7 @@ A 2D and 3D vector library written in TypeScript.
 See: <https://rohit.page/blog/posts/how-to-get-prettier-eslint-play-nicely-with-vscode/>
 
 ```json
+// Filename: .vscode/settings.json
 {
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",

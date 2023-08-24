@@ -8,7 +8,9 @@ import { zeroObject } from '../../util/object'
  * @param {Object2D} otherVector - second operand
  * @returns {Object2D} the resulting vector
  */
-export function addObjects(vector: Object2D, otherVector: Object2D): Object2D { return addObjectsTo(vector, otherVector, zeroObject()) }
+export function addObjects(vector: Object2D, otherVector: Object2D): Object2D {
+  return addObjectsTo(vector, otherVector, zeroObject())
+}
 
 /**
  * Adds the result of the addition of {@link vector} and the {@link otherVector} to {@link ref}.
