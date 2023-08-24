@@ -41,9 +41,11 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "test": "vitest",
-    "lint": "eslint --ignore-path .eslintignore --ext .js,.ts .",
-    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
-    "docs": "typedoc src/index.ts"
+    "docs": "typedoc src/index.ts",
+    "lint": "npx eslint --ignore-path .eslintignore --ext .js,.ts .",
+    "lint:fix": "npm run lint -- --fix",
+    "format": "npx prettier --ignore-path .gitignore --check \"**/*.+(js|ts|json)\"",
+    "format:fix": "npm run format -- --write"
   },
   "devDependencies": {
     "@types/jest": "^29.5.4",

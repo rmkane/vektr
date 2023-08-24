@@ -9,10 +9,7 @@ export function addArray(a: Vector2DArray, value: number): Vector2DArray {
   return [a[0] + value, a[1] + value]
 }
 
-export function subtractArrays(
-  a: Vector2DArray,
-  b: Vector2DArray
-): Vector2DArray {
+export function subtractArrays(a: Vector2DArray, b: Vector2DArray): Vector2DArray {
   return [a[0] - b[0], a[1] - b[1]]
 }
 
@@ -20,10 +17,7 @@ export function subtractArray(a: Vector2DArray, value: number): Vector2DArray {
   return [a[0] - value, a[1] - value]
 }
 
-export function multiplyArrays(
-  a: Vector2DArray,
-  b: Vector2DArray
-): Vector2DArray {
+export function multiplyArrays(a: Vector2DArray, b: Vector2DArray): Vector2DArray {
   return [a[0] * b[0], a[1] * b[1]]
 }
 
@@ -31,10 +25,7 @@ export function multiplyArray(a: Vector2DArray, value: number): Vector2DArray {
   return [a[0] * value, a[1] * value]
 }
 
-export function divideArrays(
-  a: Vector2DArray,
-  b: Vector2DArray
-): Vector2DArray {
+export function divideArrays(a: Vector2DArray, b: Vector2DArray): Vector2DArray {
   return [a[0] / b[0], a[1] / b[1]]
 }
 
@@ -74,19 +65,11 @@ export function directionArray(a: Vector2DArray): number {
   return Math.atan2(a[1], a[0])
 }
 
-export function clampArray(
-  a: Vector2DArray,
-  min: Vector2DArray,
-  max: Vector2DArray
-): Vector2DArray {
+export function clampArray(a: Vector2DArray, min: Vector2DArray, max: Vector2DArray): Vector2DArray {
   return [clamp(a[0], min[0], max[0]), clamp(a[1], min[1], max[1])]
 }
 
-export function lerpArray(
-  start: Vector2DArray,
-  end: Vector2DArray,
-  amount: number
-): Vector2DArray {
+export function lerpArray(start: Vector2DArray, end: Vector2DArray, amount: number): Vector2DArray {
   return [lerp(start[0], end[0], amount), lerp(start[1], end[1], amount)]
 }
 

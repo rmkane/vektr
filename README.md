@@ -15,3 +15,15 @@ A 2D and 3D vector library written in TypeScript.
 - Victor.js: <https://github.com/maxkueng/victor/blob/master/index.js>
 - Fork of Victor.js: <https://github.com/a-robu/victor/blob/master/index.js>
 - Immutable version of Victor.js: <https://github.com/yukulele/Vector.js/blob/master/vector.ts>
+
+## VScode configuration
+
+See: <https://rohit.page/blog/posts/how-to-get-prettier-eslint-play-nicely-with-vscode/>
+
+```json
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": ["source.formatDocument", "source.fixAll.eslint"]
+}
+```

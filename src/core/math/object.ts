@@ -2,18 +2,11 @@ import { Polar2DObject, Vector2DObject } from '../../types'
 import { zeroObject } from '../util/object'
 import { clamp, fraction, lerp, polarX, polarY } from './functions'
 
-export function addObjects(
-  a: Vector2DObject,
-  b: Vector2DObject
-): Vector2DObject {
+export function addObjects(a: Vector2DObject, b: Vector2DObject): Vector2DObject {
   return addObjectsTo(a, b, zeroObject())
 }
 
-export function addObjectsTo(
-  a: Vector2DObject,
-  b: Vector2DObject,
-  ref: Vector2DObject
-): Vector2DObject {
+export function addObjectsTo(a: Vector2DObject, b: Vector2DObject, ref: Vector2DObject): Vector2DObject {
   ref.x = a.x + b.x
   ref.y = a.y + b.y
   return ref
@@ -23,60 +16,41 @@ export function addObject(a: Vector2DObject, value: number): Vector2DObject {
   return addObjectTo(a, value, zeroObject())
 }
 
-export function addObjectTo(
-  a: Vector2DObject,
-  value: number,
-  ref: Vector2DObject
-): Vector2DObject {
+export function addObjectTo(a: Vector2DObject, value: number, ref: Vector2DObject): Vector2DObject {
   ref.x = a.x + value
   ref.y = a.y + value
   return ref
 }
 
-export function subtractObjects(
-  a: Vector2DObject,
-  b: Vector2DObject
-): Vector2DObject {
+export function subtractObjects(a: Vector2DObject, b: Vector2DObject): Vector2DObject {
   return {
     x: a.x - b.x,
     y: a.y - b.y,
   }
 }
 
-export function subtractObject(
-  a: Vector2DObject,
-  value: number
-): Vector2DObject {
+export function subtractObject(a: Vector2DObject, value: number): Vector2DObject {
   return {
     x: a.x - value,
     y: a.y - value,
   }
 }
 
-export function multiplyObjects(
-  a: Vector2DObject,
-  b: Vector2DObject
-): Vector2DObject {
+export function multiplyObjects(a: Vector2DObject, b: Vector2DObject): Vector2DObject {
   return {
     x: a.x * b.x,
     y: a.y * b.y,
   }
 }
 
-export function multiplyObject(
-  a: Vector2DObject,
-  value: number
-): Vector2DObject {
+export function multiplyObject(a: Vector2DObject, value: number): Vector2DObject {
   return {
     x: a.x * value,
     y: a.y * value,
   }
 }
 
-export function divideObjects(
-  a: Vector2DObject,
-  b: Vector2DObject
-): Vector2DObject {
+export function divideObjects(a: Vector2DObject, b: Vector2DObject): Vector2DObject {
   return {
     x: a.x / b.x,
     y: a.y / b.y,
@@ -137,22 +111,14 @@ export function directionObject(a: Vector2DObject): number {
   return Math.atan2(a.y, a.x)
 }
 
-export function clampObject(
-  a: Vector2DObject,
-  min: Vector2DObject,
-  max: Vector2DObject
-): Vector2DObject {
+export function clampObject(a: Vector2DObject, min: Vector2DObject, max: Vector2DObject): Vector2DObject {
   return {
     x: clamp(a.x, min.x, max.x),
     y: clamp(a.y, min.y, max.y),
   }
 }
 
-export function lerpObject(
-  start: Vector2DObject,
-  end: Vector2DObject,
-  amount: number
-): Vector2DObject {
+export function lerpObject(start: Vector2DObject, end: Vector2DObject, amount: number): Vector2DObject {
   return {
     x: lerp(start.x, end.x, amount),
     y: lerp(start.y, end.y, amount),
