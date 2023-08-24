@@ -1,5 +1,5 @@
 import { test, expect } from 'vitest'
-import { hashNumber } from './util'
+import { hashNumber } from './hash'
 
 test('hash a number into an int', () => {
   expect(hashNumber(0)).toBe(0)

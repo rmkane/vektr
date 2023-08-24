@@ -1,0 +1,1 @@
+export { hashNumber } from './hash'

@@ -4,20 +4,26 @@ export type Serialized = {
   type: string
 }
 
-export type Vector2DObject = {
+export type Array2D = [number, number]
+
+export type Point2DObject = {
   x: number
   y: number
 }
 
-export type Array2D = [number, number]
+export type Point3DObject = Point2DObject & {
+  z: number
+}
+
+export type Point2DSerialized = Serialized & Point2DObject
+
+export type Vector2DObject = Point2DObject
+
+export type Vector3DObject = Point3DObject
 
 export type Vector2DArray = Array2D
 
 export type Vector2DSerialized = Serialized & Vector2DObject
-
-export type Vector3DObject = Vector2DObject & {
-  z: number
-}
 
 export type Polar2DObject = {
   magnitude: number

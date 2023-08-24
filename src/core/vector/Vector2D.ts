@@ -1,4 +1,4 @@
-import { FloatArray, Vector2DObject, Vector2DSerialized } from '../../types'
+import { FloatArray, Vector2DObject } from '../../types'
 import {
   addObjects,
   ceilObject,
@@ -17,33 +17,11 @@ import {
   roundObject,
   subtractObjects,
 } from '../math/object'
-import { hashNumber } from '../util'
+import Point2D from './Point2D'
 
-class Vector2D {
-  private _x: number
-  private _y: number
-
+class Vector2D extends Point2D {
   constructor(x: number, y: number) {
-    this._x = x
-    this._y = y
-  }
-
-  // Accessors and mutators
-
-  get x(): number {
-    return this._x
-  }
-
-  set x(value: number) {
-    this._x = value
-  }
-
-  get y(): number {
-    return this._y
-  }
-
-  set y(value: number) {
-    this._y = value
+    super(x, y)
   }
 
   // Convenience
@@ -57,63 +35,11 @@ class Vector2D {
   }
 
   static fromVector(vector: Vector2D): Vector2D {
-    return vector.clone()
+    return new Vector2D(vector.x, vector.y)
   }
 
   static zero(): Vector2D {
     return new Vector2D(0, 0)
-  }
-
-  // Utility
-
-  getClassName(): string {
-    return 'Vector2D'
-  }
-
-  toSerializable(): Vector2DSerialized {
-    return { type: this.getClassName(), ...this.toObject() }
-  }
-
-  toString(): string {
-    return JSON.stringify(this.toSerializable())
-  }
-
-  toArray(): FloatArray {
-    return [this._x, this._y]
-  }
-
-  toObject(): Vector2DObject {
-    return { x: this._x, y: this._y }
-  }
-
-  equals(other: Vector2D): boolean {
-    return other && this._x === other.x && this._y == other.y
-  }
-
-  hashCode(): number {
-    const x = hashNumber(this._x)
-    const y = hashNumber(this._y)
-    let hash = x
-    hash = (hash * 397) ^ y
-    return hash
-  }
-
-  clone(): Vector2D {
-    return new Vector2D(this._x, this._y)
-  }
-
-  copyFrom(otherVector: Vector2D): Vector2D {
-    return this.set(otherVector.x, otherVector.y)
-  }
-
-  copyFromFloats(x: number, y: number): Vector2D {
-    return this.set(x, y)
-  }
-
-  set(x: number, y: number): Vector2D {
-    this._x = x
-    this._y = y
-    return this
   }
 
   // Static methods
@@ -183,6 +109,10 @@ class Vector2D {
   }
 
   // Instance methods
+
+  getClassName(): string {
+    return 'Vector2D'
+  }
 
   add(otherVector: Vector2D): Vector2D {
     return Vector2D.add(this, otherVector)
