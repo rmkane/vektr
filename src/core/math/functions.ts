@@ -9,3 +9,11 @@ export function fraction(value: number) {
 export function lerp(start: number, end: number, amount: number): number {
   return start + (end - start) * amount
 }
+
+export function polarX(magnitude: number, direction: number) {
+  return Math.cos(direction) * magnitude
+}
+
+export function polarY(magnitude: number, direction: number) {
+  return Math.sin(direction) * magnitude
+}

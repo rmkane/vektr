@@ -1,5 +1,5 @@
-import { Vector2DObject } from '../../types'
-import { clamp, fraction, lerp } from './functions'
+import { Polar2DObject, Vector2DObject } from '../../types'
+import { clamp, fraction, lerp, polarX, polarY } from './functions'
 
 export function addObjects(
   a: Vector2DObject,
@@ -146,4 +146,18 @@ export function lerpObject(
 
 export function dotObject(left: Vector2DObject, right: Vector2DObject): number {
   return left.x * right.x + left.y * right.y
+}
+
+export function toPolar(vector: Vector2DObject): Polar2DObject {
+  return {
+    magnitude: magnitudeObject(vector),
+    direction: directionObject(vector),
+  }
+}
+
+export function fromPolar(polar: Polar2DObject): Vector2DObject {
+  return {
+    x: polarX(polar.magnitude, polar.direction),
+    y: polarY(polar.magnitude, polar.direction),
+  }
 }

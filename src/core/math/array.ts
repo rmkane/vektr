@@ -1,5 +1,5 @@
-import { Vector2DArray } from '../../types'
-import { clamp, fraction, lerp } from './functions'
+import { Polar2DArray, Vector2DArray } from '../../types'
+import { clamp, fraction, lerp, polarX, polarY } from './functions'
 
 export function addArrays(a: Vector2DArray, b: Vector2DArray): Vector2DArray {
   return [a[0] + b[0], a[1] + b[1]]
@@ -92,4 +92,12 @@ export function lerpArray(
 
 export function dotArray(left: Vector2DArray, right: Vector2DArray): number {
   return left[0] * right[0] + left[1] * right[1]
+}
+
+export function toPolar(vector: Vector2DArray): Polar2DArray {
+  return [magnitudeArray(vector), directionArray(vector)]
+}
+
+export function fromPolar(polar: Polar2DArray): Vector2DArray {
+  return [polarX(polar[0], polar[1]), polarY(polar[0], polar[1])]
 }
