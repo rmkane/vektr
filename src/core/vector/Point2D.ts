@@ -1,31 +1,65 @@
 import { hashNumber } from '..'
 import { FloatArray, Point2DObject, Point2DSerialized } from '../../types'
 
+/**
+ * A class representing a point in 2D.
+ */
 class Point2D {
   protected _x: number
   protected _y: number
 
+  /**
+   * Create a point.
+   *
+   * @param {number} x - the x value
+   * @param {number} y - the y value
+   */
   constructor(x: number, y: number) {
     this._x = x
     this._y = y
   }
 
+  /**
+   * Get the x value.
+   *
+   * @returns {number} the x value
+   */
   get x(): number {
     return this._x
   }
 
+  /**
+   * Set the x value.
+   *
+   * @param {number} value - new value for x
+   */
   set x(value: number) {
     this._x = value
   }
 
+  /**
+   * Get the y value.
+   *
+   * @returns {number} the y value
+   */
   get y(): number {
     return this._y
   }
 
+  /**
+   * Set the y value.
+   *
+   * @param {number} value - new value for y
+   */
   set y(value: number) {
     this._y = value
   }
 
+  /**
+   * Gets the class name.
+   *
+   * @returns {string} the name of the class
+   */
   getClassName(): string {
     return 'Vector2D'
   }
