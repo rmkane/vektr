@@ -1,1 +1,8 @@
+node_modules
+
+_bundles
+docs
+lib
+lib-esm
+
 tsconfig.json

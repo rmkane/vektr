@@ -1,6 +1,7 @@
 node_modules
-docs
+
 _bundles
+docs
 lib
 lib-esm
 
