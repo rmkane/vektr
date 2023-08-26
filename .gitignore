@@ -1,6 +1,8 @@
 node_modules
-dist
 docs
+_bundles
+lib
+lib-esm
 
 # Yarn
 .yarn/*

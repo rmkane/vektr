@@ -1,4 +1,4 @@
-import { hashNumber } from '..'
+import { hashNumber } from '../util/hash'
 import { Array2D, Object2D, Point2DSerialized } from '../../types'
 
 /** A class representing a point in 2D. */
@@ -76,6 +76,10 @@ class Point2D<T extends Point2D<T>> {
 
   toObject(): Object2D {
     return { x: this._x, y: this._y }
+  }
+
+  toJSON(): string {
+    return JSON.stringify(this.toObject())
   }
 
   equals(other: Object2D): boolean {

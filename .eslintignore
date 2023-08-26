@@ -1,3 +1,8 @@
 node_modules
-dist
 docs
+
+_bundles
+lib
+lib-esm
+
+webpack.config.cjs

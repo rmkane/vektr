@@ -1,2 +1,3 @@
-export * from './core'
-export * from './types'
+import Vector2D from './core/vector/Vector2D'
+
+export { Vector2D }

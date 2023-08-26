@@ -1,4 +1,5 @@
-import { test, expect } from 'vitest'
+import { expect, test } from '@jest/globals'
+
 import { clamp, fraction, lerp } from './functions'
 
 test('clamp a value', () => {

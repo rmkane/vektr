@@ -1,0 +1,12 @@
+.*
+**/tsconfig.json
+**/webpack.config.js
+
+node_modules
+public
+src
+scripts
+
+.eslintignore
+.prettierignore
+.prettierrc

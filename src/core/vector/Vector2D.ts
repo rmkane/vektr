@@ -241,6 +241,4 @@ class Vector2D extends Point2D<Vector2D> {
   }
 }
 
-new Vector2D().clone()
-
 export default Vector2D
