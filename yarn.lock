@@ -3713,6 +3713,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fix-esm-import-path@npm:^1.4.0":
+  version: 1.4.0
+  resolution: "fix-esm-import-path@npm:1.4.0"
+  dependencies:
+    debug: ^4.3.2
+  bin:
+    fix-esm-import-path: fix-esm-import-path.js
+  checksum: 3f8458d9328ed22c09623190f7d150de6f9276138b913b55128bdd801ea0c2dd5a6cced83bb5c69647cf7ae8884355a3364d37b762173f32049944e89c5c6245
+  languageName: node
+  linkType: hard
+
 "flat-cache@npm:^3.0.4":
   version: 3.0.4
   resolution: "flat-cache@npm:3.0.4"
@@ -8005,6 +8016,7 @@ __metadata:
     eslint-plugin-n: ^16.0.2
     eslint-plugin-prettier: ^5.0.0
     eslint-plugin-promise: ^6.1.1
+    fix-esm-import-path: ^1.4.0
     husky: ^8.0.0
     jest: ^29.6.3
     lint-staged: ^14.0.1
