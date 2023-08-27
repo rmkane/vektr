@@ -1,5 +1,3 @@
-import { expect, test } from '@jest/globals'
-
 import { hashNumber } from './hash'
 
 test('hash a number into an int', () => {
