@@ -12,6 +12,7 @@ A 2D and 3D vector library written in TypeScript.
 - Vite Entry Points: <https://www.raulmelo.me/en/blog/build-javascript-library-with-multiple-entry-points-using-vite-3>
 - Multi-Support Webpack (JS): <https://dev.to/riversun/recipes-on-how-to-create-a-library-that-supports-both-browser-and-node-js-201m>
 - Multi-Support TypeScript: <https://medium.com/collaborne-engineering/typescript-create-library-for-nodejs-and-browser-fece291d517f>
+- Bundles: <https://marcobotto.com/blog/compiling-and-bundling-typescript-libraries-with-webpack/>
 
 ## Inspiration
 
