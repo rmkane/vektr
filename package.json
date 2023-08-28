@@ -1,5 +1,5 @@
 {
-  "name": "vector-math",
+  "name": "vektr",
   "version": "0.1.0",
   "description": "A JavaScript 2D and 3D vector library with methods for common vector operations",
   "author": {
@@ -7,13 +7,13 @@
     "email": "rmkane89@gmail.com"
   },
   "license": "MIT",
-  "homepage": "https://kanebytes.dev/vector-math",
+  "homepage": "https://kanebytes.dev/github/vektr",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rmkane/vector-math.git"
+    "url": "https://github.com/rmkane/vektr.git"
   },
   "bugs": {
-    "url": "https://github.com/rmkane/vector-math/issues"
+    "url": "https://github.com/rmkane/vektr/issues"
   },
   "keywords": [
     "2D",
