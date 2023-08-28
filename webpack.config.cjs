@@ -45,7 +45,7 @@ const config = {
   devtool: 'source-map',
   devServer: {
     static: {
-      directory: path.resolve(__dirname, './'),
+      directory: path.resolve(__dirname),
       publicPath: '/',
     },
     hot: true,
