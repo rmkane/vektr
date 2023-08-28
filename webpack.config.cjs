@@ -18,9 +18,11 @@ const config = {
   output: {
     path: PATHS.bundles,
     filename: '[name].js',
-    libraryTarget: 'umd',
-    library: LIB_NAME,
-    umdNamedDefine: true,
+    library: {
+      name: LIB_NAME,
+      type: 'umd',
+      umdNamedDefine: true,
+    },
   },
   module: {
     rules: [

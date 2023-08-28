@@ -9,6 +9,9 @@ A 2D and 3D vector library written in TypeScript.
 - Setup ESLint and Prettier for TS: <https://blog.logrocket.com/linting-typescript-eslint-prettier/>
 - Prettier automation: <https://blog.logrocket.com/using-prettier-eslint-automate-formatting-fixing-javascript/>
 - Husky: <https://www.aleksandrhovhannisyan.com/blog/format-code-on-save-vs-code-eslint/>
+- Vite Entry Points: <https://www.raulmelo.me/en/blog/build-javascript-library-with-multiple-entry-points-using-vite-3>
+- Multi-Support Webpack (JS): <https://dev.to/riversun/recipes-on-how-to-create-a-library-that-supports-both-browser-and-node-js-201m>
+- Multi-Support TypeScript: <https://medium.com/collaborne-engineering/typescript-create-library-for-nodejs-and-browser-fece291d517f>
 
 ## Inspiration
 
