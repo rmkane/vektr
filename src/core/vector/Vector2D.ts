@@ -1,21 +1,24 @@
 import { Array2D, Object2D } from '../../types'
 import {
-  ceilObject,
   clampObject,
   directionObject,
   dotObject,
-  floorObject,
-  fractObject,
   lerpObject,
   magnitudeObject,
-  negateObject,
   normalizeObject,
-  roundObject,
 } from '../math/legacy/object'
-import { addObject } from '../math/object/add'
-import { divideObject } from '../math/object/divide'
-import { multiplyObject, multiplyObjectScalar } from '../math/object/multiply'
-import { subtractObject } from '../math/object/subtract'
+import {
+  addObject,
+  ceilObject,
+  divideObject,
+  floorObject,
+  fractObject,
+  multiplyObject,
+  multiplyObjectScalar,
+  negateObject,
+  roundObject,
+  subtractObject,
+} from '../math/object/index'
 import Point2D from './Point2D'
 
 class Vector2D extends Point2D<Vector2D> {
