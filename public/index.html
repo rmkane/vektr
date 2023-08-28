@@ -8,26 +8,26 @@
         font-family: monospace;
       }
     </style>
-    <script src="../_bundles/vektr.min.js"></script>
+    <script src="../dist/vektr.min.js"></script>
     <script>
       const showResult = (result) => {
-        const div = document.createElement("div");
-        div.classList.add("result");
-        div.textContent = result;
-        document.body.append(div);
-      };
+        const div = document.createElement('div')
+        div.classList.add('result')
+        div.textContent = result
+        document.body.append(div)
+      }
     </script>
   </head>
   <body>
     <h1>Browser CJS</h1>
     <script>
-      const { Vector2D } = Vektr;
+      const { Vector2D } = Vektr
 
-      const v1 = new Vector2D(3, 4);
-      const v2 = new Vector2D(6, 8);
-      const v3 = v1.add(v2);
+      const v1 = new Vector2D(3, 4)
+      const v2 = new Vector2D(6, 8)
+      const v3 = v1.add(v2)
 
-      showResult(v3);
+      showResult(v3)
     </script>
   </body>
 </html>

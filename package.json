@@ -27,12 +27,12 @@
   "module": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [
-    "_bundles",
+    "dist",
     "lib",
     "lib-esm"
   ],
   "scripts": {
-    "clean": "shx rm -rf _bundles lib lib-esm",
+    "clean": "shx rm -rf dist lib lib-esm",
     "build": "yarn clean && yarn build:lib && yarn build:esm && yarn build:cjs",
     "build:esm": "tsc --project tsconfig.build.json --module es6 --outDir lib-esm && yarn fix:esm",
     "build:lib": "tsc --project tsconfig.build.json --outDir lib",

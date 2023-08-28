@@ -10,25 +10,25 @@
     </style>
     <script>
       const showResult = (result) => {
-        const div = document.createElement("div");
-        div.classList.add("result");
-        div.textContent = result;
-        document.body.append(div);
-      };
+        const div = document.createElement('div')
+        div.classList.add('result')
+        div.textContent = result
+        document.body.append(div)
+      }
     </script>
   </head>
   <body>
     <h1>ESM Module</h1>
     <script type="module">
-      import * as Vektr from "../lib-esm/index.js";
+      import * as Vektr from '../lib-esm/index.js'
 
-      const { Vector2D } = Vektr;
+      const { Vector2D } = Vektr
 
-      const v1 = new Vector2D(3, 4);
-      const v2 = new Vector2D(6, 8);
-      const v3 = v1.add(v2);
+      const v1 = new Vector2D(3, 4)
+      const v2 = new Vector2D(6, 8)
+      const v3 = v1.add(v2)
 
-      showResult(v3);
+      showResult(v3)
     </script>
   </body>
 </html>

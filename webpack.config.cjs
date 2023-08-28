@@ -6,7 +6,7 @@ const LIB_ID = 'vektr'
 
 const PATHS = {
   entryPoint: path.resolve(__dirname, 'src/index.ts'),
-  bundles: path.resolve(__dirname, '_bundles'),
+  bundles: path.resolve(__dirname, 'dist'),
 }
 
 const config = {
