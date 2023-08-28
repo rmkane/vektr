@@ -147,15 +147,15 @@ function addScalarRefY(vector: Object2D, y: number, referenceVector: Object2D): 
   return referenceVector
 }
 
-export { add as addObjects }
-export { addRef as addObjectsTo }
-export { addX as addObjectsX }
+export { add as addObject }
+export { addRef as addObjectRef }
+export { addX as addObjectX }
 export { addRefX as addObjectsToX }
-export { addY as addObjectsY }
-export { addRefY as addObjectsToY }
-export { addScalar as addObject }
-export { addScalarRef as addObjectTo }
-export { addScalarX as addObjectX }
-export { addScalarRefX as addObjectToX }
-export { addScalarY as addObjectY }
-export { addScalarRefY as addObjectToY }
+export { addY as addObjectY }
+export { addRefY as addObjectRefY }
+export { addScalar as addObjectScalar }
+export { addScalarRef as addObjectScalarRef }
+export { addScalarX as addObjectScalarX }
+export { addScalarRefX as addObjectScalarRefX }
+export { addScalarY as addObjectScalarY }
+export { addScalarRefY as addObjectScalarRefY }

@@ -1,6 +1,5 @@
 import { Array2D, Object2D } from '../../types'
 import {
-  addObjects,
   ceilObject,
   clampObject,
   directionObject,
@@ -17,6 +16,7 @@ import {
   roundObject,
   subtractObjects,
 } from '../math/legacy/object'
+import { addObject } from '../math/object/add'
 import Point2D from './Point2D'
 
 class Vector2D extends Point2D<Vector2D> {
@@ -45,7 +45,7 @@ class Vector2D extends Point2D<Vector2D> {
   // Static methods
 
   static add(vector: Object2D, otherVector: Object2D): Vector2D {
-    return Vector2D.fromObject(addObjects(vector, otherVector))
+    return Vector2D.fromObject(addObject(vector, otherVector))
   }
 
   static subtract(vector: Object2D, otherVector: Object2D): Vector2D {
