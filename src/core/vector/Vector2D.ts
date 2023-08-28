@@ -3,20 +3,19 @@ import {
   ceilObject,
   clampObject,
   directionObject,
-  divideObjects,
   dotObject,
   floorObject,
   fractObject,
   lerpObject,
   magnitudeObject,
-  multiplyObject,
-  multiplyObjects,
   negateObject,
   normalizeObject,
   roundObject,
-  subtractObjects,
 } from '../math/legacy/object'
 import { addObject } from '../math/object/add'
+import { divideObject } from '../math/object/divide'
+import { multiplyObject, multiplyObjectScalar } from '../math/object/multiply'
+import { subtractObject } from '../math/object/subtract'
 import Point2D from './Point2D'
 
 class Vector2D extends Point2D<Vector2D> {
@@ -49,15 +48,15 @@ class Vector2D extends Point2D<Vector2D> {
   }
 
   static subtract(vector: Object2D, otherVector: Object2D): Vector2D {
-    return Vector2D.fromObject(subtractObjects(vector, otherVector))
+    return Vector2D.fromObject(subtractObject(vector, otherVector))
   }
 
   static multiply(vector: Object2D, otherVector: Object2D): Vector2D {
-    return Vector2D.fromObject(multiplyObjects(vector, otherVector))
+    return Vector2D.fromObject(multiplyObject(vector, otherVector))
   }
 
   static divide(vector: Object2D, otherVector: Object2D): Vector2D {
-    return Vector2D.fromObject(divideObjects(vector, otherVector))
+    return Vector2D.fromObject(divideObject(vector, otherVector))
   }
 
   static negate(vector: Object2D): Vector2D {
@@ -65,7 +64,7 @@ class Vector2D extends Point2D<Vector2D> {
   }
 
   static scale(vector: Object2D, factor: number): Vector2D {
-    return Vector2D.fromObject(multiplyObject(vector, factor))
+    return Vector2D.fromObject(multiplyObjectScalar(vector, factor))
   }
 
   static floor(vector: Object2D): Vector2D {
