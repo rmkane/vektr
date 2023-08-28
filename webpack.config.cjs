@@ -27,7 +27,9 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.ts$/,
+        test: function (modulePath) {
+          return modulePath.endsWith('.ts') && !modulePath.endsWith('test.ts')
+        },
         use: 'ts-loader',
         include: [path.resolve(__dirname, 'src')],
       },

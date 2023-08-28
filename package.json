@@ -34,8 +34,8 @@
   "scripts": {
     "clean": "shx rm -rf _bundles lib lib-esm",
     "build": "yarn clean && yarn build:lib && yarn build:esm && yarn build:cjs",
-    "build:lib": "tsc --project tsconfig.build.json",
-    "build:esm": "tsc --project tsconfig.build.json -m es6 --outDir lib-esm && yarn fix:esm",
+    "build:esm": "tsc --project tsconfig.build.json --module es6 --outDir lib-esm && yarn fix:esm",
+    "build:lib": "tsc --project tsconfig.build.json --outDir lib",
     "build:cjs": "webpack",
     "fix:esm": "yarn dlx fix-esm-import-path lib-esm/index.js",
     "test": "jest",
