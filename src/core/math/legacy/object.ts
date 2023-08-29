@@ -1,6 +1,6 @@
 import { Object2D, Polar2DObject } from '../../../types'
 import { zeroObject } from '../../util/object'
-import { clamp, fraction, fromPolarX, fromPolarY, lerp } from '../functions'
+import { clamp, fract, fromPolarX, fromPolarY, lerp } from '../functions'
 
 export function addObjects(a: Object2D, b: Object2D): Object2D {
   return addObjectsTo(a, b, zeroObject())
@@ -94,8 +94,8 @@ export function roundObject(a: Object2D): Object2D {
 
 export function fractObject(a: Object2D): Object2D {
   return {
-    x: fraction(a.x),
-    y: fraction(a.y),
+    x: fract(a.x),
+    y: fract(a.y),
   }
 }
 
