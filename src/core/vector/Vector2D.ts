@@ -1,21 +1,19 @@
 import { Array2D, Object2D } from '../../types'
 import {
-  clampObject,
-  directionObject,
-  dotObject,
-  lerpObject,
-  magnitudeObject,
-  normalizeObject,
-} from '../math/legacy/object'
-import {
   addObject,
   ceilObject,
+  clampObject,
+  directionObject,
   divideObject,
+  dotObject,
   floorObject,
   fractObject,
+  lerpObject,
+  magnitudeObject,
   multiplyObject,
   multiplyObjectScalar,
   negateObject,
+  normObject,
   roundObject,
   subtractObject,
 } from '../math/object/index'
@@ -28,15 +26,15 @@ class Vector2D extends Point2D<Vector2D> {
 
   // Convenience
 
-  static fromArray(arr: Array2D): Vector2D {
+  static FromArray(arr: Array2D): Vector2D {
     return new Vector2D(arr[0], arr[1])
   }
 
-  static fromObject(obj: Object2D): Vector2D {
+  static FromObject(obj: Object2D): Vector2D {
     return new Vector2D(obj.x, obj.y)
   }
 
-  static fromVector(vector: Vector2D): Vector2D {
+  static FromVector(vector: Vector2D): Vector2D {
     return new Vector2D(vector.x, vector.y)
   }
 
@@ -46,67 +44,67 @@ class Vector2D extends Point2D<Vector2D> {
 
   // Static methods
 
-  static add(vector: Object2D, otherVector: Object2D): Vector2D {
-    return Vector2D.fromObject(addObject(vector, otherVector))
+  static Add(vector: Object2D, otherVector: Object2D): Vector2D {
+    return Vector2D.FromObject(addObject(vector, otherVector))
   }
 
-  static subtract(vector: Object2D, otherVector: Object2D): Vector2D {
-    return Vector2D.fromObject(subtractObject(vector, otherVector))
+  static Subtract(vector: Object2D, otherVector: Object2D): Vector2D {
+    return Vector2D.FromObject(subtractObject(vector, otherVector))
   }
 
-  static multiply(vector: Object2D, otherVector: Object2D): Vector2D {
-    return Vector2D.fromObject(multiplyObject(vector, otherVector))
+  static Multiply(vector: Object2D, otherVector: Object2D): Vector2D {
+    return Vector2D.FromObject(multiplyObject(vector, otherVector))
   }
 
-  static divide(vector: Object2D, otherVector: Object2D): Vector2D {
-    return Vector2D.fromObject(divideObject(vector, otherVector))
+  static Divide(vector: Object2D, otherVector: Object2D): Vector2D {
+    return Vector2D.FromObject(divideObject(vector, otherVector))
   }
 
-  static negate(vector: Object2D): Vector2D {
-    return Vector2D.fromObject(negateObject(vector))
+  static Negate(vector: Object2D): Vector2D {
+    return Vector2D.FromObject(negateObject(vector))
   }
 
-  static scale(vector: Object2D, factor: number): Vector2D {
-    return Vector2D.fromObject(multiplyObjectScalar(vector, factor))
+  static Scale(vector: Object2D, factor: number): Vector2D {
+    return Vector2D.FromObject(multiplyObjectScalar(vector, factor))
   }
 
-  static floor(vector: Object2D): Vector2D {
-    return Vector2D.fromObject(floorObject(vector))
+  static Floor(vector: Object2D): Vector2D {
+    return Vector2D.FromObject(floorObject(vector))
   }
 
-  static ceil(vector: Object2D): Vector2D {
-    return Vector2D.fromObject(ceilObject(vector))
+  static Ceil(vector: Object2D): Vector2D {
+    return Vector2D.FromObject(ceilObject(vector))
   }
 
-  static round(vector: Object2D): Vector2D {
-    return Vector2D.fromObject(roundObject(vector))
+  static Round(vector: Object2D): Vector2D {
+    return Vector2D.FromObject(roundObject(vector))
   }
 
-  static fract(vector: Object2D): Vector2D {
-    return Vector2D.fromObject(fractObject(vector))
+  static Fract(vector: Object2D): Vector2D {
+    return Vector2D.FromObject(fractObject(vector))
   }
 
-  static magnitude(vector: Object2D): number {
+  static Magnitude(vector: Object2D): number {
     return magnitudeObject(vector)
   }
 
-  static direction(vector: Object2D): number {
+  static Direction(vector: Object2D): number {
     return directionObject(vector)
   }
 
-  static normalize(vector: Object2D): Vector2D {
-    return Vector2D.fromObject(normalizeObject(vector))
+  static Norm(vector: Object2D): Vector2D {
+    return Vector2D.FromObject(normObject(vector))
   }
 
-  static clamp(value: Object2D, min: Object2D, max: Object2D): Vector2D {
-    return Vector2D.fromObject(clampObject(value, min, max))
+  static Clamp(value: Object2D, min: Object2D, max: Object2D): Vector2D {
+    return Vector2D.FromObject(clampObject(value, min, max))
   }
 
-  static lerp(start: Object2D, end: Object2D, amount: number): Vector2D {
-    return Vector2D.fromObject(lerpObject(start, end, amount))
+  static Lerp(start: Object2D, end: Object2D, amount: number): Vector2D {
+    return Vector2D.FromObject(lerpObject(start, end, amount))
   }
 
-  static dot(left: Object2D, right: Object2D): number {
+  static Dot(left: Object2D, right: Object2D): number {
     return dotObject(left, right)
   }
 
@@ -131,7 +129,7 @@ class Vector2D extends Point2D<Vector2D> {
   }
 
   add(otherVector: Vector2D): Vector2D {
-    return Vector2D.add(this, otherVector)
+    return Vector2D.Add(this, otherVector)
   }
 
   addInPlace(otherVector: Vector2D): Vector2D {
@@ -145,7 +143,7 @@ class Vector2D extends Point2D<Vector2D> {
   }
 
   subtract(otherVector: Vector2D): Vector2D {
-    return Vector2D.subtract(this, otherVector)
+    return Vector2D.Subtract(this, otherVector)
   }
 
   subtractInPlace(otherVector: Vector2D): Vector2D {
@@ -159,7 +157,7 @@ class Vector2D extends Point2D<Vector2D> {
   }
 
   multiply(otherVector: Vector2D): Vector2D {
-    return Vector2D.multiply(this, otherVector)
+    return Vector2D.Multiply(this, otherVector)
   }
 
   multiplyInPlace(otherVector: Vector2D): Vector2D {
@@ -173,7 +171,7 @@ class Vector2D extends Point2D<Vector2D> {
   }
 
   divide(otherVector: Vector2D): Vector2D {
-    return Vector2D.divide(this, otherVector)
+    return Vector2D.Divide(this, otherVector)
   }
 
   divideInPlace(otherVector: Vector2D): Vector2D {
@@ -187,7 +185,7 @@ class Vector2D extends Point2D<Vector2D> {
   }
 
   negate(): Vector2D {
-    return Vector2D.negate(this)
+    return Vector2D.Negate(this)
   }
 
   negateInPlace(): Vector2D {
@@ -197,7 +195,7 @@ class Vector2D extends Point2D<Vector2D> {
   }
 
   scale(factor: number): Vector2D {
-    return Vector2D.scale(this, factor)
+    return Vector2D.Scale(this, factor)
   }
 
   scaleInPlace(factor: number): Vector2D {
@@ -215,31 +213,31 @@ class Vector2D extends Point2D<Vector2D> {
   }
 
   floor(): Vector2D {
-    return Vector2D.floor(this)
+    return Vector2D.Floor(this)
   }
 
   ceil(): Vector2D {
-    return Vector2D.ceil(this)
+    return Vector2D.Ceil(this)
   }
 
   round(): Vector2D {
-    return Vector2D.round(this)
+    return Vector2D.Round(this)
   }
 
   fract(): Vector2D {
-    return Vector2D.fract(this)
+    return Vector2D.Fract(this)
   }
 
   magnitude(): number {
-    return Vector2D.magnitude(this)
+    return Vector2D.Magnitude(this)
   }
 
   direction(): number {
-    return Vector2D.direction(this)
+    return Vector2D.Direction(this)
   }
 
-  normalize(): Vector2D {
-    return Vector2D.normalize(this)
+  norm(): Vector2D {
+    return Vector2D.Norm(this)
   }
 }
 
