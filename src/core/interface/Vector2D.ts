@@ -19,7 +19,7 @@ import {
 } from '../math/object/index'
 import Point2D from './Point2D'
 
-class Vector2D extends Point2D<Vector2D> {
+class Vector2D extends Point2D {
   constructor(x: number = 0, y: number = 0) {
     super(x, y)
   }

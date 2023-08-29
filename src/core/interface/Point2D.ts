@@ -1,8 +1,9 @@
 import { hashNumber } from '../util/hash'
-import { Array2D, Object2D, Point2DSerialized } from '../../types'
+import { Array2D, NumberPair, Object2D, Point2DSerialized } from '../../types'
+import AbstractPoint from './AbstractPoint'
 
 /** A class representing a point in 2D. */
-class Point2D<T extends Point2D<T>> {
+class Point2D extends AbstractPoint<Point2D, Object2D, Array2D, Point2DSerialized> {
   protected _x: number
   protected _y: number
 
@@ -13,6 +14,7 @@ class Point2D<T extends Point2D<T>> {
    * @param {number} y - The y value
    */
   constructor(x: number, y: number) {
+    super()
     this._x = x
     this._y = y
   }
@@ -62,30 +64,27 @@ class Point2D<T extends Point2D<T>> {
     return 'Point2D'
   }
 
-  toSerializable(): Point2DSerialized {
-    return { type: this.getClassName(), ...this.toObject() }
-  }
-
-  toString(): string {
-    return JSON.stringify(this.toSerializable())
-  }
-
-  toArray(): Array2D {
+  /** @override */
+  toArray(): NumberPair {
     return [this._x, this._y]
   }
 
+  /** @override */
   toObject(): Object2D {
     return { x: this._x, y: this._y }
   }
 
-  toJSON(): string {
-    return JSON.stringify(this.toObject())
+  /** @override */
+  toSerializable(): Point2DSerialized {
+    return { type: this.getClassName(), ...this.toObject() }
   }
 
-  equals(other: Object2D): boolean {
+  /** @override */
+  equals(other: Point2D): boolean {
     return other && this._x === other.x && this._y === other.y
   }
 
+  /** @override */
   hashCode(): number {
     const x = hashNumber(this._x)
     const y = hashNumber(this._y)
@@ -98,23 +97,24 @@ class Point2D<T extends Point2D<T>> {
    * Clones a point.
    *
    * @returns {Point2D} A coloned point
+   * @override
    */
-  clone(): T {
-    return new Point2D(this._x, this._y) as T
+  clone(): Point2D {
+    return new Point2D(this._x, this._y)
   }
 
-  copyFrom(otherVector: T): T {
-    return this.set(otherVector.x, otherVector.y)
+  copyFrom(other: Point2D): Point2D {
+    return this.set(other.x, other.y)
   }
 
-  copyFromFloats(x: number, y: number): T {
+  copyFromFloats(x: number, y: number): Point2D {
     return this.set(x, y)
   }
 
-  set(x: number, y: number): T {
+  set(x: number, y: number): Point2D {
     this._x = x
     this._y = y
-    return this as unknown as T
+    return this
   }
 }
 

@@ -1,8 +1,2 @@
-import Vector2D from './core/vector/Vector2D'
-
-export { Vector2D }
-
-export * from './core/math/array/index'
-export * from './core/math/object/index'
-
+export * from './core/index'
 export * from './types'
