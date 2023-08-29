@@ -128,57 +128,65 @@ class Vector2D extends Point2D {
     return new Vector2D(this._x, this._y)
   }
 
-  add(otherVector: Vector2D): Vector2D {
-    return Vector2D.Add(this, otherVector)
+  add<T extends Vector2D>(otherVector: T): T {
+    return Vector2D.Add(this, otherVector) as T
   }
 
-  addInPlace(otherVector: Vector2D): Vector2D {
-    return this.addToRef(otherVector, this)
+  addInPlace<T extends Vector2D>(otherVector: T): this {
+    this._x += otherVector.x
+    this._y += otherVector.y
+    return this
   }
 
-  addToRef(otherVector: Vector2D, ref: Vector2D): Vector2D {
+  addToRef<T extends Vector2D>(otherVector: T, ref: T): T {
     ref._x = this.x + otherVector.x
     ref._y = this.y + otherVector.y
     return ref
   }
 
-  subtract(otherVector: Vector2D): Vector2D {
-    return Vector2D.Subtract(this, otherVector)
+  subtract<T extends Vector2D>(otherVector: T): T {
+    return Vector2D.Subtract(this, otherVector) as T
   }
 
-  subtractInPlace(otherVector: Vector2D): Vector2D {
-    return this.subtractToRef(otherVector, this)
+  subtractInPlace<T extends Vector2D>(otherVector: T): this {
+    this._x -= otherVector.x
+    this._y -= otherVector.y
+    return this
   }
 
-  subtractToRef(otherVector: Vector2D, ref: Vector2D): Vector2D {
+  subtractToRef<T extends Vector2D>(otherVector: T, ref: T): T {
     ref._x = this.x - otherVector.x
     ref._y = this.y - otherVector.y
     return ref
   }
 
-  multiply(otherVector: Vector2D): Vector2D {
-    return Vector2D.Multiply(this, otherVector)
+  multiply<T extends Vector2D>(otherVector: T): T {
+    return Vector2D.Multiply(this, otherVector) as T
   }
 
-  multiplyInPlace(otherVector: Vector2D): Vector2D {
-    return this.multiplyToRef(otherVector, this)
+  multiplyInPlace<T extends Vector2D>(otherVector: T): this {
+    this._x *= otherVector.x
+    this._y *= otherVector.y
+    return this
   }
 
-  multiplyToRef(otherVector: Vector2D, ref: Vector2D): Vector2D {
+  multiplyToRef<T extends Vector2D>(otherVector: T, ref: T): T {
     ref._x = this.x * otherVector.x
     ref._y = this.y * otherVector.y
     return ref
   }
 
-  divide(otherVector: Vector2D): Vector2D {
-    return Vector2D.Divide(this, otherVector)
+  divide<T extends Vector2D>(otherVector: T): T {
+    return Vector2D.Divide(this, otherVector) as T
   }
 
-  divideInPlace(otherVector: Vector2D): Vector2D {
-    return this.divideToRef(otherVector, this)
+  divideInPlace<T extends Vector2D>(otherVector: T): this {
+    this._x /= otherVector.x
+    this._y /= otherVector.y
+    return this
   }
 
-  divideToRef(otherVector: Vector2D, ref: Vector2D): Vector2D {
+  divideToRef<T extends Vector2D>(otherVector: T, ref: T): T {
     ref._x = this.x / otherVector.x
     ref._y = this.y / otherVector.y
     return ref
@@ -188,7 +196,7 @@ class Vector2D extends Point2D {
     return Vector2D.Invert(this)
   }
 
-  invertInPlace(): Vector2D {
+  invertInPlace(): this {
     this._x *= -1
     this._y *= -1
     return this
@@ -198,8 +206,10 @@ class Vector2D extends Point2D {
     return Vector2D.Scale(this, factor)
   }
 
-  scaleInPlace(factor: number): Vector2D {
-    return this.scaleToRef(factor, this)
+  scaleInPlace(factor: number): this {
+    this.x *= factor
+    this.y *= factor
+    return this
   }
 
   scaleToRef(factor: number, ref: Vector2D): Vector2D {
