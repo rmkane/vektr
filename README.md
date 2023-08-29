@@ -1,36 +1,42 @@
-# Vector Math
+# Vektr
 
-A 2D and 3D vector library written in TypeScript.
+A 2D and 3D vector math library written in TypeScript.
 
-## Setup
+## Commands
 
-- Vite JS library: <https://andrewwalpole.com/blog/use-vite-for-javascript-libraries/>
-- Vite TS library: <https://onderonur.netlify.app/blog/creating-a-typescript-library-with-vite/>
-- Setup ESLint and Prettier for TS: <https://blog.logrocket.com/linting-typescript-eslint-prettier/>
-- Prettier automation: <https://blog.logrocket.com/using-prettier-eslint-automate-formatting-fixing-javascript/>
-- Husky: <https://www.aleksandrhovhannisyan.com/blog/format-code-on-save-vs-code-eslint/>
-- Vite Entry Points: <https://www.raulmelo.me/en/blog/build-javascript-library-with-multiple-entry-points-using-vite-3>
-- Multi-Support Webpack (JS): <https://dev.to/riversun/recipes-on-how-to-create-a-library-that-supports-both-browser-and-node-js-201m>
-- Multi-Support TypeScript: <https://medium.com/collaborne-engineering/typescript-create-library-for-nodejs-and-browser-fece291d517f>
-- Bundles: <https://marcobotto.com/blog/compiling-and-bundling-typescript-libraries-with-webpack/>
+```shell
+yarn install  # Initial setup
+yarn clean    # Remove all generated directories
+yarn build    # Generate the `lib/`, `lib-esm/`, and `dist/` directories
+yarn test     # Run Jest unit tests
+yarn docs     # Generate typedoc in the `docs/` directory
+yarn serve    # Start a Webpack dev server (see the `public/` directory)
+```
 
 ## Inspiration
 
-- Babylon.js: <https://github.com/BabylonJS/Babylon.js/blob/master/packages/dev/core/src/Maths/math.vector.ts>
-- Victor.js: <https://github.com/maxkueng/victor/blob/master/index.js>
-- Fork of Victor.js: <https://github.com/a-robu/victor/blob/master/index.js>
-- Immutable version of Victor.js: <https://github.com/yukulele/Vector.js/blob/master/vector.ts>
+The following libraries were the inspiration for the Vektr library:
 
-## VScode configuration
+- [Babylon.js](https://github.com/BabylonJS/Babylon.js/blob/master/packages/dev/core/src/Maths/math.vector.ts)
+- [Victor.js](https://github.com/maxkueng/victor/blob/master/index.js)
+- [Fork of Victor.js](https://github.com/a-robu/victor/blob/master/index.js)
+- [Immutable version of Victor.js](https://github.com/yukulele/Vector.js/blob/master/vector.ts)
 
-See: <https://rohit.page/blog/posts/how-to-get-prettier-eslint-play-nicely-with-vscode/>
+## VS Code configuration
+
+Here is a sample settings configuration for VS Code.
 
 ```json
 // Filename: .vscode/settings.json
 {
-  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": ["source.formatDocument", "source.fixAll.eslint"],
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.codeActionsOnSave": ["source.formatDocument", "source.fixAll.eslint"]
+  "editor.detectIndentation": false,
+  "editor.formatOnSave": true,
+  "editor.insertSpaces": true,
+  "editor.rulers": [120],
+  "editor.tabSize": 2,
+  "files.eol": "\n"
 }
 ```
 
