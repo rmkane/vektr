@@ -1,3 +1,6 @@
+const DEGREES_PER_RADIAN = 180 / Math.PI
+const RADIANS_PER_DEGREE = Math.PI / 180
+
 /**
  * Clamps a {@link value} between a {@link min} and {@link max}.
  *
@@ -52,4 +55,24 @@ export function fromPolarX(magnitude: number, direction: number): number {
  */
 export function fromPolarY(magnitude: number, direction: number): number {
   return Math.sin(direction) * magnitude
+}
+
+/**
+ * Convert an angle in radians to degrees.
+ *
+ * @param {number} radians - Angle in radians
+ * @returns {number} Angle in degrees
+ */
+export function radiansToDegrees(radians: number): number {
+  return radians * DEGREES_PER_RADIAN
+}
+
+/**
+ * Convert an angle in degrees to radians.
+ *
+ * @param {number} degrees - Angle in degrees
+ * @returns {number} Angle in radians
+ */
+export function degreesToRadians(degrees: number): number {
+  return degrees * RADIANS_PER_DEGREE
 }

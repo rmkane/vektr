@@ -1,3 +1,3 @@
 import { horizontalAngleObject } from './horizontalAngle'
 
-export { horizontalAngleObject as directionObject }
+export { horizontalAngleObject as angleObject }

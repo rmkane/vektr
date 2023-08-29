@@ -8,14 +8,14 @@ import {
   dotObject,
   floorObject,
   fractObject,
+  invertObject,
+  lengthObject,
   lerpObject,
-  magnitudeObject,
   multiplyObject,
   multiplyObjectScalar,
-  negateObject,
-  normObject,
   roundObject,
   subtractObject,
+  unitObject,
 } from '../math/object/index'
 import Point2D from './Point2D'
 
@@ -60,8 +60,8 @@ class Vector2D extends Point2D<Vector2D> {
     return Vector2D.FromObject(divideObject(vector, otherVector))
   }
 
-  static Negate(vector: Object2D): Vector2D {
-    return Vector2D.FromObject(negateObject(vector))
+  static Invert(vector: Object2D): Vector2D {
+    return Vector2D.FromObject(invertObject(vector))
   }
 
   static Scale(vector: Object2D, factor: number): Vector2D {
@@ -84,16 +84,16 @@ class Vector2D extends Point2D<Vector2D> {
     return Vector2D.FromObject(fractObject(vector))
   }
 
-  static Magnitude(vector: Object2D): number {
-    return magnitudeObject(vector)
+  static Length(vector: Object2D): number {
+    return lengthObject(vector)
   }
 
   static Direction(vector: Object2D): number {
     return directionObject(vector)
   }
 
-  static Norm(vector: Object2D): Vector2D {
-    return Vector2D.FromObject(normObject(vector))
+  static Unit(vector: Object2D): Vector2D {
+    return Vector2D.FromObject(unitObject(vector))
   }
 
   static Clamp(value: Object2D, min: Object2D, max: Object2D): Vector2D {
@@ -184,11 +184,11 @@ class Vector2D extends Point2D<Vector2D> {
     return ref
   }
 
-  negate(): Vector2D {
-    return Vector2D.Negate(this)
+  invert(): Vector2D {
+    return Vector2D.Invert(this)
   }
 
-  negateInPlace(): Vector2D {
+  invertInPlace(): Vector2D {
     this._x *= -1
     this._y *= -1
     return this
@@ -228,16 +228,16 @@ class Vector2D extends Point2D<Vector2D> {
     return Vector2D.Fract(this)
   }
 
-  magnitude(): number {
-    return Vector2D.Magnitude(this)
+  length(): number {
+    return Vector2D.Length(this)
   }
 
   direction(): number {
     return Vector2D.Direction(this)
   }
 
-  norm(): Vector2D {
-    return Vector2D.Norm(this)
+  unit(): Vector2D {
+    return Vector2D.Unit(this)
   }
 }
 
