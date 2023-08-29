@@ -1,6 +1,6 @@
-import { Object2D } from '../../../types'
+import { Object2D } from '../../../../types'
 import { divideObjectScalar } from './divide'
-import { magnitudeObject } from './maginitude'
+import { magnitudeObject } from '../product/index'
 
 /**
  * TBD

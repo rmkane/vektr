@@ -1,5 +1,5 @@
-import { Object2D } from '../../../types'
-import { zeroObject } from '../../util/object'
+import { Object2D } from '../../../../types'
+import { zeroObject } from '../../../util/object'
 
 /**
  * TBD.

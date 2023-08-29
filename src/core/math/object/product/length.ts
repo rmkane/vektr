@@ -1,4 +1,4 @@
-import { Object2D } from '../../../types'
+import { Object2D } from '../../../../types'
 
 /**
  * TBD

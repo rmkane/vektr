@@ -1,5 +1,5 @@
-import { Object2D } from '../../../types'
-import { zeroObject } from '../../util/object'
+import { Object2D } from '../../../../types'
+import { zeroObject } from '../../../util/object'
 
 /**
  * Computes a new vector, result of the addition of {@link vector} and the {@link otherVector}.

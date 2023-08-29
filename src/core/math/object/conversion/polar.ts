@@ -1,7 +1,6 @@
-import { Object2D, Polar2DObject } from '../../../types'
-import { fromPolarX, fromPolarY } from '../functions'
-import { directionObject } from './direction'
-import { magnitudeObject } from './maginitude'
+import { Object2D, Polar2DObject } from '../../../../types'
+import { fromPolarX, fromPolarY } from '../../functions'
+import { directionObject, magnitudeObject } from '../product/index'
 
 /**
  * Converts a cartesian coordinate into a polar coordinate.

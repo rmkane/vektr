@@ -1,6 +1,6 @@
-import { Object2D } from '../../../types'
-import { zeroObject } from '../../util/object'
-import { lerp as lerpFn } from '../functions'
+import { Object2D } from '../../../../types'
+import { zeroObject } from '../../../util/object'
+import { lerp as lerpFn } from '../../functions'
 
 /**
  * TBD

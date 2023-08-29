@@ -1,6 +1,6 @@
-import { Object2D } from '../../../types'
-import { zeroObject } from '../../util/object'
-import { fract as fractFn } from '../functions'
+import { Object2D } from '../../../../types'
+import { zeroObject } from '../../../util/object'
+import { fract as fractFn } from '../../functions'
 
 /**
  * TBD
