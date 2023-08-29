@@ -31,10 +31,7 @@ function invertRef(vector: Object2D, referenceVector: Object2D): Object2D {
  * @returns {Object2D} The resulting vector
  */
 function invertX(vector: Object2D): Object2D {
-  return {
-    x: vector.x * -1,
-    y: vector.y,
-  }
+  return invertRefX(vector, zeroObject())
 }
 
 /**
@@ -57,10 +54,7 @@ function invertRefX(vector: Object2D, referenceVector: Object2D): Object2D {
  * @returns {Object2D} The resulting vector
  */
 function invertY(vector: Object2D): Object2D {
-  return {
-    x: vector.x,
-    y: vector.y * -1,
-  }
+  return invertRefY(vector, zeroObject())
 }
 
 /**
