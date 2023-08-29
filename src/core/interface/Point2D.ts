@@ -3,7 +3,7 @@ import { Array2D, NumberPair, Object2D, Point2DSerialized } from '../../types'
 import AbstractPoint from './AbstractPoint'
 
 /** A class representing a point in 2D. */
-class Point2D extends AbstractPoint<Point2D, Object2D, Array2D, Point2DSerialized> {
+class Point2D extends AbstractPoint<Point2D, Object2D, Array2D, Point2DSerialized> implements Object2D {
   protected _x: number
   protected _y: number
 

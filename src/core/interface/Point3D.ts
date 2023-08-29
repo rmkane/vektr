@@ -3,7 +3,7 @@ import { Array3D, NumberTrio, Object3D, Point3DSerialized } from '../../types'
 import AbstractPoint from './AbstractPoint'
 
 /** A class representing a point in 3D. */
-class Point3D extends AbstractPoint<Point3D, Object3D, Array3D, Point3DSerialized> {
+class Point3D extends AbstractPoint<Point3D, Object3D, Array3D, Point3DSerialized> implements Object3D {
   protected _x: number
   protected _y: number
   protected _z: number
