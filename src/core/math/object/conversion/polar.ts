@@ -1,4 +1,4 @@
-import { Object2D, Polar2DObject } from '../../../../types'
+import type { Object2D, Polar2DObject } from '../../../../types'
 import { fromPolarX, fromPolarY } from '../../functions'
 import { directionObject, magnitudeObject } from '../product/index'
 

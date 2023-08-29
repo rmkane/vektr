@@ -1,4 +1,4 @@
-import { Array2D } from '../../../../../types'
+import type { Array2D } from '../../../../../types'
 import { zeroArray } from '../../../../util/array'
 import { clamp as clampFn } from '../../../functions'
 

@@ -1,4 +1,4 @@
-import { ArrayMulti, ObjectMulti, Serialized } from '../../types'
+import type { ArrayMulti, ObjectMulti, Serialized } from '../../types'
 
 /** A class representing a point in 2D. */
 abstract class AbstractPoint<

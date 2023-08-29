@@ -1,5 +1,5 @@
+import type { Array3D, NumberTrio, Object3D, Point3DSerialized } from '../../types'
 import { hashNumber } from '../util/hash'
-import { Array3D, NumberTrio, Object3D, Point3DSerialized } from '../../types'
 import AbstractPoint from './AbstractPoint'
 
 /** A class representing a point in 3D. */

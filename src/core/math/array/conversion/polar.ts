@@ -1,4 +1,4 @@
-import { Array2D, Polar2DArray } from '../../../../types'
+import type { Array2D, Polar2DArray } from '../../../../types'
 import { fromPolarX, fromPolarY } from '../../functions'
 import { directionArray, magnitudeArray } from '../product/index'
 

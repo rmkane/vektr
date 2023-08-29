@@ -1,4 +1,4 @@
-import { Object2D } from '../../../../../types'
+import type { Object2D } from '../../../../../types'
 import { zeroObject } from '../../../../util/object'
 import { clamp as clampFn } from '../../../functions'
 

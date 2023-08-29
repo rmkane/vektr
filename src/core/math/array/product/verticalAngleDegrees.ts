@@ -1,4 +1,4 @@
-import { Array2D } from '../../../../types'
+import type { Array2D } from '../../../../types'
 import { radiansToDegrees } from '../../functions'
 import { verticalAngleArray } from './verticalAngle'
 

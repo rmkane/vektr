@@ -1,4 +1,4 @@
-import { Object2D } from '../../types'
+import type { Object2D } from '../../types'
 
 /**
  * Creates a new vector at (0, 0).

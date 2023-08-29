@@ -1,5 +1,5 @@
+import type { Array2D, NumberPair, Object2D, Point2DSerialized } from '../../types'
 import { hashNumber } from '../util/hash'
-import { Array2D, NumberPair, Object2D, Point2DSerialized } from '../../types'
 import AbstractPoint from './AbstractPoint'
 
 /** A class representing a point in 2D. */

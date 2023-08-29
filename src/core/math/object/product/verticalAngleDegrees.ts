@@ -1,4 +1,4 @@
-import { Object2D } from '../../../../types'
+import type { Object2D } from '../../../../types'
 import { radiansToDegrees } from '../../functions'
 import { verticalAngleObject } from './verticalAngle'
 

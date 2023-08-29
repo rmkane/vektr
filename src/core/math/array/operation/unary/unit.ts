@@ -1,4 +1,4 @@
-import { Array2D } from '../../../../../types'
+import type { Array2D } from '../../../../../types'
 import { divideArrayScalar } from '../binary/index'
 import { magnitudeArray } from '../../product/index'
 

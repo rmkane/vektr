@@ -1,4 +1,4 @@
-import { Array2D, Object2D } from '../../types'
+import type { Array2D, Object2D } from '../../types'
 import {
   addObject,
   ceilObject,

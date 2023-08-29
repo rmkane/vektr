@@ -1,4 +1,4 @@
-import { Polar2DArray } from '../../types'
+import type { Polar2DArray } from '../../types'
 
 /**
  * Creates a new vector at (0, 0).
