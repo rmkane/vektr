@@ -103,7 +103,7 @@ export function magnitudeObject(a: Object2D): number {
   return Math.hypot(a.x, a.y)
 }
 
-export function normalizeObject(a: Object2D): Object2D {
+export function normObject(a: Object2D): Object2D {
   return divideObject(a, magnitudeObject(a))
 }
 
@@ -131,8 +131,8 @@ export function dotObject(left: Object2D, right: Object2D): number {
 
 export function toPolar(vector: Object2D): Polar2DObject {
   return {
-    magnitude: magnitudeObject(vector),
-    direction: directionObject(vector),
+    radius: magnitudeObject(vector),
+    angle: directionObject(vector),
   }
 }
 
@@ -144,7 +144,7 @@ export function toPolar(vector: Object2D): Polar2DObject {
  */
 export function fromPolarObject(polar: Polar2DObject): Object2D {
   return {
-    x: fromPolarX(polar.magnitude, polar.direction),
-    y: fromPolarY(polar.magnitude, polar.direction),
+    x: fromPolarX(polar.radius, polar.angle),
+    y: fromPolarY(polar.radius, polar.angle),
   }
 }

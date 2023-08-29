@@ -1,5 +1,5 @@
 import { Array2D, Polar2DArray } from '../../../types'
-import { clamp, fraction, fromPolarX, fromPolarY, lerp } from '../functions'
+import { clamp, fract, fromPolarX, fromPolarY, lerp } from '../functions'
 
 export function addArrays(a: Array2D, b: Array2D): Array2D {
   return [a[0] + b[0], a[1] + b[1]]
@@ -50,7 +50,7 @@ export function roundArray(a: Array2D): Array2D {
 }
 
 export function fractArray(a: Array2D): Array2D {
-  return [fraction(a[0]), fraction(a[1])]
+  return [fract(a[0]), fract(a[1])]
 }
 
 export function magnitudeArray(a: Array2D): number {

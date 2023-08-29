@@ -24,8 +24,8 @@ export type Vector2DArray = NumberPair
 export type Vector2DSerialized = Serialized & Vector2DObject
 
 export type Polar2DObject = {
-  magnitude: number
-  direction: number
+  radius: number
+  angle: number
 }
 
 export type Polar2DArray = Array2D
