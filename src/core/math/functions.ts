@@ -16,7 +16,7 @@ export function clamp(value: number, min: number, max: number): number {
  * @param {number} value - The floating-point value
  * @returns {number} The decimal portion of the floating-point number
  */
-export function fraction(value: number): number {
+export function fract(value: number): number {
   return value - Math.floor(value)
 }
 

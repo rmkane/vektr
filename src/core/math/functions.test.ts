@@ -1,4 +1,4 @@
-import { clamp, fraction, lerp } from './functions'
+import { clamp, fract, lerp } from './functions'
 
 test('clamp a value', () => {
   expect(clamp(50, 0, 100)).toBe(50)
@@ -6,8 +6,8 @@ test('clamp a value', () => {
   expect(clamp(200, 50, 100)).toBe(100)
 })
 
-test('fraction of a value', () => {
-  expect(fraction(3.14)).toBeCloseTo(0.14)
+test('fract of a value', () => {
+  expect(fract(3.14)).toBeCloseTo(0.14)
 })
 
 test('lerp a value', () => {
