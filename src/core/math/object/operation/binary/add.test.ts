@@ -10,7 +10,7 @@ test('add vector', () => {
   const a: Object2D = { ...VECTOR_A }
   const b: Object2D = { ...VECTOR_B }
 
-  // Result of addition
+  // Result of vector addition
   expect(addObject(a, b, zeroObject())).toStrictEqual({ x: 4, y: 6 })
 
   // No mutations
@@ -22,7 +22,7 @@ test('add vector x', () => {
   const a: Object2D = { ...VECTOR_A }
   const b: Object2D = { ...VECTOR_B }
 
-  // Result of addition
+  // Result of vector addition
   expect(addObjectX(a, b, zeroObject())).toStrictEqual({ x: 4, y: 0 })
 
   // No mutations
@@ -34,7 +34,7 @@ test('add vector y', () => {
   const a: Object2D = { ...VECTOR_A }
   const b: Object2D = { ...VECTOR_B }
 
-  // Result of addition
+  // Result of vector addition
   expect(addObjectY(a, b, zeroObject())).toStrictEqual({ x: 0, y: 6 })
 
   // No mutations
@@ -45,7 +45,7 @@ test('add vector y', () => {
 test('add scalar', () => {
   const a: Object2D = { ...VECTOR_A }
 
-  // Result of addition
+  // Result of scalar addition
   expect(addObjectScalar(a, SCALAR, zeroObject())).toStrictEqual({ x: 11, y: 12 })
 
   // No mutations
@@ -55,7 +55,7 @@ test('add scalar', () => {
 test('add scalar x', () => {
   const a: Object2D = { ...VECTOR_A }
 
-  // Result of addition
+  // Result of scalar addition
   expect(addObjectScalarX(a, SCALAR, zeroObject())).toStrictEqual({ x: 11, y: 0 })
 
   // No mutations
@@ -65,7 +65,7 @@ test('add scalar x', () => {
 test('add scalar y', () => {
   const a: Object2D = { ...VECTOR_A }
 
-  // Result of addition
+  // Result of scalar addition
   expect(addObjectScalarY(a, SCALAR, zeroObject())).toStrictEqual({ x: 0, y: 12 })
 
   // No mutations
