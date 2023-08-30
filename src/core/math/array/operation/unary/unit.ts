@@ -5,11 +5,11 @@ import { magnitudeArray } from '../../product/index'
 /**
  * TBD
  *
- * @param {Array2D} vector
+ * @param {V} vector
  * @returns {number}
  */
-function unit(vector: Array2D): Array2D {
-  return divideArrayScalar(vector, magnitudeArray(vector))
+function unit<V extends Array2D>(vector: V, referenceVector: V): V {
+  return divideArrayScalar(vector, magnitudeArray(vector), referenceVector)
 }
 
 export { unit as unitArray }

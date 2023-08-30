@@ -5,10 +5,10 @@ import { verticalAngleObject } from './verticalAngle'
 /**
  * TBD
  *
- * @param {Object2D} vector
+ * @param {V} vector
  * @returns {number} Angle in degrees
  */
-function verticalAngleDegrees(vector: Object2D): number {
+function verticalAngleDegrees<V extends Object2D>(vector: V): number {
   return radiansToDegrees(verticalAngleObject(vector))
 }
 

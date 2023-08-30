@@ -3,10 +3,10 @@ import type { Object2D } from '../../../../types'
 /**
  * TBD
  *
- * @param {Object2D} vector
+ * @param {V} vector
  * @returns {number} Angle in radians
  */
-function verticalAngle(vector: Object2D): number {
+function verticalAngle<V extends Object2D>(vector: V): number {
   return Math.atan2(vector.x, vector.y)
 }
 

@@ -3,11 +3,11 @@ import type { Array2D } from '../../../../types'
 /**
  * TBD
  *
- * @param {Array2D} left
- * @param {Array2D} right
+ * @param {V} left
+ * @param {V} right
  * @returns {number}
  */
-function cross(left: Array2D, right: Array2D): number {
+function cross<V extends Array2D>(left: V, right: V): number {
   return left[0] * right[1] - left[1] * right[0]
 }
 

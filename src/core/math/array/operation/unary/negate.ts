@@ -1,8 +1,5 @@
-import { invertArray, invertArrayRef, invertArrayX, invertArrayRefX, invertArrayY, invertArrayRefY } from './invert'
+import { invertArray, invertArrayX, invertArrayY } from './invert'
 
 export { invertArray as negateArray }
-export { invertArrayRef as negateArrayRef }
 export { invertArrayX as negateArrayX }
-export { invertArrayRefX as negateArrayRefX }
 export { invertArrayY as negateArrayY }
-export { invertArrayRefY as negateArrayRefY }

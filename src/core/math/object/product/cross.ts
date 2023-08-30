@@ -3,11 +3,11 @@ import type { Object2D } from '../../../../types'
 /**
  * TBD
  *
- * @param {Object2D} left
- * @param {Object2D} right
+ * @param {V} left
+ * @param {V} right
  * @returns {number}
  */
-function cross(left: Object2D, right: Object2D): number {
+function cross<V extends Object2D>(left: V, right: V): number {
   return left.x * right.y - left.y * right.x
 }
 

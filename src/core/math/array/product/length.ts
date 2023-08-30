@@ -3,10 +3,10 @@ import type { Array2D } from '../../../../types'
 /**
  * TBD
  *
- * @param {Array2D} vector
+ * @param {V} vector
  * @returns {number}
  */
-function length(vector: Array2D): number {
+function length<V extends Array2D>(vector: V): number {
   return Math.hypot(vector[0], vector[1])
 }
 

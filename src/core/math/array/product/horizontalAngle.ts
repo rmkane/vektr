@@ -3,10 +3,10 @@ import type { Array2D } from '../../../../types'
 /**
  * TBD
  *
- * @param {Array2D} vector
+ * @param {V} vector
  * @returns {number} Angle in radians
  */
-function horizontalAngle(vector: Array2D): number {
+function horizontalAngle<V extends Array2D>(vector: V): number {
   return Math.atan2(vector[1], vector[0])
 }
 

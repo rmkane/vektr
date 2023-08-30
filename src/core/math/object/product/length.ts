@@ -3,10 +3,10 @@ import type { Object2D } from '../../../../types'
 /**
  * TBD
  *
- * @param {Object2D} vector
+ * @param {V} vector
  * @returns {number}
  */
-function length(vector: Object2D): number {
+function length<V extends Object2D>(vector: V): number {
   return Math.hypot(vector.x, vector.y)
 }
 

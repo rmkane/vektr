@@ -1,24 +1,13 @@
 import type { Object2D } from '../../../../../types'
-import { zeroObject } from '../../../../util/object'
 
 /**
  * TBD
  *
- * @param {Object2D} vector
- * @returns {Object2D} The resulting vector
+ * @param {V} vector
+ * @param {V} referenceVector - The reference
+ * @returns {V} The modified reference vector
  */
-function invert(vector: Object2D): Object2D {
-  return invertRef(vector, zeroObject())
-}
-
-/**
- * TBD
- *
- * @param {Object2D} vector
- * @param {Object2D} referenceVector - The reference
- * @returns {Object2D} The modified reference vector
- */
-function invertRef(vector: Object2D, referenceVector: Object2D): Object2D {
+function invert<V extends Object2D>(vector: V, referenceVector: V): V {
   referenceVector.x = vector.x * -1
   referenceVector.y = vector.y * -1
   return referenceVector
@@ -27,21 +16,11 @@ function invertRef(vector: Object2D, referenceVector: Object2D): Object2D {
 /**
  * TBD
  *
- * @param {Object2D} vector
- * @returns {Object2D} The resulting vector
+ * @param {V} vector
+ * @param {V} referenceVector - The reference
+ * @returns {V} The modified reference vector
  */
-function invertX(vector: Object2D): Object2D {
-  return invertRefX(vector, zeroObject())
-}
-
-/**
- * TBD
- *
- * @param {Object2D} vector
- * @param {Object2D} referenceVector - The reference
- * @returns {Object2D} The modified reference vector
- */
-function invertRefX(vector: Object2D, referenceVector: Object2D): Object2D {
+function invertX<V extends Object2D>(vector: V, referenceVector: V): V {
   referenceVector.x = vector.x * -1
   referenceVector.y = vector.y
   return referenceVector
@@ -50,29 +29,16 @@ function invertRefX(vector: Object2D, referenceVector: Object2D): Object2D {
 /**
  * TBD
  *
- * @param {Object2D} vector
- * @returns {Object2D} The resulting vector
+ * @param {V} vector
+ * @param {V} referenceVector - The reference
+ * @returns {V} The modified reference vector
  */
-function invertY(vector: Object2D): Object2D {
-  return invertRefY(vector, zeroObject())
-}
-
-/**
- * TBD
- *
- * @param {Object2D} vector
- * @param {Object2D} referenceVector - The reference
- * @returns {Object2D} The modified reference vector
- */
-function invertRefY(vector: Object2D, referenceVector: Object2D): Object2D {
+function invertY<V extends Object2D>(vector: V, referenceVector: V): V {
   referenceVector.x = vector.x
   referenceVector.y = vector.y * -1
   return referenceVector
 }
 
 export { invert as invertObject }
-export { invertRef as invertObjectRef }
 export { invertX as invertObjectX }
-export { invertRefX as invertObjectRefX }
 export { invertY as invertObjectY }
-export { invertRefY as invertObjectRefY }

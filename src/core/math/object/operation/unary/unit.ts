@@ -5,11 +5,11 @@ import { magnitudeObject } from '../../product/index'
 /**
  * TBD
  *
- * @param {Object2D} vector
+ * @param {V} vector
  * @returns {number}
  */
-function unit(vector: Object2D): Object2D {
-  return divideObjectScalar(vector, magnitudeObject(vector))
+function unit<V extends Object2D>(vector: V, referenceVector: V): V {
+  return divideObjectScalar(vector, magnitudeObject(vector), referenceVector)
 }
 
 export { unit as unitObject }

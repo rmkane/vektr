@@ -5,10 +5,10 @@ import { directionObject, magnitudeObject } from '../product/index'
 /**
  * Converts a cartesian coordinate into a polar coordinate.
  *
- * @param {Object2D} vector
+ * @param {V} vector
  * @returns {Polar2DObject}
  */
-function toPolar(vector: Object2D): Polar2DObject {
+function toPolar<V extends Object2D>(vector: V): Polar2DObject {
   return {
     radius: magnitudeObject(vector),
     angle: directionObject(vector),
@@ -19,13 +19,12 @@ function toPolar(vector: Object2D): Polar2DObject {
  * Converts a polar coordinate into a cartesian coordinate.
  *
  * @param {Polar2DObject} polar - A polar coordinate object
- * @returns {number} A point object in cartesian space
+ * @returns {V} A point object in cartesian space
  */
-function fromPolar(polar: Polar2DObject): Object2D {
-  return {
-    x: fromPolarX(polar.radius, polar.angle),
-    y: fromPolarY(polar.radius, polar.angle),
-  }
+function fromPolar<V extends Object2D>(polar: Polar2DObject, referenceVector: V): V {
+  referenceVector.x = fromPolarX(polar.radius, polar.angle)
+  referenceVector.y = fromPolarY(polar.radius, polar.angle)
+  return referenceVector
 }
 
 export { toPolar as toObjectPolar }

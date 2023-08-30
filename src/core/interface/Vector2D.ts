@@ -38,50 +38,50 @@ class Vector2D extends Point2D {
     return new Vector2D(vector.x, vector.y)
   }
 
-  static zero(): Vector2D {
+  static Zero(): Vector2D {
     return new Vector2D(0, 0)
   }
 
   // Static methods
 
   static Add(vector: Object2D, otherVector: Object2D): Vector2D {
-    return Vector2D.FromObject(addObject(vector, otherVector))
+    return addObject(vector, otherVector, Vector2D.Zero()) as Vector2D
   }
 
   static Subtract(vector: Object2D, otherVector: Object2D): Vector2D {
-    return Vector2D.FromObject(subtractObject(vector, otherVector))
+    return subtractObject(vector, otherVector, Vector2D.Zero()) as Vector2D
   }
 
   static Multiply(vector: Object2D, otherVector: Object2D): Vector2D {
-    return Vector2D.FromObject(multiplyObject(vector, otherVector))
+    return multiplyObject(vector, otherVector, Vector2D.Zero()) as Vector2D
   }
 
   static Divide(vector: Object2D, otherVector: Object2D): Vector2D {
-    return Vector2D.FromObject(divideObject(vector, otherVector))
+    return divideObject(vector, otherVector, Vector2D.Zero()) as Vector2D
   }
 
   static Invert(vector: Object2D): Vector2D {
-    return Vector2D.FromObject(invertObject(vector))
+    return invertObject(vector, Vector2D.Zero()) as Vector2D
   }
 
   static Scale(vector: Object2D, factor: number): Vector2D {
-    return Vector2D.FromObject(multiplyObjectScalar(vector, factor))
+    return multiplyObjectScalar(vector, factor, Vector2D.Zero()) as Vector2D
   }
 
   static Floor(vector: Object2D): Vector2D {
-    return Vector2D.FromObject(floorObject(vector))
+    return floorObject(vector, Vector2D.Zero()) as Vector2D
   }
 
   static Ceil(vector: Object2D): Vector2D {
-    return Vector2D.FromObject(ceilObject(vector))
+    return ceilObject(vector, Vector2D.Zero()) as Vector2D
   }
 
   static Round(vector: Object2D): Vector2D {
-    return Vector2D.FromObject(roundObject(vector))
+    return roundObject(vector, Vector2D.Zero()) as Vector2D
   }
 
   static Fract(vector: Object2D): Vector2D {
-    return Vector2D.FromObject(fractObject(vector))
+    return fractObject(vector, Vector2D.Zero()) as Vector2D
   }
 
   static Length(vector: Object2D): number {
@@ -93,15 +93,15 @@ class Vector2D extends Point2D {
   }
 
   static Unit(vector: Object2D): Vector2D {
-    return Vector2D.FromObject(unitObject(vector))
+    return unitObject(vector, Vector2D.Zero()) as Vector2D
   }
 
   static Clamp(value: Object2D, min: Object2D, max: Object2D): Vector2D {
-    return Vector2D.FromObject(clampObject(value, min, max))
+    return clampObject(value, min, max, Vector2D.Zero()) as Vector2D
   }
 
   static Lerp(start: Object2D, end: Object2D, amount: number): Vector2D {
-    return Vector2D.FromObject(lerpObject(start, end, amount))
+    return lerpObject(start, end, amount, Vector2D.Zero()) as Vector2D
   }
 
   static Dot(left: Object2D, right: Object2D): number {
@@ -128,68 +128,52 @@ class Vector2D extends Point2D {
     return new Vector2D(this._x, this._y)
   }
 
-  add<T extends Vector2D>(otherVector: T): T {
-    return Vector2D.Add(this, otherVector) as T
+  add(otherVector: Vector2D): Vector2D {
+    return Vector2D.Add(this, otherVector) as Vector2D
   }
 
-  addInPlace<T extends Vector2D>(otherVector: T): this {
-    this._x += otherVector.x
-    this._y += otherVector.y
-    return this
+  addInPlace(otherVector: Vector2D): this {
+    return addObject(this, otherVector, this) as this
   }
 
-  addToRef<T extends Vector2D>(otherVector: T, ref: T): T {
-    ref._x = this.x + otherVector.x
-    ref._y = this.y + otherVector.y
-    return ref
+  addToRef(otherVector: Vector2D, ref: Vector2D): Vector2D {
+    return addObject(this, otherVector, ref)
   }
 
-  subtract<T extends Vector2D>(otherVector: T): T {
-    return Vector2D.Subtract(this, otherVector) as T
+  subtract(otherVector: Vector2D): Vector2D {
+    return Vector2D.Subtract(this, otherVector) as Vector2D
   }
 
-  subtractInPlace<T extends Vector2D>(otherVector: T): this {
-    this._x -= otherVector.x
-    this._y -= otherVector.y
-    return this
+  subtractInPlace(otherVector: Vector2D): this {
+    return subtractObject(this, otherVector, this) as this
   }
 
-  subtractToRef<T extends Vector2D>(otherVector: T, ref: T): T {
-    ref._x = this.x - otherVector.x
-    ref._y = this.y - otherVector.y
-    return ref
+  subtractToRef(otherVector: Vector2D, ref: Vector2D): Vector2D {
+    return subtractObject(this, otherVector, ref)
   }
 
-  multiply<T extends Vector2D>(otherVector: T): T {
-    return Vector2D.Multiply(this, otherVector) as T
+  multiply(otherVector: Vector2D): Vector2D {
+    return Vector2D.Multiply(this, otherVector) as Vector2D
   }
 
-  multiplyInPlace<T extends Vector2D>(otherVector: T): this {
-    this._x *= otherVector.x
-    this._y *= otherVector.y
-    return this
+  multiplyInPlace(otherVector: Vector2D): this {
+    return multiplyObject(this, otherVector, this) as this
   }
 
-  multiplyToRef<T extends Vector2D>(otherVector: T, ref: T): T {
-    ref._x = this.x * otherVector.x
-    ref._y = this.y * otherVector.y
-    return ref
+  multiplyToRef(otherVector: Vector2D, ref: Vector2D): Vector2D {
+    return multiplyObject(this, otherVector, ref)
   }
 
-  divide<T extends Vector2D>(otherVector: T): T {
-    return Vector2D.Divide(this, otherVector) as T
+  divide(otherVector: Vector2D): Vector2D {
+    return Vector2D.Divide(this, otherVector) as Vector2D
   }
 
-  divideInPlace<T extends Vector2D>(otherVector: T): this {
-    this._x /= otherVector.x
-    this._y /= otherVector.y
-    return this
+  divideInPlace(otherVector: Vector2D): this {
+    return divideObject(this, otherVector, this) as this
   }
 
-  divideToRef<T extends Vector2D>(otherVector: T, ref: T): T {
-    ref._x = this.x / otherVector.x
-    ref._y = this.y / otherVector.y
-    return ref
+  divideToRef(otherVector: Vector2D, ref: Vector2D): Vector2D {
+    return divideObject(this, otherVector, ref)
   }
 
   invert(): Vector2D {
@@ -197,9 +181,7 @@ class Vector2D extends Point2D {
   }
 
   invertInPlace(): this {
-    this._x *= -1
-    this._y *= -1
-    return this
+    return invertObject(this, this)
   }
 
   scale(factor: number): Vector2D {
@@ -207,15 +189,11 @@ class Vector2D extends Point2D {
   }
 
   scaleInPlace(factor: number): this {
-    this.x *= factor
-    this.y *= factor
-    return this
+    return multiplyObjectScalar(this, factor, this)
   }
 
   scaleToRef(factor: number, ref: Vector2D): Vector2D {
-    ref.x = this.x * factor
-    ref.y = this.y * factor
-    return ref
+    return multiplyObjectScalar(this, factor, ref)
   }
 
   scaleAndAddToRef(factor: number, ref: Vector2D): Vector2D {

@@ -5,10 +5,10 @@ import { horizontalAngleArray } from './horizontalAngle'
 /**
  * TBD
  *
- * @param {Array2D} vector
+ * @param {V} vector
  * @returns {number} Angle in degrees
  */
-function horizontalAngleDegrees(vector: Array2D): number {
+function horizontalAngleDegrees<V extends Array2D>(vector: V): number {
   return radiansToDegrees(horizontalAngleArray(vector))
 }
 
