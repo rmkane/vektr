@@ -8,6 +8,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import url from 'node:url'
+import util from 'node:util'
 
 import { rimraf } from 'rimraf'
 
@@ -16,13 +17,24 @@ import rewriteFiles from './modules/updateFiles.mjs'
 const __filename = url.fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
+// Parse arguments
+const {
+  values: { quiet: quietMode },
+} = util.parseArgs({
+  args: process.argv.slice(2),
+  options: {
+    quiet: {
+      type: 'boolean',
+      short: 'q',
+    },
+  },
+})
+
 // Directory constants
 const SRC_DIR = path.resolve(__dirname, '../../src')
 const MATH_DIR = path.resolve(SRC_DIR, 'core/math')
 const OBJECT_DIR = path.resolve(MATH_DIR, 'object')
 const ARRAY_DIR = path.resolve(MATH_DIR, 'array')
-
-let quietMode = process.argv.includes('-q')
 
 function showMessage(...args) {
   if (!quietMode) {
