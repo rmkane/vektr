@@ -15,8 +15,8 @@ function toPolar2d<V extends Array2D>(vector: V): Polar2DArray {
 /**
  * Converts a polar coordinate into a cartesian coordinate.
  *
- * @param {Polar2DArray} polar - A polar coordinate Array
- * @returns {V} A point Array in cartesian space
+ * @param {Polar2DArray} polar - A polar coordinate array
+ * @returns {V} A point array in cartesian space
  */
 function fromPolar2d<V extends Array2D>(polar: Polar2DArray, referenceVector: V): V {
   referenceVector[0] = fromPolarX(polar[0], polar[1])

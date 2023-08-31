@@ -1,7 +1,7 @@
 import type { Array2D } from '../../../../../../types'
 
 /**
- * TBD.
+ * Applies the quotient of {@link vector} and {@link otherVector} to {@link referenceVector}.
  *
  * @param {V} vector - First vector operand
  * @param {V} otherVector - Second vector operand
@@ -15,7 +15,7 @@ function divide2d<V extends Array2D>(vector: V, otherVector: V, referenceVector:
 }
 
 /**
- * TBD.
+ * Applies the quotient of {@link vector} x-coordinate and {@link otherVector} to {@link referenceVector} and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} otherVector - Second vector operand
@@ -28,7 +28,7 @@ function divide2dX<V extends Array2D>(vector: V, otherVector: V, referenceVector
 }
 
 /**
- * TBD.
+ * Applies the quotient of {@link vector} and {@link otherVector} y-coordinates to {@link referenceVector} and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} otherVector - Second vector operand
@@ -41,7 +41,7 @@ function divide2dY<V extends Array2D>(vector: V, otherVector: V, referenceVector
 }
 
 /**
- * TBD.
+ * Applies the quotient of {@link vector} and {@link value} to {@link referenceVector} and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} value - Value to divide
@@ -55,7 +55,7 @@ function divideScalar2d<V extends Array2D>(vector: V, value: number, referenceVe
 }
 
 /**
- * TBD.
+ * Applies the quotient of {@link vector} x-coordinate and {@link x} to {@link referenceVector} and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} x - Value to divide to x
@@ -68,7 +68,7 @@ function divideScalar2dX<V extends Array2D>(vector: V, x: number, referenceVecto
 }
 
 /**
- * TBD.
+ * Applies the quotient of {@link vector} y-coordinate and {@link y} to {@link referenceVector} and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} y - Value to divide to y

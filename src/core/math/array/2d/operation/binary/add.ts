@@ -1,8 +1,9 @@
 import type { Array2D } from '../../../../../../types'
+
 /**
- * Adds the result of the addition of {@link vector} and the {@link otherVector} to {@link referenceVector}.
+ * Applies the sum of {@link vector} and {@link otherVector} to {@link referenceVector}.
  *
- * @typeParam V - A vector-like Array
+ * @typeParam V - A vector-like array
  * @param {V} vector - First vector operand
  * @param {V} otherVector - Second vector operand
  * @param {V} referenceVector - The reference vector
@@ -15,7 +16,7 @@ function add2d<V extends Array2D>(vector: V, otherVector: V, referenceVector: V)
 }
 
 /**
- * Sums the {@link vector} x-coordinate and {@link otherVector} to {@link referenceVector} and returns it.
+ * Applies the sum of {@link vector} x-coordinate and {@link otherVector} to {@link referenceVector} and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} otherVector - Second vector operand
@@ -28,7 +29,7 @@ function add2dX<V extends Array2D>(vector: V, otherVector: V, referenceVector: V
 }
 
 /**
- * Sums {@link vector} and {@link otherVector} y-coordinates to {@link referenceVector} and returns it.
+ * Applies the sum of {@link vector} and {@link otherVector} y-coordinates to {@link referenceVector} and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} otherVector - Second vector operand
@@ -41,7 +42,7 @@ function add2dY<V extends Array2D>(vector: V, otherVector: V, referenceVector: V
 }
 
 /**
- * Sums {@link vector} and {@link value} to {@link referenceVector} and returns it.
+ * Applies the sum of {@link vector} and {@link value} to {@link referenceVector} and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} value - Value to add
@@ -55,7 +56,7 @@ function addScalar2d<V extends Array2D>(vector: V, value: number, referenceVecto
 }
 
 /**
- * Sums the {@link vector} x-coordinate and {@link x} to {@link referenceVector} and returns it.
+ * Applies the sum of {@link vector} x-coordinate and {@link x} to {@link referenceVector} and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} x - Value to add to x
@@ -68,7 +69,7 @@ function addScalar2dX<V extends Array2D>(vector: V, x: number, referenceVector: 
 }
 
 /**
- * Sums the {@link vector} y-coordinate and {@link y} to {@link referenceVector} and returns it.
+ * Applies the sum of {@link vector} y-coordinate and {@link y} to {@link referenceVector} and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} y - Value to add to y
