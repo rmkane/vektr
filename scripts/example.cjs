@@ -23,9 +23,9 @@ console.log(v3.toJSON())
  */
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const { addObject } = require('../lib/core/math/object/operation/binary/add.js')
+const { addObject2d } = require('../lib/core/math/object/2d/operation/binary/add.js')
 
-const v4 = addObject(v1, v2, new Vector2D())
+const v4 = addObject2d(v1, v2, new Vector2D())
 
 // eslint-disable-next-line no-console
 console.log(v4.toJSON())
