@@ -1,3 +1,3 @@
-import { horizontalAngleDegreesArray } from './horizontalAngleDegrees'
+import { horizontalAngleDegreesArray2d } from './horizontalAngleDegrees'
 
-export { horizontalAngleDegreesArray as angleArrayDegrees }
+export { horizontalAngleDegreesArray2d as angleArrayDegrees2d }

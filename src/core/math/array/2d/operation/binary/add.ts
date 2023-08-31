@@ -8,7 +8,7 @@ import type { Array2D } from '../../../../../../types'
  * @param {V} referenceVector - The reference vector
  * @returns {V} The modified reference vector
  */
-function add<V extends Array2D>(vector: V, otherVector: V, referenceVector: V): V {
+function add2d<V extends Array2D>(vector: V, otherVector: V, referenceVector: V): V {
   referenceVector[0] = vector[0] + otherVector[0]
   referenceVector[1] = vector[1] + otherVector[1]
   return referenceVector
@@ -22,7 +22,7 @@ function add<V extends Array2D>(vector: V, otherVector: V, referenceVector: V): 
  * @param {V} referenceVector - The reference
  * @returns {V} The modified reference vector
  */
-function addX<V extends Array2D>(vector: V, otherVector: V, referenceVector: V): V {
+function add2dX<V extends Array2D>(vector: V, otherVector: V, referenceVector: V): V {
   referenceVector[0] = vector[0] + otherVector[0]
   return referenceVector
 }
@@ -35,7 +35,7 @@ function addX<V extends Array2D>(vector: V, otherVector: V, referenceVector: V):
  * @param {V} referenceVector - The reference vector
  * @returns {V} The modified reference vector
  */
-function addY<V extends Array2D>(vector: V, otherVector: V, referenceVector: V): V {
+function add2dY<V extends Array2D>(vector: V, otherVector: V, referenceVector: V): V {
   referenceVector[1] = vector[1] + otherVector[1]
   return referenceVector
 }
@@ -48,7 +48,7 @@ function addY<V extends Array2D>(vector: V, otherVector: V, referenceVector: V):
  * @param {V} referenceVector - The reference vector
  * @returns {V} The modified reference vector
  */
-function addScalar<V extends Array2D>(vector: V, value: number, referenceVector: V): V {
+function addScalar2d<V extends Array2D>(vector: V, value: number, referenceVector: V): V {
   referenceVector[0] = vector[0] + value
   referenceVector[1] = vector[1] + value
   return referenceVector
@@ -62,7 +62,7 @@ function addScalar<V extends Array2D>(vector: V, value: number, referenceVector:
  * @param {V} referenceVector - The reference vector
  * @returns {V} The resulting vector
  */
-function addScalarX<V extends Array2D>(vector: V, x: number, referenceVector: V): V {
+function addScalar2dX<V extends Array2D>(vector: V, x: number, referenceVector: V): V {
   referenceVector[0] = vector[0] + x
   return referenceVector
 }
@@ -75,14 +75,14 @@ function addScalarX<V extends Array2D>(vector: V, x: number, referenceVector: V)
  * @param {V} referenceVector - The reference vector
  * @returns {V} The resulting vector
  */
-function addScalarY<V extends Array2D>(vector: V, y: number, referenceVector: V): V {
+function addScalar2dY<V extends Array2D>(vector: V, y: number, referenceVector: V): V {
   referenceVector[1] = vector[1] + y
   return referenceVector
 }
 
-export { add as addArray }
-export { addX as addArrayX }
-export { addY as addArrayY }
-export { addScalar as addArrayScalar }
-export { addScalarX as addArrayScalarX }
-export { addScalarY as addArrayScalarY }
+export { add2d as addArray2d }
+export { add2dX as addArray2dX }
+export { add2dY as addArray2dY }
+export { addScalar2d as addArrayScalar2d }
+export { addScalar2dX as addArrayScalar2dX }
+export { addScalar2dY as addArrayScalar2dY }

@@ -8,7 +8,7 @@ import type { Array2D } from '../../../../../../types'
  * @param {V} referenceVector - The reference vector
  * @returns {V} The modified reference vector
  */
-function modulo<V extends Array2D>(vector: V, otherVector: V, referenceVector: V): V {
+function modulo2d<V extends Array2D>(vector: V, otherVector: V, referenceVector: V): V {
   referenceVector[0] = vector[0] % otherVector[0]
   referenceVector[1] = vector[1] % otherVector[1]
   return referenceVector
@@ -22,7 +22,7 @@ function modulo<V extends Array2D>(vector: V, otherVector: V, referenceVector: V
  * @param {V} referenceVector - The reference
  * @returns {V} The modified reference vector
  */
-function moduloX<V extends Array2D>(vector: V, otherVector: V, referenceVector: V): V {
+function modulo2dX<V extends Array2D>(vector: V, otherVector: V, referenceVector: V): V {
   referenceVector[0] = vector[0] % otherVector[0]
   return referenceVector
 }
@@ -35,7 +35,7 @@ function moduloX<V extends Array2D>(vector: V, otherVector: V, referenceVector: 
  * @param {V} referenceVector - The reference vector
  * @returns {V} The modified reference vector
  */
-function moduloY<V extends Array2D>(vector: V, otherVector: V, referenceVector: V): V {
+function modulo2dY<V extends Array2D>(vector: V, otherVector: V, referenceVector: V): V {
   referenceVector[1] = vector[1] % otherVector[1]
   return referenceVector
 }
@@ -48,7 +48,7 @@ function moduloY<V extends Array2D>(vector: V, otherVector: V, referenceVector: 
  * @param {V} referenceVector - The reference vector
  * @returns {V} The modified reference vector
  */
-function moduloScalar<V extends Array2D>(vector: V, value: number, referenceVector: V): V {
+function moduloScalar2d<V extends Array2D>(vector: V, value: number, referenceVector: V): V {
   referenceVector[0] = vector[0] % value
   referenceVector[1] = vector[1] % value
   return referenceVector
@@ -62,7 +62,7 @@ function moduloScalar<V extends Array2D>(vector: V, value: number, referenceVect
  * @param {V} referenceVector - The reference vector
  * @returns {V} The resulting vector
  */
-function moduloScalarX<V extends Array2D>(vector: V, x: number, referenceVector: V): V {
+function moduloScalar2dX<V extends Array2D>(vector: V, x: number, referenceVector: V): V {
   referenceVector[0] = vector[0] % x
   return referenceVector
 }
@@ -75,14 +75,14 @@ function moduloScalarX<V extends Array2D>(vector: V, x: number, referenceVector:
  * @param {V} referenceVector - The reference vector
  * @returns {V} The resulting vector
  */
-function moduloScalarY<V extends Array2D>(vector: V, y: number, referenceVector: V): V {
+function moduloScalar2dY<V extends Array2D>(vector: V, y: number, referenceVector: V): V {
   referenceVector[1] = vector[1] % y
   return referenceVector
 }
 
-export { modulo as moduloArray }
-export { moduloX as moduloArrayX }
-export { moduloY as moduloArrayY }
-export { moduloScalar as moduloArrayScalar }
-export { moduloScalarX as moduloArrayScalarX }
-export { moduloScalarY as moduloArrayScalarY }
+export { modulo2d as moduloArray2d }
+export { modulo2dX as moduloArray2dX }
+export { modulo2dY as moduloArray2dY }
+export { moduloScalar2d as moduloArrayScalar2d }
+export { moduloScalar2dX as moduloArrayScalar2dX }
+export { moduloScalar2dY as moduloArrayScalar2dY }

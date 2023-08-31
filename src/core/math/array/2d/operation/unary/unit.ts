@@ -1,6 +1,6 @@
 import type { Array2D } from '../../../../../../types'
-import { divideArrayScalar } from '../binary/index'
-import { magnitudeArray } from '../../product/index'
+import { divideArrayScalar2d } from '../binary/index'
+import { magnitudeArray2d } from '../../product/index'
 
 /**
  * TBD
@@ -8,8 +8,8 @@ import { magnitudeArray } from '../../product/index'
  * @param {V} vector
  * @returns {number}
  */
-function unit<V extends Array2D>(vector: V, referenceVector: V): V {
-  return divideArrayScalar(vector, magnitudeArray(vector), referenceVector)
+function unit2d<V extends Array2D>(vector: V, referenceVector: V): V {
+  return divideArrayScalar2d(vector, magnitudeArray2d(vector), referenceVector)
 }
 
-export { unit as unitArray }
+export { unit2d as unitArray2d }

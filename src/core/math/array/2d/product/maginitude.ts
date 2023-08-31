@@ -1,3 +1,3 @@
-import { lengthArray } from './length'
+import { lengthArray2d } from './length'
 
-export { lengthArray as magnitudeArray }
+export { lengthArray2d as magnitudeArray2d }

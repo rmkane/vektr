@@ -6,8 +6,8 @@ import type { Array2D } from '../../../../../types'
  * @param {V} vector
  * @returns {number} Angle in radians
  */
-function horizontalAngle<V extends Array2D>(vector: V): number {
+function horizontalAngle2d<V extends Array2D>(vector: V): number {
   return Math.atan2(vector[1], vector[0])
 }
 
-export { horizontalAngle as horizontalAngleArray }
+export { horizontalAngle2d as horizontalAngleArray2d }

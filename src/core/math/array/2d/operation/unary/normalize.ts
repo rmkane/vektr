@@ -1,3 +1,3 @@
-import { unitArray } from './unit'
+import { unitArray2d } from './unit'
 
-export { unitArray as normizeArray }
+export { unitArray2d as normizeArray2d }

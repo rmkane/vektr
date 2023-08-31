@@ -8,7 +8,7 @@ import type { Array2D } from '../../../../../../types'
  * @param {V} referenceVector - The reference vector
  * @returns {V} The modified reference vector
  */
-function divide<V extends Array2D>(vector: V, otherVector: V, referenceVector: V): V {
+function divide2d<V extends Array2D>(vector: V, otherVector: V, referenceVector: V): V {
   referenceVector[0] = vector[0] / otherVector[0]
   referenceVector[1] = vector[1] / otherVector[1]
   return referenceVector
@@ -22,7 +22,7 @@ function divide<V extends Array2D>(vector: V, otherVector: V, referenceVector: V
  * @param {V} referenceVector - The reference
  * @returns {V} The modified reference vector
  */
-function divideX<V extends Array2D>(vector: V, otherVector: V, referenceVector: V): V {
+function divide2dX<V extends Array2D>(vector: V, otherVector: V, referenceVector: V): V {
   referenceVector[0] = vector[0] / otherVector[0]
   return referenceVector
 }
@@ -35,7 +35,7 @@ function divideX<V extends Array2D>(vector: V, otherVector: V, referenceVector: 
  * @param {V} referenceVector - The reference vector
  * @returns {V} The modified reference vector
  */
-function divideY<V extends Array2D>(vector: V, otherVector: V, referenceVector: V): V {
+function divide2dY<V extends Array2D>(vector: V, otherVector: V, referenceVector: V): V {
   referenceVector[1] = vector[1] / otherVector[1]
   return referenceVector
 }
@@ -48,7 +48,7 @@ function divideY<V extends Array2D>(vector: V, otherVector: V, referenceVector: 
  * @param {V} referenceVector - The reference vector
  * @returns {V} The modified reference vector
  */
-function divideScalar<V extends Array2D>(vector: V, value: number, referenceVector: V): V {
+function divideScalar2d<V extends Array2D>(vector: V, value: number, referenceVector: V): V {
   referenceVector[0] = vector[0] / value
   referenceVector[1] = vector[1] / value
   return referenceVector
@@ -62,7 +62,7 @@ function divideScalar<V extends Array2D>(vector: V, value: number, referenceVect
  * @param {V} referenceVector - The reference vector
  * @returns {V} The resulting vector
  */
-function divideScalarX<V extends Array2D>(vector: V, x: number, referenceVector: V): V {
+function divideScalar2dX<V extends Array2D>(vector: V, x: number, referenceVector: V): V {
   referenceVector[0] = vector[0] / x
   return referenceVector
 }
@@ -75,14 +75,14 @@ function divideScalarX<V extends Array2D>(vector: V, x: number, referenceVector:
  * @param {V} referenceVector - The reference vector
  * @returns {V} The resulting vector
  */
-function divideScalarY<V extends Array2D>(vector: V, y: number, referenceVector: V): V {
+function divideScalar2dY<V extends Array2D>(vector: V, y: number, referenceVector: V): V {
   referenceVector[1] = vector[1] / y
   return referenceVector
 }
 
-export { divide as divideArray }
-export { divideX as divideArrayX }
-export { divideY as divideArrayY }
-export { divideScalar as divideArrayScalar }
-export { divideScalarX as divideArrayScalarX }
-export { divideScalarY as divideArrayScalarY }
+export { divide2d as divideArray2d }
+export { divide2dX as divideArray2dX }
+export { divide2dY as divideArray2dY }
+export { divideScalar2d as divideArrayScalar2d }
+export { divideScalar2dX as divideArrayScalar2dX }
+export { divideScalar2dY as divideArrayScalar2dY }

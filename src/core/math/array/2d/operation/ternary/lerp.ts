@@ -10,7 +10,7 @@ import { lerp as lerpFn } from '../../../../functions'
  * @param {V} referenceVector - The reference
  * @returns {V} The modified reference vector
  */
-function lerp<V extends Array2D>(start: V, end: V, amount: number, referenceVector: V): V {
+function lerp2d<V extends Array2D>(start: V, end: V, amount: number, referenceVector: V): V {
   referenceVector[0] = lerpFn(start[0], end[0], amount)
   referenceVector[1] = lerpFn(start[1], end[1], amount)
   return referenceVector
@@ -25,7 +25,7 @@ function lerp<V extends Array2D>(start: V, end: V, amount: number, referenceVect
  * @param {V} referenceVector - The reference
  * @returns {V} The modified reference vector
  */
-function lerpX<V extends Array2D>(start: V, end: V, amount: number, referenceVector: V): V {
+function lerp2dX<V extends Array2D>(start: V, end: V, amount: number, referenceVector: V): V {
   referenceVector[0] = lerpFn(start[0], end[0], amount)
   return referenceVector
 }
@@ -39,11 +39,11 @@ function lerpX<V extends Array2D>(start: V, end: V, amount: number, referenceVec
  * @param {V} referenceVector - The reference
  * @returns {V} The modified reference vector
  */
-function lerpY<V extends Array2D>(start: V, end: V, amount: number, referenceVector: V): V {
+function lerp2dY<V extends Array2D>(start: V, end: V, amount: number, referenceVector: V): V {
   referenceVector[1] = lerpFn(start[1], end[1], amount)
   return referenceVector
 }
 
-export { lerp as lerpArray }
-export { lerpX as lerpArrayX }
-export { lerpY as lerpArrayY }
+export { lerp2d as lerpArray2d }
+export { lerp2dX as lerpArray2dX }
+export { lerp2dY as lerpArray2dY }

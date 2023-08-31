@@ -8,7 +8,7 @@ import type { Array2D } from '../../../../../../types'
  * @param {V} referenceVector - The reference vector
  * @returns {V} The modified reference vector
  */
-function subtract<V extends Array2D>(vector: V, otherVector: V, referenceVector: V): V {
+function subtract2d<V extends Array2D>(vector: V, otherVector: V, referenceVector: V): V {
   referenceVector[0] = vector[0] - otherVector[0]
   referenceVector[1] = vector[1] - otherVector[1]
   return referenceVector
@@ -22,7 +22,7 @@ function subtract<V extends Array2D>(vector: V, otherVector: V, referenceVector:
  * @param {V} referenceVector - The reference
  * @returns {V} The modified reference vector
  */
-function subtractX<V extends Array2D>(vector: V, otherVector: V, referenceVector: V): V {
+function subtract2dX<V extends Array2D>(vector: V, otherVector: V, referenceVector: V): V {
   referenceVector[0] = vector[0] - otherVector[0]
   return referenceVector
 }
@@ -35,7 +35,7 @@ function subtractX<V extends Array2D>(vector: V, otherVector: V, referenceVector
  * @param {V} referenceVector - The reference vector
  * @returns {V} The modified reference vector
  */
-function subtractY<V extends Array2D>(vector: V, otherVector: V, referenceVector: V): V {
+function subtract2dY<V extends Array2D>(vector: V, otherVector: V, referenceVector: V): V {
   referenceVector[1] = vector[1] - otherVector[1]
   return referenceVector
 }
@@ -48,7 +48,7 @@ function subtractY<V extends Array2D>(vector: V, otherVector: V, referenceVector
  * @param {V} referenceVector - The reference vector
  * @returns {V} The modified reference vector
  */
-function subtractScalar<V extends Array2D>(vector: V, value: number, referenceVector: V): V {
+function subtractScalar2d<V extends Array2D>(vector: V, value: number, referenceVector: V): V {
   referenceVector[0] = vector[0] - value
   referenceVector[1] = vector[1] - value
   return referenceVector
@@ -62,7 +62,7 @@ function subtractScalar<V extends Array2D>(vector: V, value: number, referenceVe
  * @param {V} referenceVector - The reference vector
  * @returns {V} The resulting vector
  */
-function subtractScalarX<V extends Array2D>(vector: V, x: number, referenceVector: V): V {
+function subtractScalar2dX<V extends Array2D>(vector: V, x: number, referenceVector: V): V {
   referenceVector[0] = vector[0] - x
   return referenceVector
 }
@@ -75,14 +75,14 @@ function subtractScalarX<V extends Array2D>(vector: V, x: number, referenceVecto
  * @param {V} referenceVector - The reference vector
  * @returns {V} The resulting vector
  */
-function subtractScalarY<V extends Array2D>(vector: V, y: number, referenceVector: V): V {
+function subtractScalar2dY<V extends Array2D>(vector: V, y: number, referenceVector: V): V {
   referenceVector[1] = vector[1] - y
   return referenceVector
 }
 
-export { subtract as subtractArray }
-export { subtractX as subtractArrayX }
-export { subtractY as subtractArrayY }
-export { subtractScalar as subtractArrayScalar }
-export { subtractScalarX as subtractArrayScalarX }
-export { subtractScalarY as subtractArrayScalarY }
+export { subtract2d as subtractArray2d }
+export { subtract2dX as subtractArray2dX }
+export { subtract2dY as subtractArray2dY }
+export { subtractScalar2d as subtractArrayScalar2d }
+export { subtractScalar2dX as subtractArrayScalar2dX }
+export { subtractScalar2dY as subtractArrayScalar2dY }

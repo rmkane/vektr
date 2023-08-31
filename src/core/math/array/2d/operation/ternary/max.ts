@@ -8,7 +8,7 @@ import type { Array2D } from '../../../../../../types'
  * @param {V} referenceVector - The reference
  * @returns {V} The modified reference vector
  */
-function max<V extends Array2D>(vector: V, relativeVector: V, referenceVector: V): V {
+function max2d<V extends Array2D>(vector: V, relativeVector: V, referenceVector: V): V {
   referenceVector[0] = Math.max(vector[0], relativeVector[0])
   referenceVector[1] = Math.max(vector[1], relativeVector[1])
   return referenceVector
@@ -22,7 +22,7 @@ function max<V extends Array2D>(vector: V, relativeVector: V, referenceVector: V
  * @param {V} referenceVector - The reference
  * @returns {V} The modified reference vector
  */
-function maxX<V extends Array2D>(vector: V, relativeVector: V, referenceVector: V): V {
+function max2dX<V extends Array2D>(vector: V, relativeVector: V, referenceVector: V): V {
   referenceVector[0] = Math.max(vector[0], relativeVector[0])
   return referenceVector
 }
@@ -35,11 +35,11 @@ function maxX<V extends Array2D>(vector: V, relativeVector: V, referenceVector: 
  * @param {V} referenceVector - The reference
  * @returns {V} The modified reference vector
  */
-function maxY<V extends Array2D>(vector: V, relativeVector: V, referenceVector: V): V {
+function max2dY<V extends Array2D>(vector: V, relativeVector: V, referenceVector: V): V {
   referenceVector[1] = Math.max(vector[1], relativeVector[1])
   return referenceVector
 }
 
-export { max as maxArray }
-export { maxX as maxArrayX }
-export { maxY as maxArrayY }
+export { max2d as maxArray2d }
+export { max2dX as maxArray2dX }
+export { max2dY as maxArray2dY }

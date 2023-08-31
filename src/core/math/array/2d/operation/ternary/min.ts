@@ -8,7 +8,7 @@ import type { Array2D } from '../../../../../../types'
  * @param {V} referenceVector - The reference
  * @returns {V} The modified reference vector
  */
-function min<V extends Array2D>(vector: V, relativeVector: V, referenceVector: V): V {
+function min2d<V extends Array2D>(vector: V, relativeVector: V, referenceVector: V): V {
   referenceVector[0] = Math.min(vector[0], relativeVector[0])
   referenceVector[1] = Math.min(vector[1], relativeVector[1])
   return referenceVector
@@ -22,7 +22,7 @@ function min<V extends Array2D>(vector: V, relativeVector: V, referenceVector: V
  * @param {V} referenceVector - The reference
  * @returns {V} The modified reference vector
  */
-function minX<V extends Array2D>(vector: V, relativeVector: V, referenceVector: V): V {
+function min2dX<V extends Array2D>(vector: V, relativeVector: V, referenceVector: V): V {
   referenceVector[0] = Math.min(vector[0], relativeVector[0])
   return referenceVector
 }
@@ -35,11 +35,11 @@ function minX<V extends Array2D>(vector: V, relativeVector: V, referenceVector: 
  * @param {V} referenceVector - The reference
  * @returns {V} The modified reference vector
  */
-function minY<V extends Array2D>(vector: V, relativeVector: V, referenceVector: V): V {
+function min2dY<V extends Array2D>(vector: V, relativeVector: V, referenceVector: V): V {
   referenceVector[1] = Math.min(vector[1], relativeVector[1])
   return referenceVector
 }
 
-export { min as minArray }
-export { minX as minArrayX }
-export { minY as minArrayY }
+export { min2d as minArray2d }
+export { min2dX as minArray2dX }
+export { min2dY as minArray2dY }

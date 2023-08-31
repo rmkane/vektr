@@ -1,3 +1,3 @@
-import { horizontalAngleArray } from './horizontalAngle'
+import { horizontalAngleArray2d } from './horizontalAngle'
 
-export { horizontalAngleArray as directionArray }
+export { horizontalAngleArray2d as directionArray2d }

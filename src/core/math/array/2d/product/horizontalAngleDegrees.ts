@@ -1,6 +1,6 @@
 import type { Array2D } from '../../../../../types'
 import { radiansToDegrees } from '../../../functions'
-import { horizontalAngleArray } from './horizontalAngle'
+import { horizontalAngleArray2d } from './horizontalAngle'
 
 /**
  * TBD
@@ -8,8 +8,8 @@ import { horizontalAngleArray } from './horizontalAngle'
  * @param {V} vector
  * @returns {number} Angle in degrees
  */
-function horizontalAngleDegrees<V extends Array2D>(vector: V): number {
-  return radiansToDegrees(horizontalAngleArray(vector))
+function horizontalAngleDegrees2d<V extends Array2D>(vector: V): number {
+  return radiansToDegrees(horizontalAngleArray2d(vector))
 }
 
-export { horizontalAngleDegrees as horizontalAngleDegreesArray }
+export { horizontalAngleDegrees2d as horizontalAngleDegreesArray2d }

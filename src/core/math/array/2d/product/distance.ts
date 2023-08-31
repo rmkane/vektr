@@ -1,13 +1,24 @@
 import type { Array2D } from '../../../../../types'
 
 /**
+ * Calculates the Euclidean distance between two vectors.
+ *
+ * @param {V} vector
+ * @param {V} otherVector
+ * @returns {number} The distance
+ */
+function distance2d<V extends Array2D>(vector: V, otherVector: V): number {
+  return Math.hypot(distance2dX(vector, otherVector), distance2dY(vector, otherVector))
+}
+
+/**
  * TBD
  *
  * @param {V} vector
  * @param {V} otherVector
  * @returns {number}
  */
-function distanceX<V extends Array2D>(vector: V, otherVector: V): number {
+function distance2dX<V extends Array2D>(vector: V, otherVector: V): number {
   return vector[0] - otherVector[0]
 }
 
@@ -18,19 +29,8 @@ function distanceX<V extends Array2D>(vector: V, otherVector: V): number {
  * @param {V} otherVector
  * @returns {number}
  */
-function distanceY<V extends Array2D>(vector: V, otherVector: V): number {
+function distance2dY<V extends Array2D>(vector: V, otherVector: V): number {
   return vector[1] - otherVector[1]
 }
 
-/**
- * Calculates the Euclidean distance between two vectors.
- *
- * @param {V} vector
- * @param {V} otherVector
- * @returns {number} The distance
- */
-function distance<V extends Array2D>(vector: V, otherVector: V): number {
-  return Math.hypot(distanceX(vector, otherVector), distanceY(vector, otherVector))
-}
-
-export { distance as distanceArray, distanceX as distanceArrayX, distanceY as distanceArrayY }
+export { distance2d as distanceArray2d, distance2dX as distanceArray2dX, distance2dY as distanceArray2dY }
