@@ -1,7 +1,7 @@
 import type { Object2D } from '../../../../../../types'
 
 /**
- * TBD.
+ * Applies the difference of {@link vector} and {@link otherVector} to {@link referenceVector}.
  *
  * @param {V} vector - First vector operand
  * @param {V} otherVector - Second vector operand
@@ -15,7 +15,7 @@ function subtract2d<V extends Object2D>(vector: V, otherVector: V, referenceVect
 }
 
 /**
- * TBD.
+ * Applies the difference of {@link vector} x-coordinate and {@link otherVector} to {@link referenceVector} and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} otherVector - Second vector operand
@@ -28,7 +28,8 @@ function subtract2dX<V extends Object2D>(vector: V, otherVector: V, referenceVec
 }
 
 /**
- * TBD.
+ * Applies the difference of {@link vector} and {@link otherVector} y-coordinates to {@link referenceVector} and returns
+ * it.
  *
  * @param {V} vector - First vector operand
  * @param {V} otherVector - Second vector operand
@@ -41,7 +42,7 @@ function subtract2dY<V extends Object2D>(vector: V, otherVector: V, referenceVec
 }
 
 /**
- * TBD.
+ * Applies the difference of {@link vector} and {@link value} to {@link referenceVector} and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} value - Value to subtract
@@ -55,7 +56,7 @@ function subtractScalar2d<V extends Object2D>(vector: V, value: number, referenc
 }
 
 /**
- * TBD.
+ * Applies the difference of {@link vector} x-coordinate and {@link x} to {@link referenceVector} and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} x - Value to subtract to x
@@ -68,7 +69,7 @@ function subtractScalar2dX<V extends Object2D>(vector: V, x: number, referenceVe
 }
 
 /**
- * TBD.
+ * Applies the difference of {@link vector} y-coordinate and {@link y} to {@link referenceVector} and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} y - Value to subtract to y

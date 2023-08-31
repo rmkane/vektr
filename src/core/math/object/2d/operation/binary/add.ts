@@ -1,6 +1,7 @@
 import type { Object2D } from '../../../../../../types'
+
 /**
- * Adds the result of the addition of {@link vector} and the {@link otherVector} to {@link referenceVector}.
+ * Applies the sum of {@link vector} and {@link otherVector} to {@link referenceVector}.
  *
  * @typeParam V - A vector-like object
  * @param {V} vector - First vector operand
@@ -15,7 +16,7 @@ function add2d<V extends Object2D>(vector: V, otherVector: V, referenceVector: V
 }
 
 /**
- * Sums the {@link vector} x-coordinate and {@link otherVector} to {@link referenceVector} and returns it.
+ * Applies the sum of {@link vector} x-coordinate and {@link otherVector} to {@link referenceVector} and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} otherVector - Second vector operand
@@ -28,7 +29,7 @@ function add2dX<V extends Object2D>(vector: V, otherVector: V, referenceVector: 
 }
 
 /**
- * Sums {@link vector} and {@link otherVector} y-coordinates to {@link referenceVector} and returns it.
+ * Applies the sum of {@link vector} and {@link otherVector} y-coordinates to {@link referenceVector} and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} otherVector - Second vector operand
@@ -41,7 +42,7 @@ function add2dY<V extends Object2D>(vector: V, otherVector: V, referenceVector: 
 }
 
 /**
- * Sums {@link vector} and {@link value} to {@link referenceVector} and returns it.
+ * Applies the sum of {@link vector} and {@link value} to {@link referenceVector} and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} value - Value to add
@@ -55,7 +56,7 @@ function addScalar2d<V extends Object2D>(vector: V, value: number, referenceVect
 }
 
 /**
- * Sums the {@link vector} x-coordinate and {@link x} to {@link referenceVector} and returns it.
+ * Applies the sum of {@link vector} x-coordinate and {@link x} to {@link referenceVector} and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} x - Value to add to x
@@ -68,7 +69,7 @@ function addScalar2dX<V extends Object2D>(vector: V, x: number, referenceVector:
 }
 
 /**
- * Sums the {@link vector} y-coordinate and {@link y} to {@link referenceVector} and returns it.
+ * Applies the sum of {@link vector} y-coordinate and {@link y} to {@link referenceVector} and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} y - Value to add to y

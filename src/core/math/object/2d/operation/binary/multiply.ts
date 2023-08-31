@@ -1,7 +1,7 @@
 import type { Object2D } from '../../../../../../types'
 
 /**
- * TBD.
+ * Applies the product of {@link vector} and {@link otherVector} to {@link referenceVector}.
  *
  * @param {V} vector - First vector operand
  * @param {V} otherVector - Second vector operand
@@ -15,7 +15,7 @@ function multiply2d<V extends Object2D>(vector: V, otherVector: V, referenceVect
 }
 
 /**
- * TBD.
+ * Applies the product of {@link vector} x-coordinate and {@link otherVector} to {@link referenceVector} and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} otherVector - Second vector operand
@@ -28,7 +28,7 @@ function multiply2dX<V extends Object2D>(vector: V, otherVector: V, referenceVec
 }
 
 /**
- * TBD.
+ * Applies the product of {@link vector} and {@link otherVector} y-coordinates to {@link referenceVector} and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} otherVector - Second vector operand
@@ -41,7 +41,7 @@ function multiply2dY<V extends Object2D>(vector: V, otherVector: V, referenceVec
 }
 
 /**
- * TBD.
+ * Applies the product of {@link vector} and {@link value} to {@link referenceVector} and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} value - Value to multiply
@@ -55,7 +55,7 @@ function multiplyScalar2d<V extends Object2D>(vector: V, value: number, referenc
 }
 
 /**
- * TBD.
+ * Applies the product of {@link vector} x-coordinate and {@link x} to {@link referenceVector} and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} x - Value to multiply to x
@@ -68,7 +68,7 @@ function multiplyScalar2dX<V extends Object2D>(vector: V, x: number, referenceVe
 }
 
 /**
- * TBD.
+ * Applies the product of {@link vector} y-coordinate and {@link y} to {@link referenceVector} and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} y - Value to multiply to y
