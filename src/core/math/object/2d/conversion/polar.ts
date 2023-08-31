@@ -11,7 +11,7 @@ import { directionObject2d, magnitudeObject2d } from '../product/index'
 function toPolar2d<V extends Object2D>(vector: V): Polar2DObject {
   return {
     radius: magnitudeObject2d(vector),
-    angle: directionObject2d(vector),
+    polarAngle: directionObject2d(vector),
   }
 }
 
@@ -22,8 +22,8 @@ function toPolar2d<V extends Object2D>(vector: V): Polar2DObject {
  * @returns {V} A point object in cartesian space
  */
 function fromPolar2d<V extends Object2D>(polar: Polar2DObject, referenceVector: V): V {
-  referenceVector.x = fromPolarX(polar.radius, polar.angle)
-  referenceVector.y = fromPolarY(polar.radius, polar.angle)
+  referenceVector.x = fromPolarX(polar.radius, polar.polarAngle)
+  referenceVector.y = fromPolarY(polar.radius, polar.polarAngle)
   return referenceVector
 }
 
