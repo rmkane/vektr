@@ -7,9 +7,9 @@ import type { Object2D } from '../../../../../types'
  * @param {V} referenceVector - The reference
  * @returns {V} The modified reference vector
  */
-function ceil<V extends Object2D>(vector: V, referenceVector: V): V {
-  referenceVector.x = Math.ceil(vector.x)
-  referenceVector.y = Math.ceil(vector.y)
+function abs<V extends Object2D>(vector: V, referenceVector: V): V {
+  referenceVector.x = Math.abs(vector.x)
+  referenceVector.y = Math.abs(vector.y)
   return referenceVector
 }
 
@@ -20,8 +20,8 @@ function ceil<V extends Object2D>(vector: V, referenceVector: V): V {
  * @param {V} referenceVector - The reference
  * @returns {V} The modified reference vector
  */
-function ceilX<V extends Object2D>(vector: V, referenceVector: V): V {
-  referenceVector.x = Math.ceil(vector.x)
+function absX<V extends Object2D>(vector: V, referenceVector: V): V {
+  referenceVector.x = Math.abs(vector.x)
   return referenceVector
 }
 
@@ -32,11 +32,11 @@ function ceilX<V extends Object2D>(vector: V, referenceVector: V): V {
  * @param {V} referenceVector - The reference
  * @returns {V} The modified reference vector
  */
-function ceilY<V extends Object2D>(vector: V, referenceVector: V): V {
-  referenceVector.y = Math.ceil(vector.y)
+function absY<V extends Object2D>(vector: V, referenceVector: V): V {
+  referenceVector.y = Math.abs(vector.y)
   return referenceVector
 }
 
-export { ceil as ceilObject }
-export { ceilX as ceilObjectX }
-export { ceilY as ceilObjectY }
+export { abs as absObject }
+export { absX as absObjectX }
+export { absY as absObjectY }

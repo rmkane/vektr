@@ -38,8 +38,25 @@ console.log(v4.toJSON())
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { ObjectVectorMath2D } = require('../lib/core/math/index.js')
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { zeroObject } = require('../lib/core/util/object.js')
 
-const v5 = ObjectVectorMath2D.add(v1, v2, new Vector2D())
+const v5 = ObjectVectorMath2D.add(v1, v2, zeroObject())
 
 // eslint-disable-next-line no-console
-console.log(v5.toJSON())
+console.log(v5)
+
+/*
+ * ============================================================================
+ * Example usage for addObject
+ * ============================================================================
+ */
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { ArrayVectorMath2D } = require('../lib/core/math/index.js')
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { zeroArray } = require('../lib/core/util/array.js')
+
+const v6 = ArrayVectorMath2D.add(v1.toArray(), v2.toArray(), zeroArray())
+// eslint-disable-next-line no-console
+console.log(v6)
