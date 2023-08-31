@@ -22,13 +22,21 @@ const MATH_DIR = path.resolve(SRC_DIR, 'core/math')
 const OBJECT_DIR = path.resolve(MATH_DIR, 'object')
 const ARRAY_DIR = path.resolve(MATH_DIR, 'array')
 
-console.log('Removing: %s', ARRAY_DIR)
+let quietMode = process.argv.includes('-q')
+
+function showMessage(...args) {
+  if (!quietMode) {
+    console.log(...args)
+  }
+}
+
+showMessage('Removing: %s', ARRAY_DIR)
 await rimraf(ARRAY_DIR)
 
-console.log('Copying %s to %s', OBJECT_DIR, ARRAY_DIR)
+showMessage('Copying %s to %s', OBJECT_DIR, ARRAY_DIR)
 await fs.promises.cp(OBJECT_DIR, ARRAY_DIR, { recursive: true })
 
-console.log('Writing files...')
+showMessage('Rewriting files...')
 const ioOptions = { encoding: 'utf-8' }
 rewriteFiles(
   ARRAY_DIR,

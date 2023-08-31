@@ -38,6 +38,7 @@
     "build:lib": "tsc --project tsconfig.json --outDir lib",
     "build:cjs": "webpack",
     "fix:esm": "yarn dlx fix-esm-import-path lib-esm/index.js",
+    "generate": "node scripts/automation/generateArrayLib.mjs -q",
     "test": "jest",
     "serve": "webpack-dev-server",
     "docs": "typedoc src/index.ts",
