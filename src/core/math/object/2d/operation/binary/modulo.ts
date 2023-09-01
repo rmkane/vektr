@@ -1,7 +1,7 @@
 import type { Object2D } from '../../../../../../types'
 
 /**
- * Applies the modulo of {@link vector} and {@link otherVector} to {@link referenceVector}.
+ * Applies the remainder of {@link vector} and {@link otherVector} to {@link referenceVector}.
  *
  * @param {V} vector - First vector operand
  * @param {V} otherVector - Second vector operand
@@ -15,7 +15,7 @@ function modulo2d<V extends Object2D>(vector: V, otherVector: V, referenceVector
 }
 
 /**
- * Applies the modulo of {@link vector} x-coordinate and {@link otherVector} to {@link referenceVector} and returns it.
+ * Applies the remainder of {@link vector} x-coordinate and {@link otherVector} to {@link referenceVector} and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} otherVector - Second vector operand
@@ -28,7 +28,7 @@ function modulo2dX<V extends Object2D>(vector: V, otherVector: V, referenceVecto
 }
 
 /**
- * Applies the modulo of {@link vector} and {@link otherVector} y-coordinates to {@link referenceVector} and returns it.
+ * Applies the remainder of {@link vector} and {@link otherVector} y-coordinates to {@link referenceVector} and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} otherVector - Second vector operand
@@ -41,7 +41,7 @@ function modulo2dY<V extends Object2D>(vector: V, otherVector: V, referenceVecto
 }
 
 /**
- * Applies the modulo of {@link vector} and {@link value} to {@link referenceVector} and returns it.
+ * Applies the remainder of {@link vector} and {@link value} to {@link referenceVector} and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} value - Value to modulo
@@ -55,7 +55,7 @@ function moduloScalar2d<V extends Object2D>(vector: V, value: number, referenceV
 }
 
 /**
- * Applies the modulo of {@link vector} x-coordinate and {@link x} to {@link referenceVector} and returns it.
+ * Applies the remainder of {@link vector} x-coordinate and {@link x} to {@link referenceVector} and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} x - Value to modulo to x
@@ -68,7 +68,7 @@ function moduloScalar2dX<V extends Object2D>(vector: V, x: number, referenceVect
 }
 
 /**
- * Applies the modulo of {@link vector} y-coordinate and {@link y} to {@link referenceVector} and returns it.
+ * Applies the remainder of {@link vector} y-coordinate and {@link y} to {@link referenceVector} and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} y - Value to modulo to y

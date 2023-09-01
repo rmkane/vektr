@@ -4,13 +4,21 @@ function transformNames(text) {
     .replace(/object/g, 'array') // Imports paths
 }
 
+function xyzToIndex(xyz) {
+  return xyz.charCodeAt(0) - 0x78 // ASCII Character 'x'
+}
+
 function transformCoordinates(text) {
-  return text
-    .replace(/\.x\b/g, '[0]') // x-coordinate to [0]
-    .replace(/\.y\b/g, '[1]') // y-coordinate to [1]
-    .replace(/\.z\b/g, '[2]') // z-coordinate to [2]
-    .replace(/\.radius\b/g, '[0]') // radius to [0]
-    .replace(/\.polarAngle\b/g, '[1]') // polarAngle to [1]
+  return (
+    text
+      // Assignment of optional
+      .replace(/= (\w+)\?\.([xyz])\b/g, (_, scope, prop) => `= ${scope}?.[${xyzToIndex(prop)}]`)
+      // Access
+      .replace(/\.([xyz])\b/g, (_, prop) => `[${xyzToIndex(prop)}]`)
+      // Polar coordinates
+      .replace(/\.radius\b/g, '[0]') // radius to [0]
+      .replace(/\.polarAngle\b/g, '[1]') // polarAngle to [1]
+  )
 }
 
 function transformSpread(text) {

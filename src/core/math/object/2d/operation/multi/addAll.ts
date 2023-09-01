@@ -8,10 +8,20 @@ import type { Object2D } from '../../../../../../types'
  * @returns {V} The modified reference vector
  */
 function addAll2d<V extends Object2D>(referenceVector: V, ...vectors: V[]): V {
-  for (const vector of vectors) {
-    referenceVector.x += vector.x
-    referenceVector.y += vector.y
+  const [initialVector, ...otherVectors] = vectors
+
+  let x = initialVector?.x ?? 0
+  let y = initialVector?.y ?? 0
+
+  for (const vector of otherVectors) {
+    x += vector.x
+    y += vector.y
   }
+
+  referenceVector.x = x
+  referenceVector.y = y
+
   return referenceVector
 }
+
 export { addAll2d as addAllObject2d }

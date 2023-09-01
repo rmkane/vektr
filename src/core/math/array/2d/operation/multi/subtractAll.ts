@@ -8,10 +8,20 @@ import type { Array2D } from '../../../../../../types'
  * @returns {V} The modified reference vector
  */
 function subtractAll2d<V extends Array2D>(referenceVector: V, ...vectors: V[]): V {
-  for (const vector of vectors) {
-    referenceVector[0] -= vector[0]
-    referenceVector[1] -= vector[1]
+  const [initialVector, ...otherVectors] = vectors
+
+  let x = initialVector?.[0] ?? 0
+  let y = initialVector?.[1] ?? 0
+
+  for (const vector of otherVectors) {
+    x -= vector[0]
+    y -= vector[1]
   }
+
+  referenceVector[0] = x
+  referenceVector[1] = y
+
   return referenceVector
 }
+
 export { subtractAll2d as subtractAllArray2d }
