@@ -12,6 +12,7 @@ import url from 'node:url'
 import { ArgumentParser } from 'argparse'
 import { rimraf } from 'rimraf'
 
+import { transformCoordinates, transformNames, transformObjects, transformSpread } from './modules/transformers.mjs'
 import rewriteFiles from './modules/updateFiles.mjs'
 
 const __filename = url.fileURLToPath(import.meta.url)
@@ -26,6 +27,8 @@ const SRC_DIR = path.resolve(__dirname, '../../src')
 const MATH_DIR = path.resolve(SRC_DIR, 'core/math')
 const OBJECT_DIR = path.resolve(MATH_DIR, 'object')
 const ARRAY_DIR = path.resolve(MATH_DIR, 'array')
+
+const transformers = [transformNames, transformCoordinates, transformObjects, transformSpread]
 
 main() // Call main function
 
@@ -56,22 +59,12 @@ async function main() {
     { recursive: true }
   )
 }
-
 async function rewriteFileContent(file, options) {
   const fileContent = await fs.promises.readFile(file, options)
 
-  const updatedContent = fileContent
-    .replace(/Object/g, 'Array')
-    .replace(/object/g, 'array')
-    .replace(/\.x\b/g, '[0]') // x-coordinate to [0]
-    .replace(/\.y\b/g, '[1]') // y-coordinate to [1]
-    .replace(/\.z\b/g, '[2]') // z-coordinate to [2]
-    .replace(/\.radius\b/g, '[0]') // radius to [0]
-    .replace(/\.polarAngle\b/g, '[1]') // polarAngle to [1]
-    .replace(/\{ x: (.+), y: (.+) \}/g, '[$1, $2]') // Inline object
-    .replace(/\{ x: (.+), y: (.+), z: (.+) \}/g, '[$1, $2, $3]') // Inline object
-    .replace(/\{\n\s*\w+:\s(.+),\n\s*\s+\w+:\s(.+),\n\s*\}/g, '[$1, $2]') // Polar
-    .replace(/{ ...([A-Z_]+) }/g, '[...$1]') // Unit test constant spread
+  const updatedContent = transformers.reduce(function (content, transformer) {
+    return transformer(content)
+  }, fileContent)
 
   await fs.promises.writeFile(file, updatedContent, options)
 }
