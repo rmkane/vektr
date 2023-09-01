@@ -1,4 +1,4 @@
-import * as Vektr from '../lib/index.js'
+import * as Vektr from '../../lib/index.js'
 
 const { Vector2D } = Vektr
 
