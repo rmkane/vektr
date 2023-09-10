@@ -2,11 +2,11 @@ import type { Object2D } from '../../../../../../types'
 import { clamp as clampFn } from '../../../../functions'
 
 /**
- * TBD
+ * Clamp a vector between a minimum vector and a maximum vector.
  *
- * @param {V} vector
- * @param {V} min
- * @param {V} max
+ * @param {V} vector - Vector to clamp
+ * @param {V} min - Minimum vector limit
+ * @param {V} max - Maximum vector limit
  * @param {V} referenceVector - The reference
  * @returns {V} The modified reference vector
  */

@@ -3,7 +3,6 @@ import type { Array2D } from '../../../../../../types'
 /**
  * Applies the sum of {@link vector} and {@link otherVector} to {@link referenceVector}.
  *
- * @typeParam V - A vector-like array
  * @param {V} vector - First vector operand
  * @param {V} otherVector - Second vector operand
  * @param {V} referenceVector - The reference vector
