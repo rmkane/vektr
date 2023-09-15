@@ -1,3 +1,37 @@
-import { addArray3d as add, addArray3dX as addX, addArray3dY as addY, addArray3dZ as addZ } from './operation/index'
+import {
+  addArray3d as add,
+  addArray3dX as addX,
+  addArray3dY as addY,
+  addArray3dZ as addZ,
+  divideArray3d as divide,
+  divideArray3dX as divideX,
+  divideArray3dY as divideY,
+  divideArray3dZ as divideZ,
+  multiplyArray3d as multiply,
+  multiplyArray3dX as multiplyX,
+  multiplyArray3dY as multiplyY,
+  multiplyArray3dZ as multiplyZ,
+  subtractArray3d as subtract,
+  subtractArray3dX as subtractX,
+  subtractArray3dY as subtractY,
+  subtractArray3dZ as subtractZ,
+} from './operation/index'
 
-export { add, addX, addY, addZ }
+export {
+  add,
+  addX,
+  addY,
+  addZ,
+  divide,
+  divideX,
+  divideY,
+  divideZ,
+  multiply,
+  multiplyX,
+  multiplyY,
+  multiplyZ,
+  subtract,
+  subtractX,
+  subtractY,
+  subtractZ,
+}
