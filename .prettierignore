@@ -6,3 +6,5 @@ lib
 lib-esm
 
 tsconfig.json
+
+.yarnrc.yml
