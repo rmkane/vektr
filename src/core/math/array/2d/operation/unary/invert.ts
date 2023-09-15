@@ -1,10 +1,10 @@
 import type { Array2D } from '../../../../../../types'
 
 /**
- * Inverts the x and y coordinates of a vector.
+ * Applies the inverted values of the x and y coordinates to the reference vector and returns it.
  *
  * @param {V} vector - A vector to invert
- * @param {V} referenceVector - The reference
+ * @param {V} referenceVector - The reference vector
  * @returns {V} The modified reference vector
  */
 function invert2d<V extends Array2D>(vector: V, referenceVector: V): V {
@@ -14,10 +14,10 @@ function invert2d<V extends Array2D>(vector: V, referenceVector: V): V {
 }
 
 /**
- * Inverts the x-coordinate of a vector.
+ * Applies the inverted x-coordinate to the reference vector and returns it.
  *
  * @param {V} vector - A vector to invert
- * @param {V} referenceVector - The reference
+ * @param {V} referenceVector - The reference vector
  * @returns {V} The modified reference vector
  */
 function invert2dX<V extends Array2D>(vector: V, referenceVector: V): V {
@@ -30,7 +30,7 @@ function invert2dX<V extends Array2D>(vector: V, referenceVector: V): V {
  * Inverts the y-coordinate of a vector.
  *
  * @param {V} vector - A vector to invert
- * @param {V} referenceVector - The reference
+ * @param {V} referenceVector - The reference vector
  * @returns {V} The modified reference vector
  */
 function invert2dY<V extends Array2D>(vector: V, referenceVector: V): V {

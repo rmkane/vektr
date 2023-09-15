@@ -1,10 +1,10 @@
 import type { Array2D } from '../../../../../../types'
 
 /**
- * Round the values of the x and y coordinates up.
+ * Applies the rounded-up values of the x and y coordinates to the reference vector and returns it.
  *
  * @param {V} vector - A vector to round up
- * @param {V} referenceVector - The reference
+ * @param {V} referenceVector - The reference vector
  * @returns {V} The modified reference vector
  */
 function ceil2d<V extends Array2D>(vector: V, referenceVector: V): V {
@@ -14,10 +14,10 @@ function ceil2d<V extends Array2D>(vector: V, referenceVector: V): V {
 }
 
 /**
- * Round the value of the x-coordinate up.
+ * Applies the rounded-up value of the x-coordinate to the reference vector and returns it.
  *
  * @param {V} vector - A vector to round up
- * @param {V} referenceVector - The reference
+ * @param {V} referenceVector - The reference vector
  * @returns {V} The modified reference vector
  */
 function ceil2dX<V extends Array2D>(vector: V, referenceVector: V): V {
@@ -26,10 +26,10 @@ function ceil2dX<V extends Array2D>(vector: V, referenceVector: V): V {
 }
 
 /**
- * Round the value of the y-coordinate up.
+ * Applies the rounded-up value of the y-coordinate to the reference vector and returns it.
  *
  * @param {V} vector - A vector to round up
- * @param {V} referenceVector - The reference
+ * @param {V} referenceVector - The reference vector
  * @returns {V} The modified reference vector
  */
 function ceil2dY<V extends Array2D>(vector: V, referenceVector: V): V {

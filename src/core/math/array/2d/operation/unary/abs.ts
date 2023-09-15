@@ -1,10 +1,10 @@
 import type { Array2D } from '../../../../../../types'
 
 /**
- * Compute the absolute value of the x and y coordinates.
+ * Applies the absolute value of the x and y coordinates to the reference vector and returns it.
  *
  * @param {V} vector - A vector which the absolute value is needed
- * @param {V} referenceVector - The reference
+ * @param {V} referenceVector - The reference vector
  * @returns {V} The modified reference vector
  */
 function abs2d<V extends Array2D>(vector: V, referenceVector: V): V {
@@ -14,10 +14,10 @@ function abs2d<V extends Array2D>(vector: V, referenceVector: V): V {
 }
 
 /**
- * Compute the absolute value of the x-coordinate.
+ * Applies the absolute value of the x-coordinate to the reference vector and returns it.
  *
  * @param {V} vector - A vector which the absolute value is needed
- * @param {V} referenceVector - The reference
+ * @param {V} referenceVector - The reference vector
  * @returns {V} The modified reference vector
  */
 function abs2dX<V extends Array2D>(vector: V, referenceVector: V): V {
@@ -26,10 +26,10 @@ function abs2dX<V extends Array2D>(vector: V, referenceVector: V): V {
 }
 
 /**
- * Compute the absolute value of the y-coordinate.
+ * Applies the absolute value of the y-coordinate to the reference vector and returns it.
  *
  * @param {V} vector - A vector which the absolute value is needed
- * @param {V} referenceVector - The reference
+ * @param {V} referenceVector - The reference vector
  * @returns {V} The modified reference vector
  */
 function abs2dY<V extends Array2D>(vector: V, referenceVector: V): V {

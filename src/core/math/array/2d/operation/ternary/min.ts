@@ -1,11 +1,11 @@
 import type { Array2D } from '../../../../../../types'
 
 /**
- * Compute the minimum x and y coordinates between two vectors.
+ * Applies the minimum x and y coordinates between two vectors to the reference vector and returns it.
  *
- * @param {V} vector
- * @param {V} otherVector
- * @param {V} referenceVector - The reference
+ * @param {V} vector - A vector to compare
+ * @param {V} otherVector - A vector to compare with
+ * @param {V} referenceVector - The reference vector
  * @returns {V} The modified reference vector
  */
 function min2d<V extends Array2D>(vector: V, otherVector: V, referenceVector: V): V {
@@ -15,11 +15,11 @@ function min2d<V extends Array2D>(vector: V, otherVector: V, referenceVector: V)
 }
 
 /**
- * Compute the minimum x-coordinate between two vectors.
+ * Applies the minimum x-coordinate between two vectors to the reference vector and returns it.
  *
- * @param {V} vector
- * @param {V} otherVector
- * @param {V} referenceVector - The reference
+ * @param {V} vector - A vector to compare
+ * @param {V} otherVector - A vector to compare with
+ * @param {V} referenceVector - The reference vector
  * @returns {V} The modified reference vector
  */
 function min2dX<V extends Array2D>(vector: V, otherVector: V, referenceVector: V): V {
@@ -28,11 +28,11 @@ function min2dX<V extends Array2D>(vector: V, otherVector: V, referenceVector: V
 }
 
 /**
- * Compute the minimum y-coordinate between two vectors.
+ * Applies the minimum y-coordinate between two vectors to the reference vector and returns it.
  *
- * @param {V} vector
- * @param {V} otherVector
- * @param {V} referenceVector - The reference
+ * @param {V} vector - A vector to compare
+ * @param {V} otherVector - A vector to compare with
+ * @param {V} referenceVector - The reference vector
  * @returns {V} The modified reference vector
  */
 function min2dY<V extends Array2D>(vector: V, otherVector: V, referenceVector: V): V {

@@ -2,45 +2,45 @@ import type { Object2D } from '../../../../../../types'
 import { lerp as lerpFn } from '../../../../functions'
 
 /**
- * Interpolate a vector between a start and end vector by an amount.
+ * Applies the interpolation between two vectors by an amount to the reference vector and returns it.
  *
- * @param {V} start - Start position vector
- * @param {V} end - End position vector
+ * @param {V} startVector - Start position vector
+ * @param {V} endVector - End position vector
  * @param {number} amount - A value between [0, 1]
- * @param {V} referenceVector - The reference
+ * @param {V} referenceVector - The reference vector
  * @returns {V} The modified reference vector
  */
-function lerp2d<V extends Object2D>(start: V, end: V, amount: number, referenceVector: V): V {
-  referenceVector.x = lerpFn(start.x, end.x, amount)
-  referenceVector.y = lerpFn(start.y, end.y, amount)
+function lerp2d<V extends Object2D>(startVector: V, endVector: V, amount: number, referenceVector: V): V {
+  referenceVector.x = lerpFn(startVector.x, endVector.x, amount)
+  referenceVector.y = lerpFn(startVector.y, endVector.y, amount)
   return referenceVector
 }
 
 /**
- * Interpolate a vector's x-coordinate between a start and end vector by an amount.
+ * Applies the interpolation between two vector's x-coordinates by an amount to the reference vector and returns it.
  *
- * @param {V} start - Start position vector
- * @param {V} end - End position vector
+ * @param {V} startVector - Start position vector
+ * @param {V} endVector - End position vector
  * @param {number} amount - A value between [0, 1]
- * @param {V} referenceVector - The reference
+ * @param {V} referenceVector - The reference vector
  * @returns {V} The modified reference vector
  */
-function lerp2dX<V extends Object2D>(start: V, end: V, amount: number, referenceVector: V): V {
-  referenceVector.x = lerpFn(start.x, end.x, amount)
+function lerp2dX<V extends Object2D>(startVector: V, endVector: V, amount: number, referenceVector: V): V {
+  referenceVector.x = lerpFn(startVector.x, endVector.x, amount)
   return referenceVector
 }
 
 /**
- * Interpolate a vector's y-coordinate between a start and end vector by an amount.
+ * Applies the interpolation between two vector's y-coordinates by an amount to the reference vector and returns it.
  *
- * @param {V} start - Start position vector
- * @param {V} end - End position vector
+ * @param {V} startVector - Start position vector
+ * @param {V} endVector - End position vector
  * @param {number} amount - A value between [0, 1]
- * @param {V} referenceVector - The reference
+ * @param {V} referenceVector - The reference vector
  * @returns {V} The modified reference vector
  */
-function lerp2dY<V extends Object2D>(start: V, end: V, amount: number, referenceVector: V): V {
-  referenceVector.y = lerpFn(start.y, end.y, amount)
+function lerp2dY<V extends Object2D>(startVector: V, endVector: V, amount: number, referenceVector: V): V {
+  referenceVector.y = lerpFn(startVector.y, endVector.y, amount)
   return referenceVector
 }
 

@@ -1,7 +1,7 @@
 import type { Array2D } from '../../../../../types'
 
 /**
- * Computes the length (aka magnitude, norm) of a vector.
+ * Calculates the length (aka magnitude, norm) of a vector.
  *
  * @param {V} vector - A vector
  * @returns {number} The length of the vector

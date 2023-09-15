@@ -2,10 +2,10 @@ import type { Object2D } from '../../../../../../types'
 import { fract as fractFn } from '../../../../functions'
 
 /**
- * Keep the decimal portion of a vector's x and y coordinates.
+ * Applies the decimal portion of a vector's x and y coordinates to the reference vector and returns it.
  *
  * @param {V} vector - A vector
- * @param {V} referenceVector - The reference
+ * @param {V} referenceVector - The reference vector
  * @returns {V} The modified reference vector
  */
 function fract2d<V extends Object2D>(vector: V, referenceVector: V): V {
@@ -15,10 +15,10 @@ function fract2d<V extends Object2D>(vector: V, referenceVector: V): V {
 }
 
 /**
- * Keep the decimal portion of a vector's x-coordinate.
+ * Applies the decimal portion of a vector's x-coordinate to the reference vector and returns it.
  *
  * @param {V} vector - A vector
- * @param {V} referenceVector - The reference
+ * @param {V} referenceVector - The reference vector
  * @returns {V} The modified reference vector
  */
 function fract2dX<V extends Object2D>(vector: V, referenceVector: V): V {
@@ -27,10 +27,10 @@ function fract2dX<V extends Object2D>(vector: V, referenceVector: V): V {
 }
 
 /**
- * Keep the decimal portion of a vector's y-coordinate.
+ * Applies the decimal portion of a vector's y-coordinate to the reference vector and returns it.
  *
  * @param {V} vector - A vector
- * @param {V} referenceVector - The reference
+ * @param {V} referenceVector - The reference vector
  * @returns {V} The modified reference vector
  */
 function fract2dY<V extends Object2D>(vector: V, referenceVector: V): V {

@@ -3,7 +3,7 @@ import { radiansToDegrees } from '../../../functions'
 import { horizontalAngleObject2d } from './horizontalAngle'
 
 /**
- * Computes the horizontal angle (aka direction) of a vector in degrees.
+ * Calculates the horizontal angle (aka direction) of a vector in degrees.
  *
  * @param {V} vector - A vector
  * @returns {number} Angle in degrees

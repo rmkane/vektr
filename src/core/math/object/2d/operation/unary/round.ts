@@ -1,10 +1,10 @@
 import type { Object2D } from '../../../../../../types'
 
 /**
- * Round the values of the x and y coordinates.
+ * Applies the rounded values of the x and y coordinates to the reference vector and returns it.
  *
  * @param {V} vector - A vector to round
- * @param {V} referenceVector - The reference
+ * @param {V} referenceVector - The reference vector
  * @returns {V} The modified reference vector
  */
 function round2d<V extends Object2D>(vector: V, referenceVector: V): V {
@@ -14,10 +14,10 @@ function round2d<V extends Object2D>(vector: V, referenceVector: V): V {
 }
 
 /**
- * Round the value of the x-coordinate.
+ * Applies the rounded value of the x-coordinate to the reference vector and returns it.
  *
  * @param {V} vector - A vector to round
- * @param {V} referenceVector - The reference
+ * @param {V} referenceVector - The reference vector
  * @returns {V} The modified reference vector
  */
 function round2dX<V extends Object2D>(vector: V, referenceVector: V): V {
@@ -26,10 +26,10 @@ function round2dX<V extends Object2D>(vector: V, referenceVector: V): V {
 }
 
 /**
- * Round the value of the y-coordinate.
+ * Applies the rounded value of the y-coordinate to the reference vector and returns it.
  *
  * @param {V} vector - A vector to round
- * @param {V} referenceVector - The reference
+ * @param {V} referenceVector - The reference vector
  * @returns {V} The modified reference vector
  */
 function round2dY<V extends Object2D>(vector: V, referenceVector: V): V {

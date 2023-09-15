@@ -1,7 +1,7 @@
 import type { Object2D } from '../../../../../types'
 
 /**
- * Computes the vertical angle of a vector in radians.
+ * Calculates the vertical angle of a vector in radians.
  *
  * @param {V} vector - A vector
  * @returns {number} Angle in radians

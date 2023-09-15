@@ -1,11 +1,11 @@
 import type { Object2D } from '../../../../../../types'
 
 /**
- * Applies the difference of {@link vector} and {@link otherVector} to {@link referenceVector}.
+ * Applies the difference of two vectors to the reference vector and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} otherVector - Second vector operand
- * @param {V} referenceVector - The reference vector
+ * @param {V} referenceVector - The reference vector vector
  * @returns {V} The modified reference vector
  */
 function subtract2d<V extends Object2D>(vector: V, otherVector: V, referenceVector: V): V {
@@ -15,11 +15,11 @@ function subtract2d<V extends Object2D>(vector: V, otherVector: V, referenceVect
 }
 
 /**
- * Applies the difference of {@link vector} x-coordinate and {@link otherVector} to {@link referenceVector} and returns it.
+ * Applies the difference of two vectors x-coordinates to the reference vector and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} otherVector - Second vector operand
- * @param {V} referenceVector - The reference
+ * @param {V} referenceVector - The reference vector
  * @returns {V} The modified reference vector
  */
 function subtract2dX<V extends Object2D>(vector: V, otherVector: V, referenceVector: V): V {
@@ -28,12 +28,11 @@ function subtract2dX<V extends Object2D>(vector: V, otherVector: V, referenceVec
 }
 
 /**
- * Applies the difference of {@link vector} and {@link otherVector} y-coordinates to {@link referenceVector} and returns
- * it.
+ * Applies the difference of two vectors y-coordinates to the reference vector and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} otherVector - Second vector operand
- * @param {V} referenceVector - The reference vector
+ * @param {V} referenceVector - The reference vector vector
  * @returns {V} The modified reference vector
  */
 function subtract2dY<V extends Object2D>(vector: V, otherVector: V, referenceVector: V): V {
@@ -42,11 +41,11 @@ function subtract2dY<V extends Object2D>(vector: V, otherVector: V, referenceVec
 }
 
 /**
- * Applies the difference of {@link vector} and {@link value} to {@link referenceVector} and returns it.
+ * Applies the difference of a vector and a scalar to the reference vector and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} value - Value to subtract
- * @param {V} referenceVector - The reference vector
+ * @param {V} referenceVector - The reference vector vector
  * @returns {V} The modified reference vector
  */
 function subtractScalar2d<V extends Object2D>(vector: V, value: number, referenceVector: V): V {
@@ -56,11 +55,11 @@ function subtractScalar2d<V extends Object2D>(vector: V, value: number, referenc
 }
 
 /**
- * Applies the difference of {@link vector} x-coordinate and {@link x} to {@link referenceVector} and returns it.
+ * Applies the difference of a vector's x-coordinate and a scalar to the reference vector and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} x - Value to subtract to x
- * @param {V} referenceVector - The reference vector
+ * @param {V} referenceVector - The reference vector vector
  * @returns {V} The resulting vector
  */
 function subtractScalar2dX<V extends Object2D>(vector: V, x: number, referenceVector: V): V {
@@ -69,11 +68,11 @@ function subtractScalar2dX<V extends Object2D>(vector: V, x: number, referenceVe
 }
 
 /**
- * Applies the difference of {@link vector} y-coordinate and {@link y} to {@link referenceVector} and returns it.
+ * Applies the difference of a vector's y-coordinate and a scalar to the reference vector and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} y - Value to subtract to y
- * @param {V} referenceVector - The reference vector
+ * @param {V} referenceVector - The reference vector vector
  * @returns {V} The resulting vector
  */
 function subtractScalar2dY<V extends Object2D>(vector: V, y: number, referenceVector: V): V {

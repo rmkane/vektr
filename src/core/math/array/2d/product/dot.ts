@@ -1,7 +1,7 @@
 import type { Array2D } from '../../../../../types'
 
 /**
- * Computes the dot product of two vectors.
+ * Calculates the dot product of two vectors.
  *
  * @param {V} left - The left vector operand
  * @param {V} right - The right vector operand

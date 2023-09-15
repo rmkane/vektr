@@ -2,11 +2,11 @@ import type { Array2D } from '../../../../../../types'
 import { dotArray2d } from '../../product/dot'
 
 /**
- * Applies the projection of {@link vector} onto {@link otherVector} to {@link referenceVector} and returns it.
+ * Applies the projection of a vector onto another vector to the reference vector and returns it.
  *
  * @param {V} vector - Projection source
  * @param {V} otherVector - Projection target
- * @param {V} referenceVector - The reference vector
+ * @param {V} referenceVector - The reference vector vector
  * @returns {V} The resulting vector
  */
 function projectOnto2d<V extends Array2D>(vector: V, otherVector: V, referenceVector: V): V {

@@ -2,45 +2,45 @@ import type { Object2D } from '../../../../../../types'
 import { clamp as clampFn } from '../../../../functions'
 
 /**
- * Clamp a vector between a minimum vector and a maximum vector.
+ * Applies the clamped result between a minimum and maximum vector to the reference vector and returns it.
  *
  * @param {V} vector - Vector to clamp
- * @param {V} min - Minimum vector limit
- * @param {V} max - Maximum vector limit
- * @param {V} referenceVector - The reference
+ * @param {V} minVector - Minimum vector limit
+ * @param {V} maxVector - Maximum vector limit
+ * @param {V} referenceVector - The reference vector
  * @returns {V} The modified reference vector
  */
-function clamp2d<V extends Object2D>(vector: V, min: V, max: V, referenceVector: V): V {
-  referenceVector.x = clampFn(vector.x, min.x, max.x)
-  referenceVector.y = clampFn(vector.y, min.y, max.y)
+function clamp2d<V extends Object2D>(vector: V, minVector: V, maxVector: V, referenceVector: V): V {
+  referenceVector.x = clampFn(vector.x, minVector.x, maxVector.x)
+  referenceVector.y = clampFn(vector.y, minVector.y, maxVector.y)
   return referenceVector
 }
 
 /**
- * Clamp a vector's x-coordinate between a minimum vector and a maximum vector.
+ * Applies the clamped x-coordinate between a minimum and maximum vector to the reference vector and returns it.
  *
  * @param {V} vector - Vector to clamp
- * @param {V} min - Minimum vector limit
- * @param {V} max - Maximum vector limit
- * @param {V} referenceVector - The reference
+ * @param {V} minVector - Minimum vector limit
+ * @param {V} maxVector - Maximum vector limit
+ * @param {V} referenceVector - The reference vector
  * @returns {V} The modified reference vector
  */
-function clamp2dX<V extends Object2D>(vector: V, min: V, max: V, referenceVector: V): V {
-  referenceVector.x = clampFn(vector.x, min.x, max.x)
+function clamp2dX<V extends Object2D>(vector: V, minVector: V, maxVector: V, referenceVector: V): V {
+  referenceVector.x = clampFn(vector.x, minVector.x, maxVector.x)
   return referenceVector
 }
 
 /**
- * Clamp a vector's y-coordinate between a minimum vector and a maximum vector.
+ * Applies the clamped y-coordinate between a minimum and maximum vector to the reference vector and returns it.
  *
  * @param {V} vector - Vector to clamp
- * @param {V} min - Minimum vector limit
- * @param {V} max - Maximum vector limit
- * @param {V} referenceVector - The reference
+ * @param {V} minVector - Minimum vector limit
+ * @param {V} maxVector - Maximum vector limit
+ * @param {V} referenceVector - The reference vector
  * @returns {V} The modified reference vector
  */
-function clamp2dY<V extends Object2D>(vector: V, min: V, max: V, referenceVector: V): V {
-  referenceVector.y = clampFn(vector.y, min.y, max.y)
+function clamp2dY<V extends Object2D>(vector: V, minVector: V, maxVector: V, referenceVector: V): V {
+  referenceVector.y = clampFn(vector.y, minVector.y, maxVector.y)
   return referenceVector
 }
 

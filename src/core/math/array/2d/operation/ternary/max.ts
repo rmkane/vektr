@@ -1,11 +1,11 @@
 import type { Array2D } from '../../../../../../types'
 
 /**
- * Compute the maximum x and y coordinates between two vectors.
+ * Applies the maximum x and y coordinates between two vectors to the reference vector and returns it.
  *
  * @param {V} vector - A vector to compare
  * @param {V} otherVector - A vector to compare with
- * @param {V} referenceVector - The reference
+ * @param {V} referenceVector - The reference vector
  * @returns {V} The modified reference vector
  */
 function max2d<V extends Array2D>(vector: V, otherVector: V, referenceVector: V): V {
@@ -15,11 +15,11 @@ function max2d<V extends Array2D>(vector: V, otherVector: V, referenceVector: V)
 }
 
 /**
- * Compute the maximum x-coordinate between two vectors.
+ * Applies the maximum x-coordinate between two vectors to the reference vector and returns it.
  *
  * @param {V} vector - A vector to compare
  * @param {V} otherVector - A vector to compare with
- * @param {V} referenceVector - The reference
+ * @param {V} referenceVector - The reference vector
  * @returns {V} The modified reference vector
  */
 function max2dX<V extends Array2D>(vector: V, otherVector: V, referenceVector: V): V {
@@ -28,11 +28,11 @@ function max2dX<V extends Array2D>(vector: V, otherVector: V, referenceVector: V
 }
 
 /**
- * Compute the maximum y-coordinate between two vectors.
+ * Applies the maximum y-coordinate between two vectors to the reference vector and returns it.
  *
  * @param {V} vector - A vector to compare
  * @param {V} otherVector - A vector to compare with
- * @param {V} referenceVector - The reference
+ * @param {V} referenceVector - The reference vector
  * @returns {V} The modified reference vector
  */
 function max2dY<V extends Array2D>(vector: V, otherVector: V, referenceVector: V): V {

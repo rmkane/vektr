@@ -1,9 +1,9 @@
 import type { Object2D } from '../../../../../../types'
 
 /**
- * Adds the given vectors to the reference vector and returns it.
+ * Applies the sum of the given vectors to the reference vector and returns it.
  *
- * @param {V} referenceVector - The reference vector
+ * @param {V} referenceVector - The reference vector vector
  * @param {V[]} vectors - Vector operands
  * @returns {V} The modified reference vector
  */

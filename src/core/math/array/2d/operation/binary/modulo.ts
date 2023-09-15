@@ -1,11 +1,11 @@
 import type { Array2D } from '../../../../../../types'
 
 /**
- * Applies the remainder of {@link vector} and {@link otherVector} to {@link referenceVector}.
+ * Applies the remainder of two vectors to the reference vector and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} otherVector - Second vector operand
- * @param {V} referenceVector - The reference vector
+ * @param {V} referenceVector - The reference vector vector
  * @returns {V} The modified reference vector
  */
 function modulo2d<V extends Array2D>(vector: V, otherVector: V, referenceVector: V): V {
@@ -15,11 +15,11 @@ function modulo2d<V extends Array2D>(vector: V, otherVector: V, referenceVector:
 }
 
 /**
- * Applies the remainder of {@link vector} x-coordinate and {@link otherVector} to {@link referenceVector} and returns it.
+ * Applies the remainder of two vectors x-coordinates to the reference vector and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} otherVector - Second vector operand
- * @param {V} referenceVector - The reference
+ * @param {V} referenceVector - The reference vector
  * @returns {V} The modified reference vector
  */
 function modulo2dX<V extends Array2D>(vector: V, otherVector: V, referenceVector: V): V {
@@ -28,11 +28,11 @@ function modulo2dX<V extends Array2D>(vector: V, otherVector: V, referenceVector
 }
 
 /**
- * Applies the remainder of {@link vector} and {@link otherVector} y-coordinates to {@link referenceVector} and returns it.
+ * Applies the remainder of two vectors y-coordinates to the reference vector and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} otherVector - Second vector operand
- * @param {V} referenceVector - The reference vector
+ * @param {V} referenceVector - The reference vector vector
  * @returns {V} The modified reference vector
  */
 function modulo2dY<V extends Array2D>(vector: V, otherVector: V, referenceVector: V): V {
@@ -41,11 +41,11 @@ function modulo2dY<V extends Array2D>(vector: V, otherVector: V, referenceVector
 }
 
 /**
- * Applies the remainder of {@link vector} and {@link value} to {@link referenceVector} and returns it.
+ * Applies the remainder of a vector and a scalar to the reference vector and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} value - Value to modulo
- * @param {V} referenceVector - The reference vector
+ * @param {V} referenceVector - The reference vector vector
  * @returns {V} The modified reference vector
  */
 function moduloScalar2d<V extends Array2D>(vector: V, value: number, referenceVector: V): V {
@@ -55,11 +55,11 @@ function moduloScalar2d<V extends Array2D>(vector: V, value: number, referenceVe
 }
 
 /**
- * Applies the remainder of {@link vector} x-coordinate and {@link x} to {@link referenceVector} and returns it.
+ * Applies the remainder of a vector's x-coordinate and a scalar to the reference vector and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} x - Value to modulo to x
- * @param {V} referenceVector - The reference vector
+ * @param {V} referenceVector - The reference vector vector
  * @returns {V} The resulting vector
  */
 function moduloScalar2dX<V extends Array2D>(vector: V, x: number, referenceVector: V): V {
@@ -68,11 +68,11 @@ function moduloScalar2dX<V extends Array2D>(vector: V, x: number, referenceVecto
 }
 
 /**
- * Applies the remainder of {@link vector} y-coordinate and {@link y} to {@link referenceVector} and returns it.
+ * Applies the remainder of a vector's y-coordinate and a scalar to the reference vector and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} y - Value to modulo to y
- * @param {V} referenceVector - The reference vector
+ * @param {V} referenceVector - The reference vector vector
  * @returns {V} The resulting vector
  */
 function moduloScalar2dY<V extends Array2D>(vector: V, y: number, referenceVector: V): V {

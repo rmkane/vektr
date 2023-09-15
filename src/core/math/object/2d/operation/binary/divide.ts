@@ -1,11 +1,11 @@
 import type { Object2D } from '../../../../../../types'
 
 /**
- * Applies the quotient of {@link vector} and {@link otherVector} to {@link referenceVector}.
+ * Applies the quotient of two vectors to the reference vector and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} otherVector - Second vector operand
- * @param {V} referenceVector - The reference vector
+ * @param {V} referenceVector - The reference vector vector
  * @returns {V} The modified reference vector
  */
 function divide2d<V extends Object2D>(vector: V, otherVector: V, referenceVector: V): V {
@@ -15,11 +15,11 @@ function divide2d<V extends Object2D>(vector: V, otherVector: V, referenceVector
 }
 
 /**
- * Applies the quotient of {@link vector} x-coordinate and {@link otherVector} to {@link referenceVector} and returns it.
+ * Applies the quotient of two vectors x-coordinates to the reference vector and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} otherVector - Second vector operand
- * @param {V} referenceVector - The reference
+ * @param {V} referenceVector - The reference vector
  * @returns {V} The modified reference vector
  */
 function divide2dX<V extends Object2D>(vector: V, otherVector: V, referenceVector: V): V {
@@ -28,11 +28,11 @@ function divide2dX<V extends Object2D>(vector: V, otherVector: V, referenceVecto
 }
 
 /**
- * Applies the quotient of {@link vector} and {@link otherVector} y-coordinates to {@link referenceVector} and returns it.
+ * Applies the quotient of two vectors y-coordinates to the reference vector and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} otherVector - Second vector operand
- * @param {V} referenceVector - The reference vector
+ * @param {V} referenceVector - The reference vector vector
  * @returns {V} The modified reference vector
  */
 function divide2dY<V extends Object2D>(vector: V, otherVector: V, referenceVector: V): V {
@@ -41,11 +41,11 @@ function divide2dY<V extends Object2D>(vector: V, otherVector: V, referenceVecto
 }
 
 /**
- * Applies the quotient of {@link vector} and {@link value} to {@link referenceVector} and returns it.
+ * Applies the quotient of a vector and a scalar to the reference vector and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} value - Value to divide
- * @param {V} referenceVector - The reference vector
+ * @param {V} referenceVector - The reference vector vector
  * @returns {V} The modified reference vector
  */
 function divideScalar2d<V extends Object2D>(vector: V, value: number, referenceVector: V): V {
@@ -55,11 +55,11 @@ function divideScalar2d<V extends Object2D>(vector: V, value: number, referenceV
 }
 
 /**
- * Applies the quotient of {@link vector} x-coordinate and {@link x} to {@link referenceVector} and returns it.
+ * Applies the quotient of a vector's x-coordinate and a scalar to the reference vector and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} x - Value to divide to x
- * @param {V} referenceVector - The reference vector
+ * @param {V} referenceVector - The reference vector vector
  * @returns {V} The resulting vector
  */
 function divideScalar2dX<V extends Object2D>(vector: V, x: number, referenceVector: V): V {
@@ -68,11 +68,11 @@ function divideScalar2dX<V extends Object2D>(vector: V, x: number, referenceVect
 }
 
 /**
- * Applies the quotient of {@link vector} y-coordinate and {@link y} to {@link referenceVector} and returns it.
+ * Applies the quotient of a vector's y-coordinate and a scalar to the reference vector and returns it.
  *
  * @param {V} vector - First vector operand
  * @param {V} y - Value to divide to y
- * @param {V} referenceVector - The reference vector
+ * @param {V} referenceVector - The reference vector vector
  * @returns {V} The resulting vector
  */
 function divideScalar2dY<V extends Object2D>(vector: V, y: number, referenceVector: V): V {

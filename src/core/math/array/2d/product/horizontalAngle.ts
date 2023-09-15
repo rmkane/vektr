@@ -1,7 +1,7 @@
 import type { Array2D } from '../../../../../types'
 
 /**
- * Computes the horizontal angle (aka direction) of a vector in radians.
+ * Calculates the horizontal angle (aka direction) of a vector in radians.
  *
  * @param {V} vector - A vector
  * @returns {number} Angle in radians
