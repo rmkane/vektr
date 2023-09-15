@@ -1,9 +1,9 @@
 import type { Array2D } from '../../../../../types'
 
 /**
- * TBD
+ * Computes the vertical angle of a vector in radians.
  *
- * @param {V} vector
+ * @param {V} vector - A vector
  * @returns {number} Angle in radians
  */
 function verticalAngle2d<V extends Array2D>(vector: V): number {

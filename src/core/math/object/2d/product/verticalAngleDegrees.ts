@@ -3,9 +3,9 @@ import { radiansToDegrees } from '../../../functions'
 import { verticalAngleObject2d } from './verticalAngle'
 
 /**
- * TBD
+ * Computes the vertical angle of a vector in degrees.
  *
- * @param {V} vector
+ * @param {V} vector - A vector
  * @returns {number} Angle in degrees
  */
 function verticalAngleDegrees2d<V extends Object2D>(vector: V): number {

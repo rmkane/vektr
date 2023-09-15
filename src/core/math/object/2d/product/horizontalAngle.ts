@@ -1,9 +1,9 @@
 import type { Object2D } from '../../../../../types'
 
 /**
- * TBD
+ * Computes the horizontal angle (aka direction) of a vector in radians.
  *
- * @param {V} vector
+ * @param {V} vector - A vector
  * @returns {number} Angle in radians
  */
 function horizontalAngle2d<V extends Object2D>(vector: V): number {
