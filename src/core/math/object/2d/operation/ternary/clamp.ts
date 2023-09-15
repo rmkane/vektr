@@ -17,11 +17,11 @@ function clamp2d<V extends Object2D>(vector: V, min: V, max: V, referenceVector:
 }
 
 /**
- * TBD
+ * Clamp a vector's x-coordinate between a minimum vector and a maximum vector.
  *
- * @param {V} vector
- * @param {V} min
- * @param {V} max
+ * @param {V} vector - Vector to clamp
+ * @param {V} min - Minimum vector limit
+ * @param {V} max - Maximum vector limit
  * @param {V} referenceVector - The reference
  * @returns {V} The modified reference vector
  */
@@ -31,11 +31,11 @@ function clamp2dX<V extends Object2D>(vector: V, min: V, max: V, referenceVector
 }
 
 /**
- * TBD
+ * Clamp a vector's y-coordinate between a minimum vector and a maximum vector.
  *
- * @param {V} vector
- * @param {V} min
- * @param {V} max
+ * @param {V} vector - Vector to clamp
+ * @param {V} min - Minimum vector limit
+ * @param {V} max - Maximum vector limit
  * @param {V} referenceVector - The reference
  * @returns {V} The modified reference vector
  */

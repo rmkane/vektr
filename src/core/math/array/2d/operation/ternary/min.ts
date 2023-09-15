@@ -1,42 +1,42 @@
 import type { Array2D } from '../../../../../../types'
 
 /**
- * TBD
+ * Compute the minimum x and y coordinates between two vectors.
  *
  * @param {V} vector
- * @param {V} relativeVector
+ * @param {V} otherVector
  * @param {V} referenceVector - The reference
  * @returns {V} The modified reference vector
  */
-function min2d<V extends Array2D>(vector: V, relativeVector: V, referenceVector: V): V {
-  referenceVector[0] = Math.min(vector[0], relativeVector[0])
-  referenceVector[1] = Math.min(vector[1], relativeVector[1])
+function min2d<V extends Array2D>(vector: V, otherVector: V, referenceVector: V): V {
+  referenceVector[0] = Math.min(vector[0], otherVector[0])
+  referenceVector[1] = Math.min(vector[1], otherVector[1])
   return referenceVector
 }
 
 /**
- * TBD
+ * Compute the minimum x-coordinate between two vectors.
  *
  * @param {V} vector
- * @param {V} relativeVector
+ * @param {V} otherVector
  * @param {V} referenceVector - The reference
  * @returns {V} The modified reference vector
  */
-function min2dX<V extends Array2D>(vector: V, relativeVector: V, referenceVector: V): V {
-  referenceVector[0] = Math.min(vector[0], relativeVector[0])
+function min2dX<V extends Array2D>(vector: V, otherVector: V, referenceVector: V): V {
+  referenceVector[0] = Math.min(vector[0], otherVector[0])
   return referenceVector
 }
 
 /**
- * TBD
+ * Compute the minimum y-coordinate between two vectors.
  *
  * @param {V} vector
- * @param {V} relativeVector
+ * @param {V} otherVector
  * @param {V} referenceVector - The reference
  * @returns {V} The modified reference vector
  */
-function min2dY<V extends Array2D>(vector: V, relativeVector: V, referenceVector: V): V {
-  referenceVector[1] = Math.min(vector[1], relativeVector[1])
+function min2dY<V extends Array2D>(vector: V, otherVector: V, referenceVector: V): V {
+  referenceVector[1] = Math.min(vector[1], otherVector[1])
   return referenceVector
 }
 

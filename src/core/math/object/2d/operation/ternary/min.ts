@@ -1,42 +1,42 @@
 import type { Object2D } from '../../../../../../types'
 
 /**
- * TBD
+ * Compute the minimum x and y coordinates between two vectors.
  *
  * @param {V} vector
- * @param {V} relativeVector
+ * @param {V} otherVector
  * @param {V} referenceVector - The reference
  * @returns {V} The modified reference vector
  */
-function min2d<V extends Object2D>(vector: V, relativeVector: V, referenceVector: V): V {
-  referenceVector.x = Math.min(vector.x, relativeVector.x)
-  referenceVector.y = Math.min(vector.y, relativeVector.y)
+function min2d<V extends Object2D>(vector: V, otherVector: V, referenceVector: V): V {
+  referenceVector.x = Math.min(vector.x, otherVector.x)
+  referenceVector.y = Math.min(vector.y, otherVector.y)
   return referenceVector
 }
 
 /**
- * TBD
+ * Compute the minimum x-coordinate between two vectors.
  *
  * @param {V} vector
- * @param {V} relativeVector
+ * @param {V} otherVector
  * @param {V} referenceVector - The reference
  * @returns {V} The modified reference vector
  */
-function min2dX<V extends Object2D>(vector: V, relativeVector: V, referenceVector: V): V {
-  referenceVector.x = Math.min(vector.x, relativeVector.x)
+function min2dX<V extends Object2D>(vector: V, otherVector: V, referenceVector: V): V {
+  referenceVector.x = Math.min(vector.x, otherVector.x)
   return referenceVector
 }
 
 /**
- * TBD
+ * Compute the minimum y-coordinate between two vectors.
  *
  * @param {V} vector
- * @param {V} relativeVector
+ * @param {V} otherVector
  * @param {V} referenceVector - The reference
  * @returns {V} The modified reference vector
  */
-function min2dY<V extends Object2D>(vector: V, relativeVector: V, referenceVector: V): V {
-  referenceVector.y = Math.min(vector.y, relativeVector.y)
+function min2dY<V extends Object2D>(vector: V, otherVector: V, referenceVector: V): V {
+  referenceVector.y = Math.min(vector.y, otherVector.y)
   return referenceVector
 }
 

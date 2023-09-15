@@ -2,11 +2,11 @@ import type { Array2D } from '../../../../../../types'
 import { lerp as lerpFn } from '../../../../functions'
 
 /**
- * TBD
+ * Interpolate a vector between a start and end vector by an amount.
  *
- * @param {V} start
- * @param {V} end
- * @param {number} amount
+ * @param {V} start - Start position vector
+ * @param {V} end - End position vector
+ * @param {number} amount - A value between [0, 1]
  * @param {V} referenceVector - The reference
  * @returns {V} The modified reference vector
  */
@@ -17,11 +17,11 @@ function lerp2d<V extends Array2D>(start: V, end: V, amount: number, referenceVe
 }
 
 /**
- * TBD
+ * Interpolate a vector's x-coordinate between a start and end vector by an amount.
  *
- * @param {V} start
- * @param {V} end
- * @param {number} amount
+ * @param {V} start - Start position vector
+ * @param {V} end - End position vector
+ * @param {number} amount - A value between [0, 1]
  * @param {V} referenceVector - The reference
  * @returns {V} The modified reference vector
  */
@@ -31,11 +31,11 @@ function lerp2dX<V extends Array2D>(start: V, end: V, amount: number, referenceV
 }
 
 /**
- * TBD
+ * Interpolate a vector's y-coordinate between a start and end vector by an amount.
  *
- * @param {V} start
- * @param {V} end
- * @param {number} amount
+ * @param {V} start - Start position vector
+ * @param {V} end - End position vector
+ * @param {number} amount - A value between [0, 1]
  * @param {V} referenceVector - The reference
  * @returns {V} The modified reference vector
  */
