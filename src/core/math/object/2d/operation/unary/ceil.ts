@@ -1,9 +1,9 @@
 import type { Object2D } from '../../../../../../types'
 
 /**
- * TBD
+ * Round the values of the x and y coordinates up.
  *
- * @param {V} vector
+ * @param {V} vector - A vector to round up
  * @param {V} referenceVector - The reference
  * @returns {V} The modified reference vector
  */
@@ -14,9 +14,9 @@ function ceil2d<V extends Object2D>(vector: V, referenceVector: V): V {
 }
 
 /**
- * TBD
+ * Round the value of the x-coordinate up.
  *
- * @param {V} vector
+ * @param {V} vector - A vector to round up
  * @param {V} referenceVector - The reference
  * @returns {V} The modified reference vector
  */
@@ -26,9 +26,9 @@ function ceil2dX<V extends Object2D>(vector: V, referenceVector: V): V {
 }
 
 /**
- * TBD
+ * Round the value of the y-coordinate up.
  *
- * @param {V} vector
+ * @param {V} vector - A vector to round up
  * @param {V} referenceVector - The reference
  * @returns {V} The modified reference vector
  */

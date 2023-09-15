@@ -1,9 +1,9 @@
 import type { Object2D } from '../../../../../../types'
 
 /**
- * TBD
+ * Inverts the x and y coordinates of a vector.
  *
- * @param {V} vector
+ * @param {V} vector - A vector to invert
  * @param {V} referenceVector - The reference
  * @returns {V} The modified reference vector
  */
@@ -14,9 +14,9 @@ function invert2d<V extends Object2D>(vector: V, referenceVector: V): V {
 }
 
 /**
- * TBD
+ * Inverts the x-coordinate of a vector.
  *
- * @param {V} vector
+ * @param {V} vector - A vector to invert
  * @param {V} referenceVector - The reference
  * @returns {V} The modified reference vector
  */
@@ -27,9 +27,9 @@ function invert2dX<V extends Object2D>(vector: V, referenceVector: V): V {
 }
 
 /**
- * TBD
+ * Inverts the y-coordinate of a vector.
  *
- * @param {V} vector
+ * @param {V} vector - A vector to invert
  * @param {V} referenceVector - The reference
  * @returns {V} The modified reference vector
  */

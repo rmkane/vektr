@@ -1,9 +1,9 @@
 import type { Array2D } from '../../../../../../types'
 
 /**
- * TBD
+ * Round the values of the x and y coordinates.
  *
- * @param {V} vector
+ * @param {V} vector - A vector to round
  * @param {V} referenceVector - The reference
  * @returns {V} The modified reference vector
  */
@@ -14,9 +14,9 @@ function round2d<V extends Array2D>(vector: V, referenceVector: V): V {
 }
 
 /**
- * TBD
+ * Round the value of the x-coordinate.
  *
- * @param {V} vector
+ * @param {V} vector - A vector to round
  * @param {V} referenceVector - The reference
  * @returns {V} The modified reference vector
  */
@@ -26,9 +26,9 @@ function round2dX<V extends Array2D>(vector: V, referenceVector: V): V {
 }
 
 /**
- * TBD
+ * Round the value of the y-coordinate.
  *
- * @param {V} vector
+ * @param {V} vector - A vector to round
  * @param {V} referenceVector - The reference
  * @returns {V} The modified reference vector
  */

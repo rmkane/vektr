@@ -3,10 +3,10 @@ import { divideArrayScalar2d } from '../binary/index'
 import { magnitudeArray2d } from '../../product/index'
 
 /**
- * TBD
+ * Compute the unit vector for a given vector.
  *
- * @param {V} vector
- * @returns {number}
+ * @param {V} vector - A vector to normalize
+ * @returns {V} The unit vector
  */
 function unit2d<V extends Array2D>(vector: V, referenceVector: V): V {
   return divideArrayScalar2d(vector, magnitudeArray2d(vector), referenceVector)
